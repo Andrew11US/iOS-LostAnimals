@@ -101,14 +101,13 @@
 		0168784E24606216000B0D9D /* LostAnimals */ = {
 			isa = PBXGroup;
 			children = (
-				0168784F24606216000B0D9D /* AppDelegate.swift */,
-				0168785124606216000B0D9D /* SceneDelegate.swift */,
-				0168785324606216000B0D9D /* FirstViewController.swift */,
-				0168785524606216000B0D9D /* SecondViewController.swift */,
-				0168785724606216000B0D9D /* Main.storyboard */,
+				01687886246062F7000B0D9D /* Storyboards */,
 				0168785A24606217000B0D9D /* Assets.xcassets */,
-				0168785C24606217000B0D9D /* LaunchScreen.storyboard */,
-				0168785F24606217000B0D9D /* Info.plist */,
+				016878822460629D000B0D9D /* View */,
+				01687883246062A5000B0D9D /* Controllers */,
+				0168788124606296000B0D9D /* Model */,
+				01687885246062C4000B0D9D /* Extensions */,
+				01687884246062B1000B0D9D /* Supporting Files */,
 			);
 			path = LostAnimals;
 			sourceTree = "<group>";
@@ -129,6 +128,55 @@
 				0168787524606218000B0D9D /* Info.plist */,
 			);
 			path = LostAnimalsUITests;
+			sourceTree = "<group>";
+		};
+		0168788124606296000B0D9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		016878822460629D000B0D9D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		01687883246062A5000B0D9D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0168785324606216000B0D9D /* FirstViewController.swift */,
+				0168785524606216000B0D9D /* SecondViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		01687884246062B1000B0D9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0168784F24606216000B0D9D /* AppDelegate.swift */,
+				0168785124606216000B0D9D /* SceneDelegate.swift */,
+				0168785F24606217000B0D9D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01687885246062C4000B0D9D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		01687886246062F7000B0D9D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0168785C24606217000B0D9D /* LaunchScreen.storyboard */,
+				0168785724606216000B0D9D /* Main.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +497,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Andrew11US.LostAnimals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -459,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Andrew11US.LostAnimals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
