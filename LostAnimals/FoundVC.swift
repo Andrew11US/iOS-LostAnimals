@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  LostAnimals
 //
 //  Created by Andrew on 5/4/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FoundVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
