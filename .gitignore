@@ -1,0 +1,203 @@
+
+Pods/Alamofire/LICENSE
+Pods/Alamofire/README.md
+Pods/Alamofire/Source/AFError.swift
+Pods/Alamofire/Source/Alamofire.swift
+Pods/Alamofire/Source/AlamofireExtended.swift
+Pods/Alamofire/Source/CachedResponseHandler.swift
+Pods/Alamofire/Source/DispatchQueue+Alamofire.swift
+Pods/Alamofire/Source/EventMonitor.swift
+Pods/Alamofire/Source/HTTPHeaders.swift
+Pods/Alamofire/Source/HTTPMethod.swift
+Pods/Alamofire/Source/MultipartFormData.swift
+Pods/Alamofire/Source/MultipartUpload.swift
+Pods/Alamofire/Source/NetworkReachabilityManager.swift
+Pods/Alamofire/Source/Notifications.swift
+Pods/Alamofire/Source/OperationQueue+Alamofire.swift
+Pods/Alamofire/Source/ParameterEncoder.swift
+Pods/Alamofire/Source/ParameterEncoding.swift
+Pods/Alamofire/Source/Protector.swift
+Pods/Alamofire/Source/RedirectHandler.swift
+Pods/Alamofire/Source/Request.swift
+Pods/Alamofire/Source/RequestInterceptor.swift
+Pods/Alamofire/Source/RequestTaskMap.swift
+Pods/Alamofire/Source/Response.swift
+Pods/Alamofire/Source/ResponseSerialization.swift
+Pods/Alamofire/Source/Result+Alamofire.swift
+Pods/Alamofire/Source/RetryPolicy.swift
+Pods/Alamofire/Source/ServerTrustEvaluation.swift
+Pods/Alamofire/Source/Session.swift
+Pods/Alamofire/Source/SessionDelegate.swift
+Pods/Alamofire/Source/URLConvertible+URLRequestConvertible.swift
+Pods/Alamofire/Source/URLEncodedFormEncoder.swift
+Pods/Alamofire/Source/URLRequest+Alamofire.swift
+Pods/Alamofire/Source/URLSessionConfiguration+Alamofire.swift
+Pods/Alamofire/Source/Validation.swift
+Pods/Manifest.lock
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/Alamofire.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/Pods-LostAnimals-LostAnimalsUITests.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/Pods-LostAnimals.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/Pods-LostAnimalsTests.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/pop.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/SPPermissions.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/SwiftKeychainWrapper.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/pop/LICENSE
+Pods/pop/pop/POP.h
+Pods/pop/pop/POPAction.h
+Pods/pop/pop/POPAnimatableProperty.h
+Pods/pop/pop/POPAnimatableProperty.mm
+Pods/pop/pop/POPAnimatablePropertyTypes.h
+Pods/pop/pop/POPAnimation.h
+Pods/pop/pop/POPAnimation.mm
+Pods/pop/pop/POPAnimationEvent.h
+Pods/pop/pop/POPAnimationEvent.mm
+Pods/pop/pop/POPAnimationEventInternal.h
+Pods/pop/pop/POPAnimationExtras.h
+Pods/pop/pop/POPAnimationExtras.mm
+Pods/pop/pop/POPAnimationInternal.h
+Pods/pop/pop/POPAnimationPrivate.h
+Pods/pop/pop/POPAnimationRuntime.h
+Pods/pop/pop/POPAnimationRuntime.mm
+Pods/pop/pop/POPAnimationTracer.h
+Pods/pop/pop/POPAnimationTracer.mm
+Pods/pop/pop/POPAnimationTracerInternal.h
+Pods/pop/pop/POPAnimator.h
+Pods/pop/pop/POPAnimator.mm
+Pods/pop/pop/POPAnimatorPrivate.h
+Pods/pop/pop/POPBasicAnimation.h
+Pods/pop/pop/POPBasicAnimation.mm
+Pods/pop/pop/POPBasicAnimationInternal.h
+Pods/pop/pop/POPCGUtils.h
+Pods/pop/pop/POPCGUtils.mm
+Pods/pop/pop/POPCustomAnimation.h
+Pods/pop/pop/POPCustomAnimation.mm
+Pods/pop/pop/POPDecayAnimation.h
+Pods/pop/pop/POPDecayAnimation.mm
+Pods/pop/pop/POPDecayAnimationInternal.h
+Pods/pop/pop/POPDefines.h
+Pods/pop/pop/POPGeometry.h
+Pods/pop/pop/POPGeometry.mm
+Pods/pop/pop/POPLayerExtras.h
+Pods/pop/pop/POPLayerExtras.mm
+Pods/pop/pop/POPMath.h
+Pods/pop/pop/POPMath.mm
+Pods/pop/pop/POPPropertyAnimation.h
+Pods/pop/pop/POPPropertyAnimation.mm
+Pods/pop/pop/POPPropertyAnimationInternal.h
+Pods/pop/pop/POPSpringAnimation.h
+Pods/pop/pop/POPSpringAnimation.mm
+Pods/pop/pop/POPSpringAnimationInternal.h
+Pods/pop/pop/POPSpringSolver.h
+Pods/pop/pop/POPVector.h
+Pods/pop/pop/POPVector.mm
+Pods/pop/pop/WebCore/FloatConversion.h
+Pods/pop/pop/WebCore/TransformationMatrix.cpp
+Pods/pop/pop/WebCore/TransformationMatrix.h
+Pods/pop/pop/WebCore/UnitBezier.h
+Pods/pop/README.md
+Pods/SPPermissions/LICENSE
+Pods/SPPermissions/README.md
+Pods/SPPermissions/Source/SPPermissions/Data/SPPermissionsColor.swift
+Pods/SPPermissions/Source/SPPermissions/Data/SPPermissionsDelay.swift
+Pods/SPPermissions/Source/SPPermissions/Data/SPPermissionsDraw.swift
+Pods/SPPermissions/Source/SPPermissions/Data/SPPermissionsHaptic.swift
+Pods/SPPermissions/Source/SPPermissions/Data/SPPermissionsOpener.swift
+Pods/SPPermissions/Source/SPPermissions/Data/SPPermissionsText.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Dialog/Controllers/SPPermissionsDialogController.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Dialog/Views/SPPermissionsDialogFooterCommentView.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Dialog/Views/SPPermissionsDialogView.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/List/Controllers/SPPermissionsListController.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/List/Views/SPPermissionsListFooterCommentView.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/List/Views/SPPermissionsListHeaderView.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Native/SPPermissionsNativeController.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Shared/Buttons/SPPermissionActionButton.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Shared/Buttons/SPPermissionsCloseButton.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Shared/Labels/SPPermissionsLabel.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Shared/Other/SPPermissionIconView.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Shared/Other/SPPermissionsGradeBlurView.swift
+Pods/SPPermissions/Source/SPPermissions/Interface/Shared/Tables/SPPermissionTableViewCell.swift
+Pods/SPPermissions/Source/SPPermissions/Models/SPPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Models/SPPermissionDeniedAlertData.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/Handlers/SPRequestPermissionLocationHandler.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPBluetoothPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPCalendarPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPCameraPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPContactsPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPLocationPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPMediaLibraryPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPMicrophonePermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPMotionPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPNotificationPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPPhotoLibraryPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPRemindersPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Permissions/SPSpeechPermission.swift
+Pods/SPPermissions/Source/SPPermissions/Protocols/SPPermissionProtocol.swift
+Pods/SPPermissions/Source/SPPermissions/Protocols/SPPermissionsControllerProtocol.swift
+Pods/SPPermissions/Source/SPPermissions/Protocols/SPPermissionsDataSource.swift
+Pods/SPPermissions/Source/SPPermissions/Protocols/SPPermissionsDelegate.swift
+Pods/SPPermissions/Source/SPPermissions/SPPermissions.swift
+Pods/SwiftKeychainWrapper/LICENSE
+Pods/SwiftKeychainWrapper/README.md
+Pods/SwiftKeychainWrapper/SwiftKeychainWrapper/KeychainItemAccessibility.swift
+Pods/SwiftKeychainWrapper/SwiftKeychainWrapper/KeychainWrapper.swift
+Pods/SwiftKeychainWrapper/SwiftKeychainWrapper/SwiftKeychainWrapper.h
+Pods/Target Support Files/Alamofire/Alamofire-dummy.m
+Pods/Target Support Files/Alamofire/Alamofire-Info.plist
+Pods/Target Support Files/Alamofire/Alamofire-prefix.pch
+Pods/Target Support Files/Alamofire/Alamofire-umbrella.h
+Pods/Target Support Files/Alamofire/Alamofire.modulemap
+Pods/Target Support Files/Alamofire/Alamofire.xcconfig
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-acknowledgements.markdown
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-acknowledgements.plist
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-dummy.m
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-frameworks-Debug-input-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-frameworks-Debug-output-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-frameworks-Release-input-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-frameworks-Release-output-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-frameworks.sh
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-Info.plist
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests-umbrella.h
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests.debug.xcconfig
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests.modulemap
+Pods/Target Support Files/Pods-LostAnimals-LostAnimalsUITests/Pods-LostAnimals-LostAnimalsUITests.release.xcconfig
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-acknowledgements.markdown
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-acknowledgements.plist
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-dummy.m
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-frameworks-Debug-input-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-frameworks-Debug-output-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-frameworks-Release-input-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-frameworks-Release-output-files.xcfilelist
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-frameworks.sh
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-Info.plist
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals-umbrella.h
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals.debug.xcconfig
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals.modulemap
+Pods/Target Support Files/Pods-LostAnimals/Pods-LostAnimals.release.xcconfig
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests-acknowledgements.markdown
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests-acknowledgements.plist
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests-dummy.m
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests-Info.plist
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests-umbrella.h
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests.debug.xcconfig
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests.modulemap
+Pods/Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests.release.xcconfig
+Pods/Target Support Files/pop/pop-dummy.m
+Pods/Target Support Files/pop/pop-Info.plist
+Pods/Target Support Files/pop/pop-prefix.pch
+Pods/Target Support Files/pop/pop-umbrella.h
+Pods/Target Support Files/pop/pop.modulemap
+Pods/Target Support Files/pop/pop.xcconfig
+Pods/Target Support Files/SPPermissions/SPPermissions-dummy.m
+Pods/Target Support Files/SPPermissions/SPPermissions-Info.plist
+Pods/Target Support Files/SPPermissions/SPPermissions-prefix.pch
+Pods/Target Support Files/SPPermissions/SPPermissions-umbrella.h
+Pods/Target Support Files/SPPermissions/SPPermissions.modulemap
+Pods/Target Support Files/SPPermissions/SPPermissions.xcconfig
+Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-dummy.m
+Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-Info.plist
+Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-prefix.pch
+Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-umbrella.h
+Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap
+Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.xcconfig
