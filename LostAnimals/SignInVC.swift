@@ -32,7 +32,7 @@ class SignInVC: UIViewController {
             }
         }
         
-        print(StorageManager.shared.getUserCache().uid)
+//        print(StorageManager.shared.getUserCache().uid)
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
     }
@@ -42,7 +42,6 @@ class SignInVC: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         addSpinner(spinner)
-        
         
         // Authenticate user using API
         self.performSegue(withIdentifier: Segue.signedIn.rawValue, sender: nil)
@@ -66,6 +65,7 @@ class SignInVC: UIViewController {
     
 }
 
+// MARK: - TextField Delegate methods
 extension SignInVC: UITextFieldDelegate {
     // Dismiss keyboard function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

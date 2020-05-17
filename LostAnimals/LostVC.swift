@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class LostVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

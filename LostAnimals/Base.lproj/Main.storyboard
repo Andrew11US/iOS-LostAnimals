@@ -7,11 +7,16 @@
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Lost-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="MainVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="LostVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,8 +184,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="ywy-YN-uP8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="textColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -208,10 +213,19 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qQ-F3-NQw" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                                        <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ge4-q7-NOX"/>
                                         </constraints>
-                                        <state key="normal" title="Log In"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signInBtnPressed:" destination="y2U-5T-SC6" eventType="touchUpInside" id="ypr-bD-zvm"/>
                                         </connections>
@@ -268,10 +282,10 @@
             </objects>
             <point key="canvasLocation" x="-1162.5" y="0.0"/>
         </scene>
-        <!--SignupVC-->
+        <!--Sign UpVC-->
         <scene sceneID="aGT-Dw-fB8">
             <objects>
-                <viewController id="a8X-ch-eVJ" customClass="SignupVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a8X-ch-eVJ" customClass="SignUpVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRV-Bv-pgd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,8 +304,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="d6Z-bd-ybh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="textColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -305,29 +319,41 @@
                                             <constraint firstAttribute="height" constant="40" id="F61-oG-cQ4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ojg-1W-4Lb">
                                         <rect key="frame" x="0.0" y="70" width="275" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ze-LW-mI6">
                                         <rect key="frame" x="0.0" y="140" width="275" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WXe-uW-mt3">
                                 <rect key="frame" x="50" y="574" width="275" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24R-ql-bcD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24R-ql-bcD" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
+                                        <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5hR-1b-U3M"/>
                                         </constraints>
-                                        <state key="normal" title="Sign Up"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpBtnPressed:" destination="a8X-ch-eVJ" eventType="touchUpInside" id="FQx-o7-Qoj"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="A8R-gc-9X3">
                                         <rect key="frame" x="0.0" y="100" width="275" height="50"/>
@@ -356,7 +382,13 @@
                                     <constraint firstAttribute="width" constant="50" id="9a2-Ap-F49"/>
                                     <constraint firstAttribute="height" constant="50" id="vC0-pv-ZUO"/>
                                 </constraints>
-                                <state key="normal" title="Cancel"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissBtnTapped:" destination="a8X-ch-eVJ" eventType="touchUpInside" id="TwW-4Y-Cfe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -378,6 +410,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Ed-lt-eoC"/>
                     <connections>
+                        <outlet property="confirmPassTextField" destination="2ze-LW-mI6" id="E4R-kq-hX1"/>
+                        <outlet property="emailTextField" destination="yR9-Fv-NHk" id="z5b-tL-hy8"/>
+                        <outlet property="passwordTextField" destination="Ojg-1W-4Lb" id="AFS-dB-JuB"/>
+                        <outlet property="signUpBtn" destination="24R-ql-bcD" id="1Gg-Mq-hrJ"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="signedUp" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Ln0-Wy-LPx"/>
                     </connections>
                 </viewController>

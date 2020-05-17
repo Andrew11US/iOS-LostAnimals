@@ -22,20 +22,30 @@
 		01094D932471A1DD00A1A3AF /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01094D922471A1DD00A1A3AF /* NetworkWrapper.swift */; };
 		01094D952471A7AF00A1A3AF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01094D942471A7AF00A1A3AF /* CustomButton.swift */; };
 		01094D992471A8E500A1A3AF /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01094D982471A8E500A1A3AF /* ViewController+Extension.swift */; };
+		01094DA62471BBD300A1A3AF /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094D9D2471BBD300A1A3AF /* Montserrat-SemiBold.ttf */; };
+		01094DA72471BBD300A1A3AF /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094D9E2471BBD300A1A3AF /* Montserrat-Thin.ttf */; };
+		01094DA82471BBD300A1A3AF /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094D9F2471BBD300A1A3AF /* Montserrat-Bold.ttf */; };
+		01094DA92471BBD300A1A3AF /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094DA02471BBD300A1A3AF /* Montserrat-ExtraBold.ttf */; };
+		01094DAA2471BBD300A1A3AF /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094DA12471BBD300A1A3AF /* Montserrat-Light.ttf */; };
+		01094DAB2471BBD400A1A3AF /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094DA22471BBD300A1A3AF /* Montserrat-ExtraLight.ttf */; };
+		01094DAC2471BBD400A1A3AF /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094DA32471BBD300A1A3AF /* Montserrat-Black.ttf */; };
+		01094DAD2471BBD400A1A3AF /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094DA42471BBD300A1A3AF /* Montserrat-Regular.ttf */; };
+		01094DAE2471BBD400A1A3AF /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01094DA52471BBD300A1A3AF /* Montserrat-Medium.ttf */; };
 		01160A5F246DE61A0096C70A /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A5E246DE61A0096C70A /* SignInVC.swift */; };
-		01160A61246DE6390096C70A /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A60246DE6390096C70A /* SignupVC.swift */; };
+		01160A61246DE6390096C70A /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A60246DE6390096C70A /* SignUpVC.swift */; };
 		01160A63246DE6790096C70A /* AdoptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A62246DE6790096C70A /* AdoptionVC.swift */; };
 		01160A65246DE69E0096C70A /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A64246DE69E0096C70A /* AddVC.swift */; };
 		01160A67246DE6C30096C70A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A66246DE6C30096C70A /* DetailVC.swift */; };
 		0168785024606216000B0D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168784F24606216000B0D9D /* AppDelegate.swift */; };
 		0168785224606216000B0D9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168785124606216000B0D9D /* SceneDelegate.swift */; };
-		0168785424606216000B0D9D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168785324606216000B0D9D /* MainVC.swift */; };
+		0168785424606216000B0D9D /* LostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168785324606216000B0D9D /* LostVC.swift */; };
 		0168785624606216000B0D9D /* FoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168785524606216000B0D9D /* FoundVC.swift */; };
 		0168785924606216000B0D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0168785724606216000B0D9D /* Main.storyboard */; };
 		0168785B24606217000B0D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0168785A24606217000B0D9D /* Assets.xcassets */; };
 		0168785E24606217000B0D9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0168785C24606217000B0D9D /* LaunchScreen.storyboard */; };
 		0168786924606217000B0D9D /* LostAnimalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168786824606217000B0D9D /* LostAnimalsTests.swift */; };
 		0168787424606218000B0D9D /* LostAnimalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168787324606218000B0D9D /* LostAnimalsUITests.swift */; };
+		01C5A2BE2471C3860037A180 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5A2BD2471C3860037A180 /* AppData.swift */; };
 		32A8B1B288F835E22E9E5345 /* Pods_LostAnimals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70965BFA0490AC35467EB20 /* Pods_LostAnimals.framework */; };
 		389C3335EF77E6D4677A4248 /* Pods_LostAnimals_LostAnimalsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649DFA6E277869290ABBD0A6 /* Pods_LostAnimals_LostAnimalsUITests.framework */; };
 		9E0791ACA9267002862B98A9 /* Pods_LostAnimalsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD0132DFCCA31D859FA7B80 /* Pods_LostAnimalsTests.framework */; };
@@ -75,15 +85,24 @@
 		01094D942471A7AF00A1A3AF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		01094D982471A8E500A1A3AF /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		01094D9A2471AAD200A1A3AF /* LostAnimals-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LostAnimals-Bridging-Header.h"; sourceTree = "<group>"; };
+		01094D9D2471BBD300A1A3AF /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		01094D9E2471BBD300A1A3AF /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		01094D9F2471BBD300A1A3AF /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		01094DA02471BBD300A1A3AF /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		01094DA12471BBD300A1A3AF /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		01094DA22471BBD300A1A3AF /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		01094DA32471BBD300A1A3AF /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		01094DA42471BBD300A1A3AF /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		01094DA52471BBD300A1A3AF /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		01160A5E246DE61A0096C70A /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		01160A60246DE6390096C70A /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		01160A60246DE6390096C70A /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		01160A62246DE6790096C70A /* AdoptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionVC.swift; sourceTree = "<group>"; };
 		01160A64246DE69E0096C70A /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		01160A66246DE6C30096C70A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		0168784C24606216000B0D9D /* LostAnimals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAnimals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0168784F24606216000B0D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0168785124606216000B0D9D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0168785324606216000B0D9D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		0168785324606216000B0D9D /* LostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostVC.swift; sourceTree = "<group>"; };
 		0168785524606216000B0D9D /* FoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundVC.swift; sourceTree = "<group>"; };
 		0168785824606216000B0D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0168785A24606217000B0D9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +114,7 @@
 		0168786F24606217000B0D9D /* LostAnimalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostAnimalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0168787324606218000B0D9D /* LostAnimalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostAnimalsUITests.swift; sourceTree = "<group>"; };
 		0168787524606218000B0D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C5A2BD2471C3860037A180 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0F6104CC9B58E0698AA1BCC4 /* Pods-LostAnimalsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAnimalsTests.release.xcconfig"; path = "Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests.release.xcconfig"; sourceTree = "<group>"; };
 		1C31B70D4E096DAABC55AA4E /* Pods-LostAnimals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAnimals.release.xcconfig"; path = "Target Support Files/Pods-LostAnimals/Pods-LostAnimals.release.xcconfig"; sourceTree = "<group>"; };
 		2A08FBE968C6C47CC9C787CF /* Pods-LostAnimals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAnimals.debug.xcconfig"; path = "Target Support Files/Pods-LostAnimals/Pods-LostAnimals.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +157,15 @@
 		01094D782471787600A1A3AF /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				01094DA32471BBD300A1A3AF /* Montserrat-Black.ttf */,
+				01094D9F2471BBD300A1A3AF /* Montserrat-Bold.ttf */,
+				01094DA02471BBD300A1A3AF /* Montserrat-ExtraBold.ttf */,
+				01094DA22471BBD300A1A3AF /* Montserrat-ExtraLight.ttf */,
+				01094DA12471BBD300A1A3AF /* Montserrat-Light.ttf */,
+				01094DA52471BBD300A1A3AF /* Montserrat-Medium.ttf */,
+				01094DA42471BBD300A1A3AF /* Montserrat-Regular.ttf */,
+				01094D9D2471BBD300A1A3AF /* Montserrat-SemiBold.ttf */,
+				01094D9E2471BBD300A1A3AF /* Montserrat-Thin.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -212,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				01094D7D2471835000A1A3AF /* Advertisment.swift */,
+				01C5A2BD2471C3860037A180 /* AppData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -229,8 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				01160A5E246DE61A0096C70A /* SignInVC.swift */,
-				01160A60246DE6390096C70A /* SignupVC.swift */,
-				0168785324606216000B0D9D /* MainVC.swift */,
+				01160A60246DE6390096C70A /* SignUpVC.swift */,
+				0168785324606216000B0D9D /* LostVC.swift */,
 				0168785524606216000B0D9D /* FoundVC.swift */,
 				01160A62246DE6790096C70A /* AdoptionVC.swift */,
 				01160A64246DE69E0096C70A /* AddVC.swift */,
@@ -407,8 +437,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01094DA72471BBD300A1A3AF /* Montserrat-Thin.ttf in Resources */,
+				01094DAD2471BBD400A1A3AF /* Montserrat-Regular.ttf in Resources */,
+				01094DAC2471BBD400A1A3AF /* Montserrat-Black.ttf in Resources */,
 				0168785E24606217000B0D9D /* LaunchScreen.storyboard in Resources */,
+				01094DA82471BBD300A1A3AF /* Montserrat-Bold.ttf in Resources */,
 				0168785B24606217000B0D9D /* Assets.xcassets in Resources */,
+				01094DAB2471BBD400A1A3AF /* Montserrat-ExtraLight.ttf in Resources */,
+				01094DAA2471BBD300A1A3AF /* Montserrat-Light.ttf in Resources */,
+				01094DA62471BBD300A1A3AF /* Montserrat-SemiBold.ttf in Resources */,
+				01094DA92471BBD300A1A3AF /* Montserrat-ExtraBold.ttf in Resources */,
+				01094DAE2471BBD400A1A3AF /* Montserrat-Medium.ttf in Resources */,
 				0168785924606216000B0D9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +580,7 @@
 				01160A65246DE69E0096C70A /* AddVC.swift in Sources */,
 				01094D8524719E5700A1A3AF /* Validator.swift in Sources */,
 				01094D8924719F9800A1A3AF /* Segue+Enum.swift in Sources */,
+				01C5A2BE2471C3860037A180 /* AppData.swift in Sources */,
 				01094D932471A1DD00A1A3AF /* NetworkWrapper.swift in Sources */,
 				01094D8D2471A06A00A1A3AF /* String+Extension.swift in Sources */,
 				01094D7C2471830800A1A3AF /* AdvertismentCell.swift in Sources */,
@@ -550,9 +590,9 @@
 				01094D8324719D5000A1A3AF /* NetworkConnection.swift in Sources */,
 				01094D8024719B1A00A1A3AF /* Spinner.swift in Sources */,
 				01094D7E2471835000A1A3AF /* Advertisment.swift in Sources */,
-				01160A61246DE6390096C70A /* SignupVC.swift in Sources */,
+				01160A61246DE6390096C70A /* SignUpVC.swift in Sources */,
 				0168785624606216000B0D9D /* FoundVC.swift in Sources */,
-				0168785424606216000B0D9D /* MainVC.swift in Sources */,
+				0168785424606216000B0D9D /* LostVC.swift in Sources */,
 				0168785024606216000B0D9D /* AppDelegate.swift in Sources */,
 				01160A67246DE6C30096C70A /* DetailVC.swift in Sources */,
 				01094D952471A7AF00A1A3AF /* CustomButton.swift in Sources */,
@@ -736,7 +776,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -760,7 +800,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
