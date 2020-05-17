@@ -459,7 +459,35 @@
                     <view key="view" contentMode="scaleToFill" id="qAr-nP-Wai">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkZ-8a-QMG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS6-xo-JYF">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xjC-NF-pPh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="uS6-xo-JYF" firstAttribute="leading" secondItem="dkZ-8a-QMG" secondAttribute="leading" id="MkY-6X-Pjj"/>
+                                    <constraint firstAttribute="bottom" secondItem="uS6-xo-JYF" secondAttribute="bottom" id="Oey-cZ-BwP"/>
+                                    <constraint firstAttribute="height" constant="100" id="W5j-Er-Cxq"/>
+                                    <constraint firstAttribute="trailing" secondItem="uS6-xo-JYF" secondAttribute="trailing" id="r56-e5-HM0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uuO-aK-SXe" firstAttribute="trailing" secondItem="dkZ-8a-QMG" secondAttribute="trailing" id="CjH-kg-NZI"/>
+                            <constraint firstItem="dkZ-8a-QMG" firstAttribute="leading" secondItem="qAr-nP-Wai" secondAttribute="leading" id="Gvn-hF-8ZD"/>
+                            <constraint firstItem="dkZ-8a-QMG" firstAttribute="top" secondItem="qAr-nP-Wai" secondAttribute="top" id="vVp-Zo-qW9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uuO-aK-SXe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" id="CWJ-GJ-ZsF"/>
@@ -738,7 +766,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <state key="normal" title="Sign up"/>
                                                 <connections>
-                                                    <segue destination="a8X-ch-eVJ" kind="show" id="oRR-nU-VG0"/>
+                                                    <segue destination="a8X-ch-eVJ" kind="presentation" id="oRR-nU-VG0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
