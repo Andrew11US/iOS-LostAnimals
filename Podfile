@@ -8,6 +8,9 @@ target 'LostAnimals' do
   pod 'SwiftKeychainWrapper'
   pod 'Alamofire', '~> 5.0'
   pod 'pop'
+  pod 'SPPermissions/Camera'
+  pod 'SPPermissions/PhotoLibrary'
+  pod 'SPPermissions/Location'
 
   target 'LostAnimalsTests' do
     inherit! :search_paths

@@ -43,11 +43,11 @@ public extension UIViewController {
         constraint.constant = CGFloat(to)
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
-            if to == 0 {
-                view.superview?.subviews[0].isUserInteractionEnabled = true
-            } else {
-                view.superview?.subviews[0].isUserInteractionEnabled = false
-            }
+//            if to == 0 {
+//                view.superview?.subviews[0].isUserInteractionEnabled = true
+//            } else {
+//                view.superview?.subviews[0].isUserInteractionEnabled = false
+//            }
         }
     }
     

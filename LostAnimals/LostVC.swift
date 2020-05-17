@@ -14,6 +14,10 @@ class LostVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var filterBtn: UIButton!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var searchViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var filterViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +25,23 @@ class LostVC: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
-
+    
     @IBAction func searchBtnTapped(_ sender: UIButton) {
+        if searchViewHeight.constant > 0 {
+            self.animate(view: searchView, constraint: searchViewHeight, to: 0)
+        } else {
+            self.animate(view: searchView, constraint: searchViewHeight, to: 200)
+            self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+        }
     }
     
     @IBAction func filterBtnTapped(_ sender: UIButton) {
+        if filterViewHeight.constant > 0 {
+            self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+        } else {
+            self.animate(view: filterView, constraint: filterViewHeight, to: 200)
+            self.animate(view: searchView, constraint: searchViewHeight, to: 0)
+        }
     }
 }
 
