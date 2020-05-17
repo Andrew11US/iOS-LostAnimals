@@ -140,7 +140,7 @@
                                 <rect key="frame" x="157.66666666666666" y="391" width="60" height="30"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
-                                    <segue destination="y2U-5T-SC6" kind="presentation" modalPresentationStyle="fullScreen" id="0uW-hG-Tij"/>
+                                    <segue destination="y2U-5T-SC6" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0uW-hG-Tij"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="4644" y="1"/>
         </scene>
-        <!--LoginVC-->
+        <!--Sign InVC-->
         <scene sceneID="Ldj-Bp-rTg">
             <objects>
-                <viewController id="y2U-5T-SC6" customClass="LoginVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="y2U-5T-SC6" customClass="SignInVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rZC-ed-iFQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,24 +194,27 @@
                                             <constraint firstAttribute="height" constant="40" id="KH4-ZS-Rmc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjq-Je-SsP">
                                         <rect key="frame" x="0.0" y="70" width="275" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-bX-Hiu">
                                 <rect key="frame" x="50" y="628" width="275" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qQ-F3-NQw">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qQ-F3-NQw" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ge4-q7-NOX"/>
                                         </constraints>
                                         <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="signInBtnPressed:" destination="y2U-5T-SC6" eventType="touchUpInside" id="ypr-bD-zvm"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5bq-2M-f5v">
                                         <rect key="frame" x="0.0" y="100" width="275" height="50"/>
@@ -255,7 +258,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="z1W-H9-RY4"/>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="presentation" modalPresentationStyle="fullScreen" id="GvF-hA-bd2"/>
+                        <outlet property="emailTextField" destination="4wI-zY-Roh" id="3mC-ql-jxy"/>
+                        <outlet property="passwordTextField" destination="jjq-Je-SsP" id="u0Z-Hv-DED"/>
+                        <outlet property="signInBtn" destination="5qQ-F3-NQw" id="7Rt-vc-Chz"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="signedIn" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="GvF-hA-bd2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atf-iX-vJ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -372,7 +378,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Ed-lt-eoC"/>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="presentation" modalPresentationStyle="fullScreen" id="Ln0-Wy-LPx"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="signedUp" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Ln0-Wy-LPx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETG-hd-6hG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

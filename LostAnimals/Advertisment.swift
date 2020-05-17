@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Advertisment {
+struct Advertisment: Codable {
     var id: String
     var name: String
     var type: String
