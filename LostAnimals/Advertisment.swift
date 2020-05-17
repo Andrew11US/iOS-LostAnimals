@@ -12,30 +12,17 @@ struct Advertisment: Codable {
     var id: String
     var name: String
     var type: String
-    var category: String
-    var currencyCode: String
-    var unifiedCurrencyCode: String
-    var originalAmount: Double
-    var unifiedAmount: Double
-    var dateCreated: String
-    var walletName: String
-    var walletID: String
+    var location: String
+    var badge: String
     
-//    init(id: String, name: String, type: String, category: String, originalAmount: Double, unifiedAmount: Double, wallet: Wallet) {
-//        self.id = id
-//        self.name = name
-//        self.type = type
-//        self.category = category
-//        self.currencyCode = wallet.currencyCode
-//        self.unifiedCurrencyCode = defaults.string(forKey: "UnifiedCurrencyCode") ?? "USD"
-//        self.originalAmount = originalAmount
-//        self.unifiedAmount = unifiedAmount
-//        self.unifiedCurrencyCode = wallet.unifiedCurrencyCode
-//        self.dateCreated = Date().formattedString
-//        self.walletName = wallet.name
-//        self.walletID = wallet.id
-//    }
-//
+    init(id: String, name: String, type: String, location: String, badge: String) {
+        self.id = id
+        self.name = name
+        self.type = type
+        self.location = location
+        self.badge = badge
+    }
+    
 //    // MARK: - Initialize from DataSnapshot
 //    init(id: String, data: Dictionary<String, AnyObject>) {
 //        self.id = id

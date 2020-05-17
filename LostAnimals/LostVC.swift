@@ -10,11 +10,42 @@ import UIKit
 
 class LostVC: UIViewController {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
 
 
 }
 
+// MARK: - UITableView delegate and data source
+extension LostVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return advertisments.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
+            
+            let advertisment = advertisments[indexPath.row]
+            cell.configureCell(ad: advertisment)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+}
