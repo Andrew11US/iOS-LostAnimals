@@ -12,6 +12,8 @@ class LostVC: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var filterBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,11 @@ class LostVC: UIViewController {
         self.tableView.dataSource = self
     }
 
-
+    @IBAction func searchBtnTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func filterBtnTapped(_ sender: UIButton) {
+    }
 }
 
 // MARK: - UITableView delegate and data source

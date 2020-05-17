@@ -10,21 +10,49 @@ import UIKit
 
 class AdoptionVC: UIViewController {
 
+    // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var filterBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
 
-        // Do any additional setup after loading the view.
+    @IBAction func searchBtnTapped(_ sender: UIButton) {
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func filterBtnTapped(_ sender: UIButton) {
     }
-    */
 
+}
+
+// MARK: - UITableView delegate and data source
+extension AdoptionVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return advertisments.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
+            
+            let advertisment = advertisments[indexPath.row]
+            cell.configureCell(ad: advertisment)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
 }
