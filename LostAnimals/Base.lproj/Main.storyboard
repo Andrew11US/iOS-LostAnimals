@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="height" constant="100" id="xhK-B9-LjV"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6kK-aD-Pm0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6kK-aD-Pm0">
                                 <rect key="frame" x="0.0" y="100" width="375" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -169,11 +169,149 @@
                                     <constraint firstItem="eM3-up-jXD" firstAttribute="top" secondItem="kgO-uf-9b1" secondAttribute="top" constant="5" id="jxf-Bg-Uld"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5X-hV-IOm">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5X-hV-IOm">
                                 <rect key="frame" x="0.0" y="100" width="375" height="400"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WHf-Iv-MZQ">
+                                        <rect key="frame" x="40" y="15" width="295" height="370"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6K-Sv-38U">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="19.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="819-Lj-pEd">
+                                                <rect key="frame" x="0.0" y="34.666666666666657" width="295" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="6Nz-gv-dnt"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="Lost"/>
+                                                    <segment title="Found"/>
+                                                    <segment title="Adoption"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="typeChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="Qqj-ig-QR2"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UAl-lF-MMR">
+                                                <rect key="frame" x="0.0" y="79.666666666666657" width="295" height="48.333333333333343"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb8-Lc-k0G">
+                                                        <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="48.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lA-pl-4Ws">
+                                                        <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="48.333333333333336"/>
+                                                        <state key="normal" title="Animal picker"/>
+                                                        <connections>
+                                                            <action selector="showPickerTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="nsx-JU-JUM"/>
+                                                        </connections>
+                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uUE-Fr-qHY" userLabel="spacer">
+                                                        <rect key="frame" x="196.66666666666666" y="0.0" width="98.333333333333343" height="48.333333333333336"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hfF-L1-e7W">
+                                                <rect key="frame" x="0.0" y="143" width="295" height="172"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-Vh-rQ3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="31.666666666666668"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-AY-lPT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="245" height="31.666666666666668"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                                <connections>
+                                                                    <action selector="dateTextFieldChanged:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="SuK-gj-OSm"/>
+                                                                </connections>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUk-CD-eqf">
+                                                                <rect key="frame" x="245" y="0.0" width="50" height="31.666666666666668"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="Kpn-4Z-Jpj"/>
+                                                                </constraints>
+                                                                <state key="normal" title="show"/>
+                                                                <connections>
+                                                                    <action selector="showCalendarTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Xp4-wr-jdT"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKh-mH-4yp">
+                                                        <rect key="frame" x="0.0" y="46.666666666666686" width="295" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level2"/>
+                                                        <connections>
+                                                            <action selector="cityTextFieldChanged:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="uCU-Zu-J6K"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="region" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dre-aN-HpD">
+                                                        <rect key="frame" x="0.0" y="93.666666666666686" width="295" height="31.666666666666671"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level3"/>
+                                                        <connections>
+                                                            <action selector="regionTextFieldChanged:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="KGC-Lg-tNm"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="chip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-ww-Ew6">
+                                                        <rect key="frame" x="0.0" y="140.33333333333331" width="295" height="31.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                        <connections>
+                                                            <action selector="chipTextFieldChanged:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="VJN-CQ-wac"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0SA-YV-ed0">
+                                                <rect key="frame" x="0.0" y="330" width="295" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-ne-3CG" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Cancel"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="cancelTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="72W-Id-TXX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWN-So-VKy" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                        <rect key="frame" x="162.66666666666663" y="0.0" width="132.33333333333337" height="40"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Apply"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="applyTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Y0H-Dh-9VQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Vah-CH-quv"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="WHf-Iv-MZQ" firstAttribute="leading" secondItem="l5X-hV-IOm" secondAttribute="leading" constant="40" id="36R-oB-Tsp"/>
+                                    <constraint firstItem="WHf-Iv-MZQ" firstAttribute="top" secondItem="l5X-hV-IOm" secondAttribute="top" constant="15" id="9DN-f4-HOn"/>
+                                    <constraint firstAttribute="bottom" secondItem="WHf-Iv-MZQ" secondAttribute="bottom" constant="15" id="Rdc-UH-h1g"/>
                                     <constraint firstAttribute="height" constant="400" id="pjq-Rx-scw"/>
+                                    <constraint firstAttribute="trailing" secondItem="WHf-Iv-MZQ" secondAttribute="trailing" constant="40" id="t2Z-5o-E8q"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -197,14 +335,23 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Lost" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="animalTypeBtn" destination="8lA-pl-4Ws" id="8VI-dj-Ndw"/>
+                        <outlet property="applyBtn" destination="aWN-So-VKy" id="hkl-gl-qj6"/>
+                        <outlet property="calendarBtn" destination="lUk-CD-eqf" id="f4B-lN-vtc"/>
+                        <outlet property="cancelBtn" destination="gcK-ne-3CG" id="Y8w-AK-Bhv"/>
+                        <outlet property="chipTextField" destination="lcd-ww-Ew6" id="zUC-ZD-q0H"/>
+                        <outlet property="cityTextField" destination="nKh-mH-4yp" id="gMF-kJ-Ghz"/>
+                        <outlet property="dateTextField" destination="qwu-AY-lPT" id="cZ3-KX-oxV"/>
                         <outlet property="filterBtn" destination="Ooc-Lm-GMI" id="bDf-0A-lhK"/>
                         <outlet property="filterView" destination="l5X-hV-IOm" id="pN2-jD-cwb"/>
                         <outlet property="filterViewHeight" destination="pjq-Rx-scw" id="yTK-r5-sAd"/>
+                        <outlet property="regionTextField" destination="dre-aN-HpD" id="Edg-Bk-V8I"/>
                         <outlet property="searchBar" destination="eM3-up-jXD" id="FYD-Sk-Qre"/>
                         <outlet property="searchBtn" destination="Dvv-yZ-y9T" id="xxR-1F-NiE"/>
                         <outlet property="searchView" destination="kgO-uf-9b1" id="hNc-IC-K39"/>
                         <outlet property="searchViewHeight" destination="heR-Jg-U1R" id="akg-TE-6FB"/>
                         <outlet property="tableView" destination="6kK-aD-Pm0" id="ye2-6q-5HH"/>
+                        <outlet property="typeSegment" destination="819-Lj-pEd" id="0R8-6R-Ics"/>
                         <segue destination="CMp-VX-GJS" kind="presentation" identifier="details" id="ngo-Wv-Ppt"/>
                     </connections>
                 </viewController>

@@ -19,6 +19,15 @@ class LostVC: UIViewController {
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var filterViewHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var typeSegment: UISegmentedControl!
+    @IBOutlet weak var animalTypeBtn: UIButton!
+    @IBOutlet weak var calendarBtn: UIButton!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var regionTextField: UITextField!
+    @IBOutlet weak var chipTextField: UITextField!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var applyBtn: UIButton!
     
     // MARK: - Variables
     private var filteredAds: [Advertisment] = advertisments
@@ -27,8 +36,13 @@ class LostVC: UIViewController {
         super.viewDidLoad()
         
         self.searchBar.delegate = self
+        self.dateTextField.delegate = self
+        self.cityTextField.delegate = self
+        self.regionTextField.delegate = self
+        self.chipTextField.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        setDoneToolBar(field: chipTextField)
     }
     
     // MARK: - IBActions
@@ -46,10 +60,49 @@ class LostVC: UIViewController {
     @IBAction func filterBtnTapped(_ sender: UIButton) {
         if filterViewHeight.constant > 0 {
             self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+            resignTextFields()
         } else {
-            self.animate(view: filterView, constraint: filterViewHeight, to: 200)
+            self.animate(view: filterView, constraint: filterViewHeight, to: 400)
             self.animate(view: searchView, constraint: searchViewHeight, to: 0)
         }
+        searchBar.resignFirstResponder()
+    }
+    
+    // MARK: - Filter button actions
+    @IBAction func typeChanged(_ sender: Any) {
+        
+    }
+    
+    @IBAction func showPickerTapped(_ sender: UIButton) {
+        resignTextFields()
+    }
+    
+    @IBAction func showCalendarTapped(_ sender: UIButton) {
+        resignTextFields()
+    }
+    
+    @IBAction func cancelTapped(_ sender: CustomButton) {
+        self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+        resignTextFields()
+    }
+    
+    @IBAction func applyTapped(_ sender: CustomButton) {
+        // TODO: make filtering
+        self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+        resignTextFields()
+    }
+    
+    // MARK: - Filter field actions
+    @IBAction func dateTextFieldChanged(_ sender: UITextField) {
+    }
+    
+    @IBAction func cityTextFieldChanged(_ sender: UITextField) {
+    }
+    
+    @IBAction func regionTextFieldChanged(_ sender: UITextField) {
+    }
+    
+    @IBAction func chipTextFieldChanged(_ sender: UITextField) {
     }
     
 }
@@ -87,22 +140,55 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - UISearchBar Delegate
 extension LostVC: UISearchBarDelegate {
-    // Dismiss keyboard on tap outside of searchBar
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        self.animate(view: searchView, constraint: searchViewHeight, to: 0)
-    }
-    
     // Dismiss keyboard when Search button pressed
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         // TODO: Do search!!!
     }
     
-    // Dismiss on Cancel button tapped
+    // Cancel button tapped
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         filteredAds = advertisments
         animate(view: searchView, constraint: searchViewHeight, to: 0)
+    }
+}
+
+// MARK: - TextField Delegate methods
+extension LostVC: UITextFieldDelegate {
+    // Dismiss keyboard on touch outside
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // Dismiss when return btn pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dateTextField.resignFirstResponder()
+        cityTextField.resignFirstResponder()
+        regionTextField.resignFirstResponder()
+        chipTextField.resignFirstResponder()
+        return true
+    }
+    
+    func resignTextFields() {
+        dateTextField.resignFirstResponder()
+        cityTextField.resignFirstResponder()
+        regionTextField.resignFirstResponder()
+        chipTextField.resignFirstResponder()
+    }
+    
+    private func setDoneToolBar(field: UITextField) {
+        let doneToolbar: UIToolbar = UIToolbar()
+        
+        doneToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(dismissKeyboard))
+        ]
+        doneToolbar.sizeToFit()
+        field.inputAccessoryView = doneToolbar
+    }
+    
+    @objc private func dismissKeyboard() {
+        chipTextField.resignFirstResponder()
     }
 }
