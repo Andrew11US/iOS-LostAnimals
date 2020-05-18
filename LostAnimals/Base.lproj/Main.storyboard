@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="height" constant="100" id="xhK-B9-LjV"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6kK-aD-Pm0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6kK-aD-Pm0">
                                 <rect key="frame" x="0.0" y="100" width="375" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -149,17 +149,31 @@
                                 </prototypes>
                             </tableView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgO-uf-9b1">
-                                <rect key="frame" x="0.0" y="100" width="375" height="226"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="60"/>
+                                <subviews>
+                                    <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-up-jXD">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="50"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="yes" returnKeyType="search" smartInsertDeleteType="yes"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="226" id="heR-Jg-U1R"/>
+                                    <constraint firstItem="eM3-up-jXD" firstAttribute="leading" secondItem="kgO-uf-9b1" secondAttribute="leading" id="6Cl-dA-Hce"/>
+                                    <constraint firstAttribute="bottom" secondItem="eM3-up-jXD" secondAttribute="bottom" constant="5" id="RAu-Rg-9VZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="eM3-up-jXD" secondAttribute="trailing" id="eCB-Ou-7G8"/>
+                                    <constraint firstAttribute="height" constant="60" id="heR-Jg-U1R"/>
+                                    <constraint firstItem="eM3-up-jXD" firstAttribute="top" secondItem="kgO-uf-9b1" secondAttribute="top" constant="5" id="jxf-Bg-Uld"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5X-hV-IOm">
-                                <rect key="frame" x="0.0" y="100" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="pjq-Rx-scw"/>
+                                    <constraint firstAttribute="height" id="pjq-Rx-scw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -186,6 +200,7 @@
                         <outlet property="filterBtn" destination="Ooc-Lm-GMI" id="bDf-0A-lhK"/>
                         <outlet property="filterView" destination="l5X-hV-IOm" id="pN2-jD-cwb"/>
                         <outlet property="filterViewHeight" destination="pjq-Rx-scw" id="yTK-r5-sAd"/>
+                        <outlet property="searchBar" destination="eM3-up-jXD" id="FYD-Sk-Qre"/>
                         <outlet property="searchBtn" destination="Dvv-yZ-y9T" id="xxR-1F-NiE"/>
                         <outlet property="searchView" destination="kgO-uf-9b1" id="hNc-IC-K39"/>
                         <outlet property="searchViewHeight" destination="heR-Jg-U1R" id="akg-TE-6FB"/>
