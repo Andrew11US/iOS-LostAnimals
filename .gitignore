@@ -201,3 +201,20 @@ Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-prefix.pch
 Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper-umbrella.h
 Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.modulemap
 Pods/Target Support Files/SwiftKeychainWrapper/SwiftKeychainWrapper.xcconfig
+Pods/Koyomi/Koyomi/DateExtension.swift
+Pods/Koyomi/Koyomi/DateModel.swift
+Pods/Koyomi/Koyomi/DictionaryExtension.swift
+Pods/Koyomi/Koyomi/Koyomi.swift
+Pods/Koyomi/Koyomi/KoyomiCell.swift
+Pods/Koyomi/Koyomi/KoyomiLayout.swift
+Pods/Koyomi/Koyomi/UIColorExtension.swift
+Pods/Koyomi/Koyomi/UIViewExtension.swift
+Pods/Koyomi/LICENSE
+Pods/Koyomi/README.md
+Pods/Pods.xcodeproj/xcuserdata/andrew11us.xcuserdatad/xcschemes/Koyomi.xcscheme
+Pods/Target Support Files/Koyomi/Koyomi-dummy.m
+Pods/Target Support Files/Koyomi/Koyomi-Info.plist
+Pods/Target Support Files/Koyomi/Koyomi-prefix.pch
+Pods/Target Support Files/Koyomi/Koyomi-umbrella.h
+Pods/Target Support Files/Koyomi/Koyomi.modulemap
+Pods/Target Support Files/Koyomi/Koyomi.xcconfig

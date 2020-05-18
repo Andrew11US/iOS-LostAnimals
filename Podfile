@@ -11,6 +11,7 @@ target 'LostAnimals' do
   pod 'SPPermissions/Camera'
   pod 'SPPermissions/PhotoLibrary'
   pod 'SPPermissions/Location'
+  pod 'Koyomi', '~> 1.2'
 
   target 'LostAnimalsTests' do
     inherit! :search_paths

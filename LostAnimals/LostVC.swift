@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Koyomi
 
 class LostVC: UIViewController {
 
@@ -18,6 +19,8 @@ class LostVC: UIViewController {
     @IBOutlet weak var searchViewHeight: NSLayoutConstraint!
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var filterViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var calendarView: UIView!
+    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var typeSegment: UISegmentedControl!
     @IBOutlet weak var animalTypeBtn: DropMenuButton!
@@ -28,6 +31,7 @@ class LostVC: UIViewController {
     @IBOutlet weak var chipTextField: UITextField!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var applyBtn: UIButton!
+    @IBOutlet weak var calendar: Koyomi!
     
     // MARK: - Variables
     private var filteredAds: [Advertisment] = advertisments
@@ -45,6 +49,7 @@ class LostVC: UIViewController {
         
         setDoneToolBar(field: chipTextField)
         populateAnimalTypes()
+        setProperties()
     }
     
     // MARK: - IBActions
@@ -196,5 +201,19 @@ extension LostVC: UITextFieldDelegate {
     
     @objc private func dismissKeyboard() {
         chipTextField.resignFirstResponder()
+    }
+}
+
+extension LostVC: KoyomiDelegate {
+    func setProperties() {
+        calendar.circularViewDiameter = 0.2
+        calendar.calendarDelegate = self
+        calendar.inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        calendar.weeks = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+        calendar.style = .deepBlack
+        calendar.dayPosition = .center
+        calendar.selectionMode = .sequence(style: .semicircleEdge)
+        calendar.selectedStyleColor = UIColor(red: 255/255, green: 218/255, blue: 0/255, alpha: 1)
+        calendar.setDayFont(size: 14).setWeekFont(size: 10)
     }
 }
