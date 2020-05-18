@@ -149,10 +149,10 @@
                                 </prototypes>
                             </tableView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgO-uf-9b1">
-                                <rect key="frame" x="0.0" y="100" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
                                 <subviews>
                                     <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-up-jXD">
-                                        <rect key="frame" x="0.0" y="5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="5" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="yes" returnKeyType="search" smartInsertDeleteType="yes"/>
                                         <scopeButtonTitles>
                                             <string>Title</string>
@@ -165,15 +165,15 @@
                                     <constraint firstItem="eM3-up-jXD" firstAttribute="leading" secondItem="kgO-uf-9b1" secondAttribute="leading" id="6Cl-dA-Hce"/>
                                     <constraint firstAttribute="bottom" secondItem="eM3-up-jXD" secondAttribute="bottom" constant="5" id="RAu-Rg-9VZ"/>
                                     <constraint firstAttribute="trailing" secondItem="eM3-up-jXD" secondAttribute="trailing" id="eCB-Ou-7G8"/>
-                                    <constraint firstAttribute="height" constant="60" id="heR-Jg-U1R"/>
+                                    <constraint firstAttribute="height" id="heR-Jg-U1R"/>
                                     <constraint firstItem="eM3-up-jXD" firstAttribute="top" secondItem="kgO-uf-9b1" secondAttribute="top" constant="5" id="jxf-Bg-Uld"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5X-hV-IOm">
-                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="400"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="pjq-Rx-scw"/>
+                                    <constraint firstAttribute="height" constant="400" id="pjq-Rx-scw"/>
                                 </constraints>
                             </view>
                         </subviews>

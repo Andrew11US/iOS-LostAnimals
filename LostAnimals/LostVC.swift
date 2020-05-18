@@ -35,10 +35,11 @@ class LostVC: UIViewController {
     @IBAction func searchBtnTapped(_ sender: UIButton) {
         if searchViewHeight.constant > 0 {
             self.animate(view: searchView, constraint: searchViewHeight, to: 0)
-            searchBar.becomeFirstResponder()
+            searchBar.resignFirstResponder()
         } else {
             self.animate(view: searchView, constraint: searchViewHeight, to: 60)
             self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+            searchBar.becomeFirstResponder()
         }
     }
     
@@ -50,7 +51,6 @@ class LostVC: UIViewController {
             self.animate(view: searchView, constraint: searchViewHeight, to: 0)
         }
     }
-    
     
 }
 
@@ -88,9 +88,10 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
 // MARK: - UISearchBar Delegate
 extension LostVC: UISearchBarDelegate {
     // Dismiss keyboard on tap outside of searchBar
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        self.animate(view: searchView, constraint: searchViewHeight, to: 0)
+    }
     
     // Dismiss keyboard when Search button pressed
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -98,6 +99,7 @@ extension LostVC: UISearchBarDelegate {
         // TODO: Do search!!!
     }
     
+    // Dismiss on Cancel button tapped
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         filteredAds = advertisments
