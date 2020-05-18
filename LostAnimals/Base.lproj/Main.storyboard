@@ -151,7 +151,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgO-uf-9b1">
                                 <rect key="frame" x="0.0" y="100" width="375" height="60"/>
                                 <subviews>
-                                    <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-up-jXD">
+                                    <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-up-jXD">
                                         <rect key="frame" x="0.0" y="5" width="375" height="50"/>
                                         <textInputTraits key="textInputTraits" spellCheckingType="yes" returnKeyType="search" smartInsertDeleteType="yes"/>
                                         <scopeButtonTitles>
