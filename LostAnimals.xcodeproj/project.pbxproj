@@ -45,6 +45,7 @@
 		0168785E24606217000B0D9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0168785C24606217000B0D9D /* LaunchScreen.storyboard */; };
 		0168786924606217000B0D9D /* LostAnimalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168786824606217000B0D9D /* LostAnimalsTests.swift */; };
 		0168787424606218000B0D9D /* LostAnimalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168787324606218000B0D9D /* LostAnimalsUITests.swift */; };
+		017480712473104B000A4B8C /* DropMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017480702473104B000A4B8C /* DropMenuButton.swift */; };
 		01C5A2BE2471C3860037A180 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5A2BD2471C3860037A180 /* AppData.swift */; };
 		32A8B1B288F835E22E9E5345 /* Pods_LostAnimals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70965BFA0490AC35467EB20 /* Pods_LostAnimals.framework */; };
 		389C3335EF77E6D4677A4248 /* Pods_LostAnimals_LostAnimalsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649DFA6E277869290ABBD0A6 /* Pods_LostAnimals_LostAnimalsUITests.framework */; };
@@ -114,6 +115,7 @@
 		0168786F24606217000B0D9D /* LostAnimalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostAnimalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0168787324606218000B0D9D /* LostAnimalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostAnimalsUITests.swift; sourceTree = "<group>"; };
 		0168787524606218000B0D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		017480702473104B000A4B8C /* DropMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropMenuButton.swift; sourceTree = "<group>"; };
 		01C5A2BD2471C3860037A180 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		0F6104CC9B58E0698AA1BCC4 /* Pods-LostAnimalsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAnimalsTests.release.xcconfig"; path = "Target Support Files/Pods-LostAnimalsTests/Pods-LostAnimalsTests.release.xcconfig"; sourceTree = "<group>"; };
 		1C31B70D4E096DAABC55AA4E /* Pods-LostAnimals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LostAnimals.release.xcconfig"; path = "Target Support Files/Pods-LostAnimals/Pods-LostAnimals.release.xcconfig"; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				01094D8E2471A0A400A1A3AF /* GlobalData.swift */,
 				01094D902471A0F500A1A3AF /* Codable+Extension.swift */,
 				01094D982471A8E500A1A3AF /* ViewController+Extension.swift */,
+				017480702473104B000A4B8C /* DropMenuButton.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				01160A63246DE6790096C70A /* AdoptionVC.swift in Sources */,
 				0168785224606216000B0D9D /* SceneDelegate.swift in Sources */,
 				01160A5F246DE61A0096C70A /* SignInVC.swift in Sources */,
+				017480712473104B000A4B8C /* DropMenuButton.swift in Sources */,
 				01094D8724719E6900A1A3AF /* StorageManager.swift in Sources */,
 				01094D8B2471A02800A1A3AF /* Date+Extension.swift in Sources */,
 			);
@@ -776,7 +780,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -800,7 +804,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

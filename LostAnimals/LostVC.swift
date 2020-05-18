@@ -20,7 +20,7 @@ class LostVC: UIViewController {
     @IBOutlet weak var filterViewHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var typeSegment: UISegmentedControl!
-    @IBOutlet weak var animalTypeBtn: UIButton!
+    @IBOutlet weak var animalTypeBtn: DropMenuButton!
     @IBOutlet weak var calendarBtn: UIButton!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
@@ -42,7 +42,9 @@ class LostVC: UIViewController {
         self.chipTextField.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
         setDoneToolBar(field: chipTextField)
+        populateAnimalTypes()
     }
     
     // MARK: - IBActions
@@ -103,6 +105,10 @@ class LostVC: UIViewController {
     }
     
     @IBAction func chipTextFieldChanged(_ sender: UITextField) {
+    }
+    
+    private func populateAnimalTypes() {
+        animalTypeBtn.initMenu(["Cat", "Dog", "Spider", "Lizard"])
     }
     
 }

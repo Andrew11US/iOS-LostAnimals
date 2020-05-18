@@ -204,7 +204,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lA-pl-4Ws">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lA-pl-4Ws" customClass="DropMenuButton" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="98.333333333333343" y="0.0" width="98.333333333333343" height="48.333333333333336"/>
                                                         <state key="normal" title="Animal picker"/>
                                                         <connections>
