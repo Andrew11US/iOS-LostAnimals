@@ -31,10 +31,10 @@ class LostVC: UIViewController {
     @IBOutlet weak var chipTextField: UITextField!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var applyBtn: UIButton!
-    @IBOutlet weak var calendar: Koyomi!
     
     // MARK: - Variables
     private var filteredAds: [Advertisment] = advertisments
+    private var cView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,6 @@ class LostVC: UIViewController {
         
         setDoneToolBar(field: chipTextField)
         populateAnimalTypes()
-        setProperties()
     }
     
     // MARK: - IBActions
@@ -85,7 +84,9 @@ class LostVC: UIViewController {
     }
     
     @IBAction func showCalendarTapped(_ sender: UIButton) {
+        setupCalendarView()
         resignTextFields()
+        self.animate(view: calendarView, constraint: calendarViewHeight, to: 300)
     }
     
     @IBAction func cancelTapped(_ sender: CustomButton) {
@@ -114,6 +115,20 @@ class LostVC: UIViewController {
     
     private func populateAnimalTypes() {
         animalTypeBtn.initMenu(["Cat", "Dog", "Spider", "Lizard"])
+    }
+    
+    // Initializing adjustment settings view
+    private func setupCalendarView() {
+        cView = CalendarView(frame: calendarView.bounds)
+        calendarView.addSubview(cView)
+        cView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            cView.topAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0),
+            cView.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 0),
+            cView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: 0),
+            cView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 0)
+        ])
     }
     
 }
@@ -204,16 +219,16 @@ extension LostVC: UITextFieldDelegate {
     }
 }
 
-extension LostVC: KoyomiDelegate {
-    func setProperties() {
-        calendar.circularViewDiameter = 0.2
-        calendar.calendarDelegate = self
-        calendar.inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        calendar.weeks = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
-        calendar.style = .deepBlack
-        calendar.dayPosition = .center
-        calendar.selectionMode = .sequence(style: .semicircleEdge)
-        calendar.selectedStyleColor = UIColor(red: 255/255, green: 218/255, blue: 0/255, alpha: 1)
-        calendar.setDayFont(size: 14).setWeekFont(size: 10)
-    }
-}
+//extension LostVC: KoyomiDelegate {
+//    func setProperties() {
+//        calendar.circularViewDiameter = 0.2
+//        calendar.calendarDelegate = self
+//        calendar.inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        calendar.weeks = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+//        calendar.style = .deepBlack
+//        calendar.dayPosition = .center
+//        calendar.selectionMode = .sequence(style: .semicircleEdge)
+//        calendar.selectedStyleColor = UIColor(red: 255/255, green: 218/255, blue: 0/255, alpha: 1)
+//        calendar.setDayFont(size: 14).setWeekFont(size: 10)
+//    }
+//}

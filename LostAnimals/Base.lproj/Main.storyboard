@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y2U-5T-SC6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -319,47 +319,10 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-7A-ILl">
-                                <rect key="frame" x="0.0" y="100" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LGt-pc-hI2">
-                                        <rect key="frame" x="10" y="15" width="355" height="180"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kye-XJ-eNi">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="180"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="cr8-n0-XMd"/>
-                                                </constraints>
-                                                <state key="normal" title="Prev">
-                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                            </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zeH-dZ-KH3" customClass="Koyomi" customModule="Koyomi">
-                                                <rect key="frame" x="50" y="0.0" width="255" height="180"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hXo-ZG-Kz7">
-                                                    <size key="itemSize" width="128" height="128"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells/>
-                                            </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V78-Lt-kAK">
-                                                <rect key="frame" x="315" y="0.0" width="40" height="180"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="bCG-g1-6aI"/>
-                                                </constraints>
-                                                <state key="normal" title="Next">
-                                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="180" id="7Dz-Kp-qhe"/>
-                                        </constraints>
-                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwH-zd-6pp" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="225" width="255" height="40"/>
+                                        <rect key="frame" x="60" y="-70" width="255" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="RMA-u5-2RM"/>
@@ -369,13 +332,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="nwH-zd-6pp" firstAttribute="top" secondItem="LGt-pc-hI2" secondAttribute="bottom" constant="30" id="0qH-8L-wsw"/>
-                                    <constraint firstAttribute="height" constant="300" id="7GU-zi-VMj"/>
-                                    <constraint firstItem="LGt-pc-hI2" firstAttribute="leading" secondItem="xzP-7A-ILl" secondAttribute="leading" constant="10" id="7l4-di-rcG"/>
-                                    <constraint firstAttribute="trailing" secondItem="LGt-pc-hI2" secondAttribute="trailing" constant="10" id="9IC-oD-Xdi"/>
+                                    <constraint firstAttribute="height" id="7GU-zi-VMj"/>
                                     <constraint firstAttribute="trailing" secondItem="nwH-zd-6pp" secondAttribute="trailing" constant="60" id="dno-BE-qz5"/>
+                                    <constraint firstAttribute="bottom" secondItem="nwH-zd-6pp" secondAttribute="bottom" constant="30" id="mOC-Hc-YI6"/>
                                     <constraint firstItem="nwH-zd-6pp" firstAttribute="leading" secondItem="xzP-7A-ILl" secondAttribute="leading" constant="60" id="qeK-nc-wpI"/>
-                                    <constraint firstItem="LGt-pc-hI2" firstAttribute="top" secondItem="xzP-7A-ILl" secondAttribute="top" constant="15" id="sEL-fO-inn"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -404,7 +364,6 @@
                     <connections>
                         <outlet property="animalTypeBtn" destination="8lA-pl-4Ws" id="8VI-dj-Ndw"/>
                         <outlet property="applyBtn" destination="aWN-So-VKy" id="hkl-gl-qj6"/>
-                        <outlet property="calendar" destination="zeH-dZ-KH3" id="cJu-Xf-CVa"/>
                         <outlet property="calendarBtn" destination="lUk-CD-eqf" id="f4B-lN-vtc"/>
                         <outlet property="calendarView" destination="xzP-7A-ILl" id="iYH-da-sEq"/>
                         <outlet property="calendarViewHeight" destination="7GU-zi-VMj" id="M33-DR-hLe"/>
@@ -1199,6 +1158,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="0uW-hG-Tij"/>
         <segue reference="Ln0-Wy-LPx"/>
     </inferredMetricsTieBreakers>
     <resources>
