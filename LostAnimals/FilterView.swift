@@ -42,7 +42,7 @@ class FilterView: UIView {
     lazy var dateTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 22.0, weight: .medium)
+        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         field.placeholder = "Enter date"
         field.returnKeyType = .done
         field.addTarget(self, action: #selector(validateDate(_:)), for: .editingDidEnd)
@@ -52,7 +52,7 @@ class FilterView: UIView {
     lazy var cityTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 22.0, weight: .medium)
+        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         field.placeholder = "City"
         field.returnKeyType = .done
         field.addTarget(self, action: #selector(validateCity(_:)), for: .editingDidEnd)
@@ -62,7 +62,7 @@ class FilterView: UIView {
     lazy var regionTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 22.0, weight: .medium)
+        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         field.placeholder = "Region"
         field.returnKeyType = .done
         field.addTarget(self, action: #selector(validateRegion(_:)), for: .editingDidEnd)
@@ -72,7 +72,7 @@ class FilterView: UIView {
     lazy var chipTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 22.0, weight: .medium)
+        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
         field.placeholder = "Chip number"
         field.keyboardType = .numberPad
         field.returnKeyType = .done
@@ -94,7 +94,7 @@ class FilterView: UIView {
         button.setTitle("Apply", for: .normal)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .white
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(applyDatesTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -104,7 +104,7 @@ class FilterView: UIView {
         button.setTitle("Cancel", for: .normal)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .white
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(cancelCalendarTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -218,7 +218,7 @@ class FilterView: UIView {
         
         NSLayoutConstraint.activate([
             calendarView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
-            calendarView.heightAnchor.constraint(equalToConstant: 350),
+            calendarView.heightAnchor.constraint(equalToConstant: 340),
             calendarView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             calendarView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
         ])

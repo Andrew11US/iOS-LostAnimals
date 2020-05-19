@@ -133,10 +133,10 @@ class CalendarView: UIView {
             topStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             topStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
-            bottomStack.topAnchor.constraint(equalTo: self.calendar.bottomAnchor, constant: 10),
-            bottomStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
-            bottomStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            bottomStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            bottomStack.heightAnchor.constraint(equalToConstant: 40),
+            bottomStack.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 10),
+            bottomStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
+            bottomStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40)
         ])
     }
     
