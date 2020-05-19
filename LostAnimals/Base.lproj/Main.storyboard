@@ -258,7 +258,7 @@
             <objects>
                 <viewController id="CMp-VX-GJS" customClass="DetailVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gnN-H3-PVC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVj-gf-qcf">
@@ -803,6 +803,9 @@
                                                         <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelTapped:" destination="VjU-jp-B2S" eventType="touchUpInside" id="7hM-gw-9UD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhO-jL-iRd" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                 <rect key="frame" x="182.66666666666663" y="0.0" width="152.33333333333337" height="40"/>
@@ -813,6 +816,9 @@
                                                         <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="applyTapped:" destination="VjU-jp-B2S" eventType="touchUpInside" id="0eD-fs-MZ1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -849,8 +855,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Adoption" id="r7x-KB-AVX"/>
                     <connections>
+                        <outlet property="applyFilterBtn" destination="FhO-jL-iRd" id="Bn5-DS-cZ7"/>
+                        <outlet property="cancelFilterBtn" destination="Dhn-On-iEr" id="zdb-yp-n7g"/>
+                        <outlet property="filterBase" destination="kZg-dd-98o" id="KgR-ce-JFL"/>
+                        <outlet property="filterBaseHeight" destination="tNN-X6-t98" id="tVa-7b-Bfk"/>
                         <outlet property="filterBtn" destination="XWm-IS-uPh" id="QIi-4B-OnN"/>
+                        <outlet property="searchBar" destination="n5C-1D-W9C" id="UkK-fc-GgA"/>
                         <outlet property="searchBtn" destination="4K6-Q2-Wzi" id="QSW-V3-Gcb"/>
+                        <outlet property="searchView" destination="wJB-u7-37q" id="gV8-Gm-rwH"/>
+                        <outlet property="searchViewHeight" destination="RDs-UV-Fkp" id="M8J-nX-3na"/>
                         <outlet property="tableView" destination="fbv-mc-pr1" id="0It-CF-95O"/>
                     </connections>
                 </viewController>
@@ -1012,7 +1025,7 @@
             <objects>
                 <viewController id="a8X-ch-eVJ" customClass="SignUpVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRV-Bv-pgd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hdt-GQ-0db">
