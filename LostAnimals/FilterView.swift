@@ -14,6 +14,7 @@ class FilterView: UIView {
     public var selectedAnimalType: String = ""
     
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
+    private var calendarView: CalendarView!
     
     // MARK: - Lazy properties (calculated only when first time is used)
     lazy var nameLbl: UILabel = {
@@ -177,7 +178,17 @@ class FilterView: UIView {
     
     // MARK: - Action functions
     @objc func showCalendarTapped(_ sender: UIButton!) {
+        calendarView = CalendarView()
+        addSubview(calendarView)
+        bringSubviewToFront(calendarView)
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            calendarView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            calendarView.heightAnchor.constraint(equalToConstant: 350),
+            calendarView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            calendarView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
+        ])
     }
     
     @objc func showAnimalPickerTapped(_ sender: UIButton!) {
