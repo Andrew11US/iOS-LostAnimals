@@ -88,6 +88,26 @@ class FilterView: UIView {
         return button
     }()
     
+    // Calendar buttons
+    lazy var applyDatesBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("Apply", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(applyDatesTapped(_:)), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var cancelCalendarBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("Cancel", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(cancelCalendarTapped(_:)), for: .touchUpInside)
+        return button
+    }()
 
     
     lazy var stackView: UIStackView = {
@@ -113,6 +133,16 @@ class FilterView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    lazy var calendarStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 30
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -164,7 +194,6 @@ class FilterView: UIView {
         stackView.addArrangedSubview(cityTextField)
         stackView.addArrangedSubview(regionTextField)
         stackView.addArrangedSubview(chipTextField)
-
         
         addSubview(stackView)
         
@@ -180,7 +209,11 @@ class FilterView: UIView {
     @objc func showCalendarTapped(_ sender: UIButton!) {
         calendarView = CalendarView()
         addSubview(calendarView)
-        bringSubviewToFront(calendarView)
+        stackView.isHidden = true
+        
+        calendarStack.addArrangedSubview(cancelCalendarBtn)
+        calendarStack.addArrangedSubview(applyDatesBtn)
+        calendarView.bottomStack.addArrangedSubview(calendarStack)
         calendarView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -194,6 +227,18 @@ class FilterView: UIView {
     @objc func showAnimalPickerTapped(_ sender: UIButton!) {
         animalPicker.isHidden = false
         animalTypeBtn.isHidden = true
+    }
+    
+    @objc func applyDatesTapped(_ sender: UIButton!) {
+        self.selectedDates = calendarView.selectedDates
+        dateTextField.text = selectedDates
+        calendarView.isHidden = true
+        stackView.isHidden = false
+    }
+    
+    @objc func cancelCalendarTapped(_ sender: UIButton!) {
+        calendarView.isHidden = true
+        stackView.isHidden = false
     }
     
     // MARK: - Text fields validatiors

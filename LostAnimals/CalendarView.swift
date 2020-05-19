@@ -26,7 +26,7 @@ class CalendarView: UIView {
     // Koyomi calendar programmatically
     lazy var calendar: Koyomi = {
         // Centering on the view
-        let frame = CGRect(x: self.bounds.width/2 - 150, y : self.bounds.height/2 + 50, width: 300, height: 200)
+        let frame = CGRect(x: UIScreen.main.bounds.width/2 - 150, y : self.bounds.height/2 + 80, width: 300, height: 200)
         let calendar = Koyomi(frame: frame, sectionSpace: 1.5, cellSpace: 0.5, inset: .zero, weekCellHeight: 25)
         // Calendar UI setup
         calendar.layer.cornerRadius = 7
@@ -77,11 +77,20 @@ class CalendarView: UIView {
         return stackView
     }()
     
-    lazy var stackView1: UIStackView = {
+    lazy var topStack: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    lazy var bottomStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -103,28 +112,31 @@ class CalendarView: UIView {
     
     // MARK: - View setup
     private func setupView() {
-        backgroundColor = .systemBackground
+        backgroundColor = .orange
+        
+        topStack.addArrangedSubview(monthLbl)
         
         stackView.addArrangedSubview(previousBtn)
         stackView.addArrangedSubview(currentBtn)
         stackView.addArrangedSubview(nextBtn)
-        stackView1.addArrangedSubview(monthLbl)
+        topStack.addArrangedSubview(stackView)
+        
         addSubview(calendar)
-        addSubview(stackView)
-        addSubview(stackView1)
+        addSubview(bottomStack)
+        addSubview(topStack)
         
         monthLbl.text = calendar.currentDateString()
         
         NSLayoutConstraint.activate([
-            stackView1.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            stackView1.bottomAnchor.constraint(equalTo: self.calendar.topAnchor, constant: 0),
-            stackView1.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            stackView1.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            topStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            topStack.bottomAnchor.constraint(equalTo: self.calendar.topAnchor, constant: 0),
+            topStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            topStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
-            stackView.topAnchor.constraint(equalTo: self.calendar.bottomAnchor, constant: 0),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            bottomStack.topAnchor.constraint(equalTo: self.calendar.bottomAnchor, constant: 10),
+            bottomStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            bottomStack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            bottomStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         ])
     }
     
