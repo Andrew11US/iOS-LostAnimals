@@ -19,8 +19,8 @@ class LostVC: UIViewController {
     @IBOutlet weak var searchViewHeight: NSLayoutConstraint!
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var filterViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var calendarView: UIView!
-    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var calendarBase: UIView!
+    @IBOutlet weak var calendarBaseHeight: NSLayoutConstraint!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var typeSegment: UISegmentedControl!
     @IBOutlet weak var animalTypeBtn: DropMenuButton!
@@ -31,10 +31,12 @@ class LostVC: UIViewController {
     @IBOutlet weak var chipTextField: UITextField!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var applyBtn: UIButton!
+    @IBOutlet weak var cancelCalendarBtn: CustomButton!
+    @IBOutlet weak var applyDatesBtn: CustomButton!
     
     // MARK: - Variables
+    private var calendarView: CalendarView!
     private var filteredAds: [Advertisment] = advertisments
-    private var cView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,9 +88,21 @@ class LostVC: UIViewController {
     @IBAction func showCalendarTapped(_ sender: UIButton) {
         setupCalendarView()
         resignTextFields()
-        self.animate(view: calendarView, constraint: calendarViewHeight, to: 300)
+        self.animate(view: calendarBase, constraint: calendarBaseHeight, to: 350)
     }
     
+    // MARK: - Calendar actions
+    @IBAction func applyDatesTapped(_ sender: UIButton) {
+        dateTextField.text = calendarView.selectedDates
+        self.animate(view: calendarBase, constraint: calendarBaseHeight, to: 0)
+    }
+    
+    @IBAction func cancelCalendarTapped(_ sender: UIButton) {
+        dateTextField.text = ""
+        self.animate(view: calendarBase, constraint: calendarBaseHeight, to: 0)
+    }
+    
+    // MARK: - Filter actions
     @IBAction func cancelTapped(_ sender: CustomButton) {
         self.animate(view: filterView, constraint: filterViewHeight, to: 0)
         resignTextFields()
@@ -119,15 +133,15 @@ class LostVC: UIViewController {
     
     // Initializing adjustment settings view
     private func setupCalendarView() {
-        cView = CalendarView(frame: calendarView.bounds)
-        calendarView.addSubview(cView)
-        cView.translatesAutoresizingMaskIntoConstraints = false
+        calendarView = CalendarView(frame: calendarBase.bounds)
+        calendarBase.addSubview(calendarView)
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            cView.topAnchor.constraint(equalTo: calendarView.topAnchor, constant: 0),
-            cView.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 0),
-            cView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: 0),
-            cView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 0)
+            calendarView.topAnchor.constraint(equalTo: calendarBase.topAnchor, constant: 0),
+            calendarView.bottomAnchor.constraint(equalTo: calendarBase.bottomAnchor, constant: -60),
+            calendarView.trailingAnchor.constraint(equalTo: calendarBase.trailingAnchor, constant: 0),
+            calendarView.leadingAnchor.constraint(equalTo: calendarBase.leadingAnchor, constant: 0)
         ])
     }
     
@@ -219,16 +233,3 @@ extension LostVC: UITextFieldDelegate {
     }
 }
 
-//extension LostVC: KoyomiDelegate {
-//    func setProperties() {
-//        calendar.circularViewDiameter = 0.2
-//        calendar.calendarDelegate = self
-//        calendar.inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        calendar.weeks = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
-//        calendar.style = .deepBlack
-//        calendar.dayPosition = .center
-//        calendar.selectionMode = .sequence(style: .semicircleEdge)
-//        calendar.selectedStyleColor = UIColor(red: 255/255, green: 218/255, blue: 0/255, alpha: 1)
-//        calendar.setDayFont(size: 14).setWeekFont(size: 10)
-//    }
-//}

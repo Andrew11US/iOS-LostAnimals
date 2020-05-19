@@ -11,7 +11,7 @@ import Koyomi
 
 class CalendarView: UIView {
 
-    var date: String = ""
+    public var selectedDates: String = ""
     
     // MARK: - Lazy properties (calculated only when first time is used)
     lazy var monthLbl: UILabel = {
@@ -47,6 +47,7 @@ class CalendarView: UIView {
     lazy var previousBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Previous", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.addTarget(self, action: #selector(previousTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -54,6 +55,7 @@ class CalendarView: UIView {
     lazy var currentBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Current", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.addTarget(self, action: #selector(currentTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -61,6 +63,7 @@ class CalendarView: UIView {
     lazy var nextBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Next", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.addTarget(self, action: #selector(nextTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -100,7 +103,7 @@ class CalendarView: UIView {
     
     // MARK: - View setup
     private func setupView() {
-        backgroundColor = .green
+        backgroundColor = .systemBackground
         
         stackView.addArrangedSubview(previousBtn)
         stackView.addArrangedSubview(currentBtn)
@@ -157,9 +160,11 @@ extension CalendarView: KoyomiDelegate {
     func koyomi(_ koyomi: Koyomi, shouldSelectDates date: Date?, to toDate: Date?, withPeriodLength length: Int) -> Bool {
 
         if let dateFrom = date {
-            monthLbl.text = "\(dateFrom.getShort)"
+            selectedDates = "\(dateFrom.getShort)"
+            monthLbl.text = selectedDates
             if let dateTo = toDate {
-                monthLbl.text = "\(dateFrom.getShort) - \(dateTo.getShort)"
+                selectedDates = "\(dateFrom.getShort) - \(dateTo.getShort)"
+                monthLbl.text = selectedDates
             }
             return true
         }

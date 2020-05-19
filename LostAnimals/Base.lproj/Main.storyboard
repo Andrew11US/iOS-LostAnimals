@@ -321,21 +321,37 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-7A-ILl">
                                 <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwH-zd-6pp" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="-70" width="255" height="40"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="uYM-mC-xX8">
+                                        <rect key="frame" x="50" y="-50" width="275" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47x-DT-GT2" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="122.66666666666667" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelCalendarTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="emN-VS-72Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7Y-32-ZLG" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="152.66666666666666" y="0.0" width="122.33333333333334" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Apply"/>
+                                                <connections>
+                                                    <action selector="applyDatesTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="btv-uN-u4M"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="RMA-u5-2RM"/>
+                                            <constraint firstAttribute="height" constant="40" id="PcG-ae-pzd"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="7GU-zi-VMj"/>
-                                    <constraint firstAttribute="trailing" secondItem="nwH-zd-6pp" secondAttribute="trailing" constant="60" id="dno-BE-qz5"/>
-                                    <constraint firstAttribute="bottom" secondItem="nwH-zd-6pp" secondAttribute="bottom" constant="30" id="mOC-Hc-YI6"/>
-                                    <constraint firstItem="nwH-zd-6pp" firstAttribute="leading" secondItem="xzP-7A-ILl" secondAttribute="leading" constant="60" id="qeK-nc-wpI"/>
+                                    <constraint firstItem="uYM-mC-xX8" firstAttribute="leading" secondItem="xzP-7A-ILl" secondAttribute="leading" constant="50" id="Sev-Nb-ccM"/>
+                                    <constraint firstAttribute="bottom" secondItem="uYM-mC-xX8" secondAttribute="bottom" constant="10" id="fgw-o4-iYw"/>
+                                    <constraint firstAttribute="trailing" secondItem="uYM-mC-xX8" secondAttribute="trailing" constant="50" id="ngj-wC-6do"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -364,10 +380,12 @@
                     <connections>
                         <outlet property="animalTypeBtn" destination="8lA-pl-4Ws" id="8VI-dj-Ndw"/>
                         <outlet property="applyBtn" destination="aWN-So-VKy" id="hkl-gl-qj6"/>
+                        <outlet property="applyDatesBtn" destination="s7Y-32-ZLG" id="Yld-fP-0GZ"/>
+                        <outlet property="calendarBase" destination="xzP-7A-ILl" id="TcK-eu-jux"/>
+                        <outlet property="calendarBaseHeight" destination="7GU-zi-VMj" id="M33-DR-hLe"/>
                         <outlet property="calendarBtn" destination="lUk-CD-eqf" id="f4B-lN-vtc"/>
-                        <outlet property="calendarView" destination="xzP-7A-ILl" id="iYH-da-sEq"/>
-                        <outlet property="calendarViewHeight" destination="7GU-zi-VMj" id="M33-DR-hLe"/>
                         <outlet property="cancelBtn" destination="gcK-ne-3CG" id="Y8w-AK-Bhv"/>
+                        <outlet property="cancelCalendarBtn" destination="47x-DT-GT2" id="NcT-V0-buz"/>
                         <outlet property="chipTextField" destination="lcd-ww-Ew6" id="zUC-ZD-q0H"/>
                         <outlet property="cityTextField" destination="nKh-mH-4yp" id="gMF-kJ-Ghz"/>
                         <outlet property="dateTextField" destination="qwu-AY-lPT" id="cZ3-KX-oxV"/>
@@ -1000,7 +1018,7 @@
             <objects>
                 <viewController id="a8X-ch-eVJ" customClass="SignUpVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRV-Bv-pgd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hdt-GQ-0db">
@@ -1158,7 +1176,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0uW-hG-Tij"/>
         <segue reference="Ln0-Wy-LPx"/>
     </inferredMetricsTieBreakers>
     <resources>
