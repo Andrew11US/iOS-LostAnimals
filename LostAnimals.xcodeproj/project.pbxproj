@@ -36,6 +36,7 @@
 		01160A63246DE6790096C70A /* AdoptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A62246DE6790096C70A /* AdoptionVC.swift */; };
 		01160A65246DE69E0096C70A /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A64246DE69E0096C70A /* AddVC.swift */; };
 		01160A67246DE6C30096C70A /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01160A66246DE6C30096C70A /* DetailVC.swift */; };
+		0152437224742FE00009026D /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152437124742FE00009026D /* FilterView.swift */; };
 		015613F72473F4F600380333 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015613F62473F4F600380333 /* CalendarView.swift */; };
 		0168785024606216000B0D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168784F24606216000B0D9D /* AppDelegate.swift */; };
 		0168785224606216000B0D9D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0168785124606216000B0D9D /* SceneDelegate.swift */; };
@@ -101,6 +102,7 @@
 		01160A62246DE6790096C70A /* AdoptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionVC.swift; sourceTree = "<group>"; };
 		01160A64246DE69E0096C70A /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		01160A66246DE6C30096C70A /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		0152437124742FE00009026D /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		015613F62473F4F600380333 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		0168784C24606216000B0D9D /* LostAnimals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAnimals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0168784F24606216000B0D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				01094D7B2471830800A1A3AF /* AdvertismentCell.swift */,
 				01094D942471A7AF00A1A3AF /* CustomButton.swift */,
 				015613F62473F4F600380333 /* CalendarView.swift */,
+				0152437124742FE00009026D /* FilterView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0152437224742FE00009026D /* FilterView.swift in Sources */,
 				01094D912471A0F500A1A3AF /* Codable+Extension.swift in Sources */,
 				01160A65246DE69E0096C70A /* AddVC.swift in Sources */,
 				01094D8524719E5700A1A3AF /* Validator.swift in Sources */,
@@ -784,7 +788,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -808,7 +812,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

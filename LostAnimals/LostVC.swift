@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Koyomi
 
 class LostVC: UIViewController {
 
@@ -17,10 +16,11 @@ class LostVC: UIViewController {
     @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var filterView: UIView!
-    @IBOutlet weak var filterViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var filterBase: UIView!
+    @IBOutlet weak var filterBaseHeight: NSLayoutConstraint!
     @IBOutlet weak var calendarBase: UIView!
     @IBOutlet weak var calendarBaseHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var typeSegment: UISegmentedControl!
     @IBOutlet weak var animalTypeBtn: DropMenuButton!
@@ -29,6 +29,7 @@ class LostVC: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var regionTextField: UITextField!
     @IBOutlet weak var chipTextField: UITextField!
+    
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var applyBtn: UIButton!
     @IBOutlet weak var cancelCalendarBtn: CustomButton!
@@ -36,6 +37,7 @@ class LostVC: UIViewController {
     
     // MARK: - Variables
     private var calendarView: CalendarView!
+    private var filterView: FilterView!
     private var filteredAds: [Advertisment] = advertisments
     
     override func viewDidLoad() {
@@ -60,17 +62,18 @@ class LostVC: UIViewController {
             searchBar.resignFirstResponder()
         } else {
             self.animate(view: searchView, constraint: searchViewHeight, to: 60)
-            self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+            self.animate(view: filterBase, constraint: filterBaseHeight, to: 0)
             searchBar.becomeFirstResponder()
         }
     }
     
     @IBAction func filterBtnTapped(_ sender: UIButton) {
-        if filterViewHeight.constant > 0 {
-            self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+        if filterBaseHeight.constant > 0 {
+            self.animate(view: filterBase, constraint: filterBaseHeight, to: 0)
             resignTextFields()
         } else {
-            self.animate(view: filterView, constraint: filterViewHeight, to: 400)
+            setupFilterView()
+            self.animate(view: filterBase, constraint: filterBaseHeight, to: 400)
             self.animate(view: searchView, constraint: searchViewHeight, to: 0)
         }
         searchBar.resignFirstResponder()
@@ -104,13 +107,13 @@ class LostVC: UIViewController {
     
     // MARK: - Filter actions
     @IBAction func cancelTapped(_ sender: CustomButton) {
-        self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+        self.animate(view: filterBase, constraint: filterBaseHeight, to: 0)
         resignTextFields()
     }
     
     @IBAction func applyTapped(_ sender: CustomButton) {
         // TODO: make filtering
-        self.animate(view: filterView, constraint: filterViewHeight, to: 0)
+        self.animate(view: filterBase, constraint: filterBaseHeight, to: 0)
         resignTextFields()
     }
     
@@ -131,7 +134,7 @@ class LostVC: UIViewController {
         animalTypeBtn.initMenu(["Cat", "Dog", "Spider", "Lizard"])
     }
     
-    // Initializing adjustment settings view
+    // Initializing views
     private func setupCalendarView() {
         calendarView = CalendarView(frame: calendarBase.bounds)
         calendarBase.addSubview(calendarView)
@@ -142,6 +145,19 @@ class LostVC: UIViewController {
             calendarView.bottomAnchor.constraint(equalTo: calendarBase.bottomAnchor, constant: -60),
             calendarView.trailingAnchor.constraint(equalTo: calendarBase.trailingAnchor, constant: 0),
             calendarView.leadingAnchor.constraint(equalTo: calendarBase.leadingAnchor, constant: 0)
+        ])
+    }
+    
+    private func setupFilterView() {
+        filterView = FilterView(frame: filterBase.bounds)
+        filterBase.addSubview(filterView)
+        filterView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            filterView.topAnchor.constraint(equalTo: filterBase.topAnchor, constant: 0),
+            filterView.bottomAnchor.constraint(equalTo: filterBase.bottomAnchor, constant: -60),
+            filterView.trailingAnchor.constraint(equalTo: filterBase.trailingAnchor, constant: 0),
+            filterView.leadingAnchor.constraint(equalTo: filterBase.leadingAnchor, constant: 0)
         ])
     }
     

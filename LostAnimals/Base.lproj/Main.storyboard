@@ -170,19 +170,19 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5X-hV-IOm">
-                                <rect key="frame" x="0.0" y="100" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WHf-Iv-MZQ">
-                                        <rect key="frame" x="40" y="15" width="295" height="370"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WHf-Iv-MZQ">
+                                        <rect key="frame" x="40" y="15" width="295" height="350.66666666666669"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6K-Sv-38U">
-                                                <rect key="frame" x="0.0" y="0.0" width="295" height="20.666666666666668"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6K-Sv-38U">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="19.666666666666668"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="819-Lj-pEd">
-                                                <rect key="frame" x="0.0" y="35.666666666666657" width="295" height="31"/>
+                                                <rect key="frame" x="0.0" y="34.666666666666657" width="295" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="6Nz-gv-dnt"/>
                                                 </constraints>
@@ -196,7 +196,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UAl-lF-MMR">
-                                                <rect key="frame" x="0.0" y="80.666666666666657" width="295" height="30"/>
+                                                <rect key="frame" x="0.0" y="79.666666666666657" width="295" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb8-Lc-k0G">
                                                         <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="30"/>
@@ -221,13 +221,13 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hfF-L1-e7W">
-                                                <rect key="frame" x="0.0" y="125.66666666666664" width="295" height="189.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="124.66666666666666" width="295" height="170.99999999999997"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-Vh-rQ3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="31.666666666666668"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwu-AY-lPT">
-                                                                <rect key="frame" x="0.0" y="0.0" width="245" height="36"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="245" height="31.666666666666668"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                                 <connections>
@@ -235,7 +235,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUk-CD-eqf">
-                                                                <rect key="frame" x="245" y="0.0" width="50" height="36"/>
+                                                                <rect key="frame" x="245" y="0.0" width="50" height="31.666666666666668"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="Kpn-4Z-Jpj"/>
                                                                 </constraints>
@@ -247,7 +247,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="city" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKh-mH-4yp">
-                                                        <rect key="frame" x="0.0" y="51.000000000000028" width="295" height="36.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="46.666666666666657" width="295" height="31.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level2"/>
                                                         <connections>
@@ -255,7 +255,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="region" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dre-aN-HpD">
-                                                        <rect key="frame" x="0.0" y="102.33333333333334" width="295" height="36"/>
+                                                        <rect key="frame" x="0.0" y="93.000000000000028" width="295" height="31.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-level3"/>
                                                         <connections>
@@ -263,7 +263,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="chip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-ww-Ew6">
-                                                        <rect key="frame" x="0.0" y="153.33333333333334" width="295" height="36"/>
+                                                        <rect key="frame" x="0.0" y="139.33333333333334" width="295" height="31.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                         <connections>
@@ -273,7 +273,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0SA-YV-ed0">
-                                                <rect key="frame" x="0.0" y="330" width="295" height="40"/>
+                                                <rect key="frame" x="0.0" y="310.66666666666669" width="295" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-ne-3CG" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="132.66666666666666" height="40"/>
@@ -314,7 +314,7 @@
                                     <constraint firstItem="WHf-Iv-MZQ" firstAttribute="leading" secondItem="l5X-hV-IOm" secondAttribute="leading" constant="40" id="36R-oB-Tsp"/>
                                     <constraint firstItem="WHf-Iv-MZQ" firstAttribute="top" secondItem="l5X-hV-IOm" secondAttribute="top" constant="15" id="9DN-f4-HOn"/>
                                     <constraint firstAttribute="bottom" secondItem="WHf-Iv-MZQ" secondAttribute="bottom" constant="15" id="Rdc-UH-h1g"/>
-                                    <constraint firstAttribute="height" constant="400" id="pjq-Rx-scw"/>
+                                    <constraint firstAttribute="height" id="pjq-Rx-scw"/>
                                     <constraint firstAttribute="trailing" secondItem="WHf-Iv-MZQ" secondAttribute="trailing" constant="40" id="t2Z-5o-E8q"/>
                                 </constraints>
                             </view>
@@ -389,9 +389,9 @@
                         <outlet property="chipTextField" destination="lcd-ww-Ew6" id="zUC-ZD-q0H"/>
                         <outlet property="cityTextField" destination="nKh-mH-4yp" id="gMF-kJ-Ghz"/>
                         <outlet property="dateTextField" destination="qwu-AY-lPT" id="cZ3-KX-oxV"/>
+                        <outlet property="filterBase" destination="l5X-hV-IOm" id="pN2-jD-cwb"/>
+                        <outlet property="filterBaseHeight" destination="pjq-Rx-scw" id="yTK-r5-sAd"/>
                         <outlet property="filterBtn" destination="Ooc-Lm-GMI" id="bDf-0A-lhK"/>
-                        <outlet property="filterView" destination="l5X-hV-IOm" id="pN2-jD-cwb"/>
-                        <outlet property="filterViewHeight" destination="pjq-Rx-scw" id="yTK-r5-sAd"/>
                         <outlet property="regionTextField" destination="dre-aN-HpD" id="Edg-Bk-V8I"/>
                         <outlet property="searchBar" destination="eM3-up-jXD" id="FYD-Sk-Qre"/>
                         <outlet property="searchBtn" destination="Dvv-yZ-y9T" id="xxR-1F-NiE"/>
