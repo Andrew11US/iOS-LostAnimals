@@ -170,10 +170,10 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5X-hV-IOm">
-                                <rect key="frame" x="0.0" y="100" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0SA-YV-ed0">
-                                        <rect key="frame" x="20" y="350" width="335" height="40"/>
+                                        <rect key="frame" x="20" y="-50" width="335" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcK-ne-3CG" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="40"/>
@@ -212,7 +212,7 @@
                                     <constraint firstItem="0SA-YV-ed0" firstAttribute="leading" secondItem="l5X-hV-IOm" secondAttribute="leading" constant="20" id="Jym-Qh-YSr"/>
                                     <constraint firstAttribute="bottom" secondItem="0SA-YV-ed0" secondAttribute="bottom" constant="10" id="M3o-K5-otL"/>
                                     <constraint firstAttribute="trailing" secondItem="0SA-YV-ed0" secondAttribute="trailing" constant="20" id="SJz-Bg-Pwj"/>
-                                    <constraint firstAttribute="height" constant="400" id="pjq-Rx-scw"/>
+                                    <constraint firstAttribute="height" id="pjq-Rx-scw"/>
                                 </constraints>
                             </view>
                         </subviews>
