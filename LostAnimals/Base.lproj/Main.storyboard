@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -258,7 +258,7 @@
             <objects>
                 <viewController id="CMp-VX-GJS" customClass="DetailVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gnN-H3-PVC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVj-gf-qcf">
@@ -484,14 +484,87 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07g-Pt-w1H">
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
+                                <subviews>
+                                    <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQ8-pz-y2b">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="56"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="yes" returnKeyType="search" smartInsertDeleteType="yes"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="QQ8-pz-y2b" secondAttribute="bottom" constant="5" id="Yj4-An-b47"/>
+                                    <constraint firstItem="QQ8-pz-y2b" firstAttribute="top" secondItem="07g-Pt-w1H" secondAttribute="top" constant="5" id="hcC-CK-nLH"/>
+                                    <constraint firstAttribute="trailing" secondItem="QQ8-pz-y2b" secondAttribute="trailing" id="iZN-OB-CAi"/>
+                                    <constraint firstAttribute="height" id="xYh-RW-Quj"/>
+                                    <constraint firstItem="QQ8-pz-y2b" firstAttribute="leading" secondItem="07g-Pt-w1H" secondAttribute="leading" id="zcm-Pd-ubI"/>
+                                </constraints>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAS-Ap-For">
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="856-UQ-KMV">
+                                        <rect key="frame" x="20" y="-50" width="335" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiG-p0-x9G" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="inT-U1-40T"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUq-pN-Zsq" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="182.66666666666663" y="0.0" width="152.33333333333337" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Apply"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="applyTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="INC-7D-g1a"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Qt7-g0-iRx"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="856-UQ-KMV" secondAttribute="bottom" constant="10" id="eSU-XM-whG"/>
+                                    <constraint firstAttribute="trailing" secondItem="856-UQ-KMV" secondAttribute="trailing" constant="20" id="jV6-sL-Ajs"/>
+                                    <constraint firstItem="856-UQ-KMV" firstAttribute="leading" secondItem="pAS-Ap-For" secondAttribute="leading" constant="20" id="lzh-Xb-Pub"/>
+                                    <constraint firstAttribute="height" id="oZA-eL-6Ni"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tvX-4U-nfm" secondAttribute="bottom" id="1Um-vO-Rew"/>
+                            <constraint firstItem="07g-Pt-w1H" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="2cg-SX-fsE"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="tvX-4U-nfm" secondAttribute="trailing" id="4Oe-gh-Cep"/>
+                            <constraint firstItem="pAS-Ap-For" firstAttribute="top" secondItem="nUP-Nk-ucI" secondAttribute="bottom" id="Hqz-PW-etw"/>
+                            <constraint firstAttribute="trailing" secondItem="pAS-Ap-For" secondAttribute="trailing" id="P0M-t9-cFU"/>
+                            <constraint firstItem="pAS-Ap-For" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="RfX-o6-IIC"/>
+                            <constraint firstItem="07g-Pt-w1H" firstAttribute="top" secondItem="nUP-Nk-ucI" secondAttribute="bottom" id="ePn-S4-hM4"/>
                             <constraint firstItem="nUP-Nk-ucI" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="kBY-iu-WfS"/>
                             <constraint firstItem="tvX-4U-nfm" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="mnS-tG-2Zo"/>
                             <constraint firstItem="nUP-Nk-ucI" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="o1T-Xh-jBS"/>
+                            <constraint firstAttribute="trailing" secondItem="07g-Pt-w1H" secondAttribute="trailing" id="sBY-BM-EWH"/>
                             <constraint firstItem="nUP-Nk-ucI" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="x0A-I8-woK"/>
                             <constraint firstItem="tvX-4U-nfm" firstAttribute="top" secondItem="nUP-Nk-ucI" secondAttribute="bottom" id="xtL-eW-7zO"/>
                         </constraints>
@@ -499,8 +572,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Found" image="second" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="applyFilterBtn" destination="VUq-pN-Zsq" id="LEt-is-qDe"/>
+                        <outlet property="cancelFilterBtn" destination="fiG-p0-x9G" id="Ynp-PS-9o1"/>
+                        <outlet property="filterBase" destination="pAS-Ap-For" id="J86-FW-CVn"/>
+                        <outlet property="filterBaseHeight" destination="oZA-eL-6Ni" id="XJ6-Qb-wJg"/>
                         <outlet property="filterBtn" destination="5XS-jq-DoZ" id="zMM-rG-j9w"/>
+                        <outlet property="searchBar" destination="QQ8-pz-y2b" id="hZG-Yg-E15"/>
                         <outlet property="searchBtn" destination="usu-0K-tBm" id="q2R-MT-pS4"/>
+                        <outlet property="searchView" destination="07g-Pt-w1H" id="aIh-7n-meL"/>
+                        <outlet property="searchViewHeight" destination="xYh-RW-Quj" id="6Dv-MX-L2F"/>
                         <outlet property="tableView" destination="tvX-4U-nfm" id="uSD-2M-6bk"/>
                     </connections>
                 </viewController>
@@ -687,16 +767,83 @@
                                     <constraint firstItem="mkk-CZ-QXE" firstAttribute="leading" secondItem="gW7-WA-9r3" secondAttribute="leading" constant="10" id="sm3-vM-Wan"/>
                                 </constraints>
                             </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJB-u7-37q">
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
+                                <subviews>
+                                    <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n5C-1D-W9C">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="56"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="yes" returnKeyType="search" smartInsertDeleteType="yes"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="n5C-1D-W9C" firstAttribute="top" secondItem="wJB-u7-37q" secondAttribute="top" constant="5" id="0Kz-B7-nqO"/>
+                                    <constraint firstAttribute="trailing" secondItem="n5C-1D-W9C" secondAttribute="trailing" id="Onf-fd-j4x"/>
+                                    <constraint firstAttribute="height" id="RDs-UV-Fkp"/>
+                                    <constraint firstAttribute="bottom" secondItem="n5C-1D-W9C" secondAttribute="bottom" constant="5" id="i8z-5l-JyZ"/>
+                                    <constraint firstItem="n5C-1D-W9C" firstAttribute="leading" secondItem="wJB-u7-37q" secondAttribute="leading" id="uCJ-SL-NDB"/>
+                                </constraints>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZg-dd-98o">
+                                <rect key="frame" x="0.0" y="100" width="375" height="0.0"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3Zc-NT-A9t">
+                                        <rect key="frame" x="20" y="-50" width="335" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhn-On-iEr" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhO-jL-iRd" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="182.66666666666663" y="0.0" width="152.33333333333337" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Apply"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="IUr-wg-IKK"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3Zc-NT-A9t" firstAttribute="leading" secondItem="kZg-dd-98o" secondAttribute="leading" constant="20" id="7of-sy-J5e"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Zc-NT-A9t" secondAttribute="trailing" constant="20" id="GNh-1i-CSZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Zc-NT-A9t" secondAttribute="bottom" constant="10" id="cgE-bY-0d9"/>
+                                    <constraint firstAttribute="height" id="tNN-X6-t98"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fbv-mc-pr1" firstAttribute="bottom" secondItem="d0Y-rv-0ew" secondAttribute="bottom" id="0Hm-jX-Izb"/>
+                            <constraint firstAttribute="trailing" secondItem="kZg-dd-98o" secondAttribute="trailing" id="0do-23-FPt"/>
+                            <constraint firstAttribute="trailing" secondItem="wJB-u7-37q" secondAttribute="trailing" id="3FV-fF-gBg"/>
+                            <constraint firstItem="kZg-dd-98o" firstAttribute="top" secondItem="gW7-WA-9r3" secondAttribute="bottom" id="Dii-5c-PZk"/>
                             <constraint firstItem="fbv-mc-pr1" firstAttribute="trailing" secondItem="d0Y-rv-0ew" secondAttribute="trailing" id="SfD-nS-w4f"/>
+                            <constraint firstItem="wJB-u7-37q" firstAttribute="top" secondItem="gW7-WA-9r3" secondAttribute="bottom" id="Tyk-q8-Sbo"/>
+                            <constraint firstItem="kZg-dd-98o" firstAttribute="leading" secondItem="fsh-P1-kZd" secondAttribute="leading" id="Ulg-DX-wzU"/>
                             <constraint firstItem="fbv-mc-pr1" firstAttribute="top" secondItem="gW7-WA-9r3" secondAttribute="bottom" id="YuV-bM-Has"/>
                             <constraint firstItem="gW7-WA-9r3" firstAttribute="leading" secondItem="d0Y-rv-0ew" secondAttribute="leading" id="dvA-l8-oiq"/>
                             <constraint firstItem="gW7-WA-9r3" firstAttribute="top" secondItem="fsh-P1-kZd" secondAttribute="top" id="eFN-Du-PVg"/>
                             <constraint firstItem="gW7-WA-9r3" firstAttribute="trailing" secondItem="d0Y-rv-0ew" secondAttribute="trailing" id="pOk-6F-eVd"/>
                             <constraint firstItem="fbv-mc-pr1" firstAttribute="leading" secondItem="d0Y-rv-0ew" secondAttribute="leading" id="qIc-lp-CuL"/>
+                            <constraint firstItem="wJB-u7-37q" firstAttribute="leading" secondItem="fsh-P1-kZd" secondAttribute="leading" id="vVz-vl-jXg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d0Y-rv-0ew"/>
                     </view>

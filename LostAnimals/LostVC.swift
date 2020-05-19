@@ -68,6 +68,7 @@ class LostVC: UIViewController {
         // TODO: make filtering
     }
     
+    // Filter setup
     private func setupFilterView() {
         filterView = FilterView()
         filterBase.addSubview(filterView)
