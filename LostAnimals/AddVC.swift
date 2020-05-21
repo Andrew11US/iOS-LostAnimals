@@ -16,20 +16,42 @@ class AddVC: UIViewController {
     @IBOutlet weak var verticalScrollView: UIScrollView!
     @IBOutlet weak var imagesScrollView: UIScrollView!
     @IBOutlet weak var verticalContentView: UIView!
-    @IBOutlet weak var openPickerBtn: CustomButton!
+    @IBOutlet weak var imagePickerBtn: CustomButton!
     @IBOutlet weak var pageControl: UIPageControl!
-    
+    @IBOutlet weak var mainStack: UIStackView!
+    @IBOutlet weak var animalTypeBtn: CustomButton!
+    @IBOutlet weak var calendarBtn: CustomButton!
+    @IBOutlet weak var adTypeSegment: UISegmentedControl!
+    @IBOutlet weak var dateTextfield: UITextField!
+    @IBOutlet weak var cityTextfield: UITextField!
+    @IBOutlet weak var regionTextfield: UITextField!
+    @IBOutlet weak var phoneTextfield: UITextField!
+    @IBOutlet weak var chipTextfield: UITextField!
+    @IBOutlet weak var nameTextfield: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var publishBtn: CustomButton!
     
     
     // MARK: Variables
     private var permissions: [SPPermission] = [.camera, .photoLibrary, .locationWhenInUse]
     private var images: [UIImage] = []
+    private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
+    private var selectedAnimalType: String = ""
+    
+    // MARK: - Programmatic views
+    lazy var animalPicker: UIPickerView = {
+        let picker = UIPickerView()
+//        picker.isHidden = true
+        return picker
+    }()
     
     // ViewDidLoad method
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imagesScrollView.delegate = self
+        animalPicker.delegate = self
+        animalPicker.dataSource = self
     }
     
     // ViewDidAppear method
@@ -49,6 +71,12 @@ class AddVC: UIViewController {
         show(picker, sender: nil)
         
         picker.didFinishPicking { [unowned picker] items, cancelled in
+            
+            if cancelled {
+                print("User did cancel picking")
+                picker.dismiss(animated: true, completion: nil)
+            }
+            
             for item in items {
                 switch item {
                 case .photo(let photo):
@@ -61,6 +89,25 @@ class AddVC: UIViewController {
             self.populateImagesScrollView()
             picker.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func animalTypeBtnTapped(_ sender: CustomButton) {
+        mainStack.insertArrangedSubview(animalPicker, at: 2)
+        
+        NSLayoutConstraint.activate([
+            animalPicker.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        animalPicker.isHidden = false
+        animalTypeBtn.isHidden = true
+    }
+    
+    @IBAction func calendarBtnTapped(_ sender: CustomButton) {
+        
+    }
+    
+    @IBAction func publishTapped(_ sender: CustomButton) {
+        
     }
     
     private func populateImagesScrollView() {
@@ -104,5 +151,27 @@ extension AddVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / view.frame.width)
         pageControl.currentPage = Int(pageIndex)
+    }
+}
+
+// MARK: - UIImagePicker delegate
+extension AddVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return animalTypes.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return animalTypes[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedAnimalType = animalTypes[row]
+        animalTypeBtn.setTitle(animalTypes[row], for: .normal)
+        animalTypeBtn.isHidden = false
+        pickerView.isHidden = true
     }
 }
