@@ -33,16 +33,49 @@ class AddVC: UIViewController {
     
     
     // MARK: Variables
+    private var calendarView: CalendarView!
     private var permissions: [SPPermission] = [.camera, .photoLibrary, .locationWhenInUse]
     private var images: [UIImage] = []
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
     private var selectedAnimalType: String = ""
+    private var selectedDates: String = ""
     
     // MARK: - Programmatic views
     lazy var animalPicker: UIPickerView = {
         let picker = UIPickerView()
 //        picker.isHidden = true
         return picker
+    }()
+    
+    lazy var calendarStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 30
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    // Calendar buttons
+    lazy var applyDatesBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("Apply", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(applyDatesTapped(_:)), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var cancelCalendarBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("Cancel", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(cancelCalendarTapped(_:)), for: .touchUpInside)
+        return button
     }()
     
     // ViewDidLoad method
@@ -103,7 +136,31 @@ class AddVC: UIViewController {
     }
     
     @IBAction func calendarBtnTapped(_ sender: CustomButton) {
+        calendarView = CalendarView()
+        verticalContentView.addSubview(calendarView)
+        verticalContentView.bringSubviewToFront(calendarView)
         
+        calendarStack.addArrangedSubview(cancelCalendarBtn)
+        calendarStack.addArrangedSubview(applyDatesBtn)
+        calendarView.bottomStack.addArrangedSubview(calendarStack)
+        calendarView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            calendarView.topAnchor.constraint(equalTo: verticalContentView.topAnchor, constant: 0),
+            calendarView.heightAnchor.constraint(equalToConstant: 340),
+            calendarView.trailingAnchor.constraint(equalTo: verticalContentView.trailingAnchor, constant: 0),
+            calendarView.leadingAnchor.constraint(equalTo: verticalContentView.leadingAnchor, constant: 0)
+        ])
+    }
+    
+    @objc func applyDatesTapped(_ sender: UIButton!) {
+        self.selectedDates = calendarView.selectedDates
+        dateTextfield.text = selectedDates
+        calendarView.isHidden = true
+    }
+    
+    @objc func cancelCalendarTapped(_ sender: UIButton!) {
+        calendarView.isHidden = true
     }
     
     @IBAction func publishTapped(_ sender: CustomButton) {
