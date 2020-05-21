@@ -769,13 +769,13 @@
                                     <constraint firstAttribute="trailing" secondItem="uS6-xo-JYF" secondAttribute="trailing" id="r56-e5-HM0"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8B-sZ-TWC">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8B-sZ-TWC">
                                 <rect key="frame" x="0.0" y="100" width="375" height="629"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-aD-GYp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="943"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1173"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqm-ji-JLn">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqm-ji-JLn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="215" id="aN4-eR-kgP"/>
@@ -785,9 +785,9 @@
                                                 <rect key="frame" x="30" y="178" width="315" height="37"/>
                                             </pageControl>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP7-yW-aiJ" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="47.666666666666657" width="359" height="120"/>
+                                                <rect key="frame" x="8" y="0.0" width="359" height="50"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="NeQ-IR-dsF"/>
+                                                    <constraint firstAttribute="height" constant="50" id="NeQ-IR-dsF"/>
                                                 </constraints>
                                                 <state key="normal" title="Select Images"/>
                                                 <connections>
@@ -821,7 +821,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uok-oK-K1F">
                                                                 <rect key="frame" x="0.0" y="0.0" width="215" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcM-VS-4Uu" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                                 <rect key="frame" x="245" y="0.0" width="50" height="40"/>
@@ -838,27 +838,27 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ShK-v5-hTE">
                                                         <rect key="frame" x="0.0" y="210" width="295" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Region" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-Op-jxk">
                                                         <rect key="frame" x="0.0" y="280" width="295" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YME-Gk-eBP">
                                                         <rect key="frame" x="0.0" y="350" width="295" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chip number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZz-1A-cxQ">
                                                         <rect key="frame" x="0.0" y="420" width="295" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUI-Dy-I75">
                                                         <rect key="frame" x="0.0" y="490" width="295" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -870,7 +870,7 @@
                                                 </constraints>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done" smartInsertDeleteType="yes"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" smartInsertDeleteType="yes"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1l-ux-9Ew" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
@@ -901,10 +901,10 @@
                                             <constraint firstAttribute="trailing" secondItem="Lui-gT-AXK" secondAttribute="trailing" constant="30" id="Usz-cP-3dE"/>
                                             <constraint firstItem="Bf7-qL-nWK" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="40" id="XbU-AY-glb"/>
                                             <constraint firstAttribute="trailing" secondItem="tt9-8B-dji" secondAttribute="trailing" constant="40" id="c82-md-cUp"/>
-                                            <constraint firstAttribute="bottom" secondItem="W1l-ux-9Ew" secondAttribute="bottom" constant="20" id="cof-8c-dcz"/>
+                                            <constraint firstItem="QP7-yW-aiJ" firstAttribute="top" secondItem="Kqm-ji-JLn" secondAttribute="top" id="cTT-Xm-F7e"/>
+                                            <constraint firstAttribute="bottom" secondItem="W1l-ux-9Ew" secondAttribute="bottom" constant="250" id="cof-8c-dcz"/>
                                             <constraint firstAttribute="trailing" secondItem="W1l-ux-9Ew" secondAttribute="trailing" constant="40" id="eDf-oN-nsL"/>
                                             <constraint firstItem="Lui-gT-AXK" firstAttribute="bottom" secondItem="Kqm-ji-JLn" secondAttribute="bottom" id="eDt-9A-bDB"/>
-                                            <constraint firstItem="QP7-yW-aiJ" firstAttribute="centerY" secondItem="Kqm-ji-JLn" secondAttribute="centerY" id="nbL-6u-dqo"/>
                                             <constraint firstItem="W1l-ux-9Ew" firstAttribute="top" secondItem="tt9-8B-dji" secondAttribute="bottom" constant="20" id="sHB-Jg-5RV"/>
                                             <constraint firstItem="Kqm-ji-JLn" firstAttribute="top" secondItem="BFr-aD-GYp" secondAttribute="top" id="uDT-aJ-xnT"/>
                                             <constraint firstItem="W1l-ux-9Ew" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="40" id="wzr-7s-mnp"/>
@@ -939,18 +939,18 @@
                         <outlet property="adTypeSegment" destination="wdh-2b-Bks" id="5o8-Yf-76S"/>
                         <outlet property="animalTypeBtn" destination="OZS-hY-l5c" id="b8C-CE-q0F"/>
                         <outlet property="calendarBtn" destination="tcM-VS-4Uu" id="nD7-Rw-Dmi"/>
-                        <outlet property="chipTextfield" destination="NZz-1A-cxQ" id="aF7-1a-TJM"/>
-                        <outlet property="cityTextfield" destination="ShK-v5-hTE" id="WnT-8E-o7f"/>
-                        <outlet property="dateTextfield" destination="Uok-oK-K1F" id="5vW-LF-WCQ"/>
+                        <outlet property="chipTextField" destination="NZz-1A-cxQ" id="aF7-1a-TJM"/>
+                        <outlet property="cityTextField" destination="ShK-v5-hTE" id="WnT-8E-o7f"/>
+                        <outlet property="dateTextField" destination="Uok-oK-K1F" id="5vW-LF-WCQ"/>
                         <outlet property="descriptionTextView" destination="tt9-8B-dji" id="Juc-BH-gTJ"/>
                         <outlet property="imagePickerBtn" destination="QP7-yW-aiJ" id="q6u-Ab-DDt"/>
                         <outlet property="imagesScrollView" destination="Kqm-ji-JLn" id="2V9-0P-Enc"/>
                         <outlet property="mainStack" destination="Bf7-qL-nWK" id="Sj5-am-Vzm"/>
-                        <outlet property="nameTextfield" destination="HUI-Dy-I75" id="81H-ae-qs7"/>
+                        <outlet property="nameTextField" destination="HUI-Dy-I75" id="81H-ae-qs7"/>
                         <outlet property="pageControl" destination="Lui-gT-AXK" id="Xkr-i9-67j"/>
-                        <outlet property="phoneTextfield" destination="YME-Gk-eBP" id="cbY-4S-Xtw"/>
+                        <outlet property="phoneTextField" destination="YME-Gk-eBP" id="cbY-4S-Xtw"/>
                         <outlet property="publishBtn" destination="W1l-ux-9Ew" id="eT3-mp-vUZ"/>
-                        <outlet property="regionTextfield" destination="UNz-Op-jxk" id="WGd-50-mav"/>
+                        <outlet property="regionTextField" destination="UNz-Op-jxk" id="WGd-50-mav"/>
                         <outlet property="verticalContentView" destination="BFr-aD-GYp" id="lK8-IV-ge5"/>
                         <outlet property="verticalScrollView" destination="D8B-sZ-TWC" id="Cxp-IM-Zk4"/>
                     </connections>

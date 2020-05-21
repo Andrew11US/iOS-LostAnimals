@@ -22,12 +22,12 @@ class AddVC: UIViewController {
     @IBOutlet weak var animalTypeBtn: CustomButton!
     @IBOutlet weak var calendarBtn: CustomButton!
     @IBOutlet weak var adTypeSegment: UISegmentedControl!
-    @IBOutlet weak var dateTextfield: UITextField!
-    @IBOutlet weak var cityTextfield: UITextField!
-    @IBOutlet weak var regionTextfield: UITextField!
-    @IBOutlet weak var phoneTextfield: UITextField!
-    @IBOutlet weak var chipTextfield: UITextField!
-    @IBOutlet weak var nameTextfield: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var regionTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var chipTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var publishBtn: CustomButton!
     
@@ -37,13 +37,19 @@ class AddVC: UIViewController {
     private var permissions: [SPPermission] = [.camera, .photoLibrary, .locationWhenInUse]
     private var images: [UIImage] = []
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
-    private var selectedAnimalType: String = ""
+    private var animalType: String = ""
     private var selectedDates: String = ""
+    private var adType: String = ""
+    private var city: String = ""
+    private var region: String = ""
+    private var phone: String = ""
+    private var chip: String = ""
+    private var name: String = ""
+    private var desc: String = ""
     
     // MARK: - Programmatic views
     lazy var animalPicker: UIPickerView = {
         let picker = UIPickerView()
-//        picker.isHidden = true
         return picker
     }()
     
@@ -85,6 +91,16 @@ class AddVC: UIViewController {
         imagesScrollView.delegate = self
         animalPicker.delegate = self
         animalPicker.dataSource = self
+        dateTextField.delegate = self
+        cityTextField.delegate = self
+        regionTextField.delegate = self
+        chipTextField.delegate = self
+        nameTextField.delegate = self
+        phoneTextField.delegate = self
+        
+        setDoneToolBar(field: chipTextField)
+        setDoneToolBar(field: phoneTextField)
+        setDoneToolBar(field: descriptionTextView)
     }
     
     // ViewDidAppear method
@@ -99,6 +115,11 @@ class AddVC: UIViewController {
     @IBAction func openPickerBtnTapped(_ sender: CustomButton) {
         var config = YPImagePickerConfiguration()
         config.library.maxNumberOfItems = 5
+        config.library.mediaType = .photo
+        config.showsPhotoFilters = false
+        config.usesFrontCamera = false
+        config.shouldSaveNewPicturesToAlbum = false
+        config.hidesStatusBar = false
         
         let picker = YPImagePicker(configuration: config)
         show(picker, sender: nil)
@@ -155,7 +176,7 @@ class AddVC: UIViewController {
     
     @objc func applyDatesTapped(_ sender: UIButton!) {
         self.selectedDates = calendarView.selectedDates
-        dateTextfield.text = selectedDates
+        dateTextField.text = selectedDates
         calendarView.isHidden = true
     }
     
@@ -164,7 +185,7 @@ class AddVC: UIViewController {
     }
     
     @IBAction func publishTapped(_ sender: CustomButton) {
-        
+        //TODO: - Create Ad and publish
     }
     
     private func populateImagesScrollView() {
@@ -199,7 +220,6 @@ class AddVC: UIViewController {
             controller.present(on: self)
         }
     }
-
 }
 
 // MARK: - UIScrollView delegate
@@ -226,9 +246,51 @@ extension AddVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedAnimalType = animalTypes[row]
+        animalType = animalTypes[row]
         animalTypeBtn.setTitle(animalTypes[row], for: .normal)
         animalTypeBtn.isHidden = false
         pickerView.isHidden = true
     }
 }
+
+// MARK: - TextField delegate
+extension AddVC: UITextFieldDelegate {
+    // Keyboard handling
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    func setDoneToolBar(field: UITextField) {
+        let doneToolbar: UIToolbar = UIToolbar()
+        
+        doneToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(dismissKeyboard))
+        ]
+        doneToolbar.sizeToFit()
+        field.inputAccessoryView = doneToolbar
+    }
+    
+    func setDoneToolBar(field: UITextView) {
+        let doneToolbar: UIToolbar = UIToolbar()
+        
+        doneToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(dismissKeyboard))
+        ]
+        doneToolbar.sizeToFit()
+        field.inputAccessoryView = doneToolbar
+    }
+}
+
