@@ -769,20 +769,81 @@
                                     <constraint firstAttribute="trailing" secondItem="uS6-xo-JYF" secondAttribute="trailing" id="r56-e5-HM0"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8B-sZ-TWC">
+                                <rect key="frame" x="0.0" y="100" width="375" height="629"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-aD-GYp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="629"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP7-yW-aiJ" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="8" width="359" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="NeQ-IR-dsF"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="openPickerBtnTapped:" destination="65Q-NE-dSV" eventType="touchUpInside" id="xe7-gz-bQO"/>
+                                                </connections>
+                                            </button>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kqm-ji-JLn">
+                                                <rect key="frame" x="0.0" y="46" width="375" height="215"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="215" id="aN4-eR-kgP"/>
+                                                </constraints>
+                                            </scrollView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-gT-AXK">
+                                                <rect key="frame" x="30" y="224" width="315" height="37"/>
+                                            </pageControl>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Lui-gT-AXK" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="30" id="92v-ga-E9g"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kqm-ji-JLn" secondAttribute="trailing" id="FZw-Mg-Mxx"/>
+                                            <constraint firstItem="QP7-yW-aiJ" firstAttribute="top" secondItem="BFr-aD-GYp" secondAttribute="top" constant="8" id="Qsu-Wd-C8H"/>
+                                            <constraint firstAttribute="trailing" secondItem="QP7-yW-aiJ" secondAttribute="trailing" constant="8" id="See-P3-mtd"/>
+                                            <constraint firstItem="Kqm-ji-JLn" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" id="Ts4-j9-6gp"/>
+                                            <constraint firstItem="QP7-yW-aiJ" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="8" id="UhI-m1-OUL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lui-gT-AXK" secondAttribute="trailing" constant="30" id="Usz-cP-3dE"/>
+                                            <constraint firstItem="Lui-gT-AXK" firstAttribute="bottom" secondItem="Kqm-ji-JLn" secondAttribute="bottom" id="eDt-9A-bDB"/>
+                                            <constraint firstItem="Kqm-ji-JLn" firstAttribute="top" secondItem="QP7-yW-aiJ" secondAttribute="bottom" constant="8" id="snc-8m-zRf"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BFr-aD-GYp" firstAttribute="leading" secondItem="D8B-sZ-TWC" secondAttribute="leading" id="8dL-2k-4xQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="BFr-aD-GYp" secondAttribute="bottom" id="9tg-rp-Ck2"/>
+                                    <constraint firstAttribute="trailing" secondItem="BFr-aD-GYp" secondAttribute="trailing" id="TGZ-MV-olT"/>
+                                    <constraint firstItem="BFr-aD-GYp" firstAttribute="height" secondItem="D8B-sZ-TWC" secondAttribute="height" priority="250" id="rMm-7b-692"/>
+                                    <constraint firstItem="BFr-aD-GYp" firstAttribute="top" secondItem="D8B-sZ-TWC" secondAttribute="top" id="vMT-41-yzz"/>
+                                    <constraint firstItem="BFr-aD-GYp" firstAttribute="width" secondItem="D8B-sZ-TWC" secondAttribute="width" id="wSp-33-mFY"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="uuO-aK-SXe" firstAttribute="trailing" secondItem="dkZ-8a-QMG" secondAttribute="trailing" id="CjH-kg-NZI"/>
                             <constraint firstItem="dkZ-8a-QMG" firstAttribute="leading" secondItem="qAr-nP-Wai" secondAttribute="leading" id="Gvn-hF-8ZD"/>
+                            <constraint firstItem="D8B-sZ-TWC" firstAttribute="bottom" secondItem="uuO-aK-SXe" secondAttribute="bottom" id="LJa-6o-pra"/>
+                            <constraint firstItem="D8B-sZ-TWC" firstAttribute="leading" secondItem="uuO-aK-SXe" secondAttribute="leading" id="PGv-Gj-SVt"/>
+                            <constraint firstItem="D8B-sZ-TWC" firstAttribute="top" secondItem="dkZ-8a-QMG" secondAttribute="bottom" id="bg2-wp-3i9"/>
+                            <constraint firstItem="D8B-sZ-TWC" firstAttribute="trailing" secondItem="uuO-aK-SXe" secondAttribute="trailing" id="rAM-J0-RUT"/>
                             <constraint firstItem="dkZ-8a-QMG" firstAttribute="top" secondItem="qAr-nP-Wai" secondAttribute="top" id="vVp-Zo-qW9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uuO-aK-SXe"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="plus.rectangle" catalog="system" id="CWJ-GJ-ZsF"/>
+                    <navigationItem key="navigationItem" id="9eG-Ge-O1K"/>
+                    <connections>
+                        <outlet property="imagesScrollView" destination="Kqm-ji-JLn" id="2V9-0P-Enc"/>
+                        <outlet property="openPickerBtn" destination="QP7-yW-aiJ" id="q6u-Ab-DDt"/>
+                        <outlet property="pageControl" destination="Lui-gT-AXK" id="Xkr-i9-67j"/>
+                        <outlet property="verticalContentView" destination="BFr-aD-GYp" id="lK8-IV-ge5"/>
+                        <outlet property="verticalScrollView" destination="D8B-sZ-TWC" id="Cxp-IM-Zk4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw5-Ri-KWF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287" y="842"/>
+            <point key="canvasLocation" x="2285.5999999999999" y="841.62561576354688"/>
         </scene>
         <!--Adoption-->
         <scene sceneID="GsH-jM-R3i">
@@ -1324,9 +1385,9 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="65Q-NE-dSV" kind="relationship" relationship="viewControllers" id="BsM-Si-HXu"/>
                         <segue destination="VjU-jp-B2S" kind="relationship" relationship="viewControllers" id="t9a-ac-iWV"/>
                         <segue destination="4us-mm-pSC" kind="relationship" relationship="viewControllers" id="TC3-uU-ftD"/>
+                        <segue destination="65Q-NE-dSV" kind="relationship" relationship="viewControllers" id="Ykm-D2-PWs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

@@ -80,5 +80,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow camera usage to make photos</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow to determine searching area automatically</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow to select photo for ad</string>
 </dict>
 </plist>
