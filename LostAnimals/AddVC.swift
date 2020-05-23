@@ -112,7 +112,7 @@ class AddVC: UIViewController {
         }
     }
     
-    @IBAction func openPickerBtnTapped(_ sender: CustomButton) {
+    @IBAction func openPickerTapped(_ sender: AnyObject) {
         var config = YPImagePickerConfiguration()
         config.library.maxNumberOfItems = 5
         config.library.mediaType = .photo
@@ -131,16 +131,22 @@ class AddVC: UIViewController {
                 picker.dismiss(animated: true, completion: nil)
             }
             
-            for item in items {
-                switch item {
-                case .photo(let photo):
-                    print(photo)
-                    self.images.append(photo.image)
-                case .video(let video):
-                    print(video)
+            if items.count > 0 {
+                self.images.removeAll()
+                for s in self.imagesScrollView.subviews {
+                    s.removeFromSuperview()
                 }
+                
+                for item in items {
+                    switch item {
+                    case .photo(let photo):
+                        self.images.append(photo.image)
+                    case .video: break
+                    }
+                }
+                self.populateImagesScrollView()
+                self.pageControl.isHidden = false
             }
-            self.populateImagesScrollView()
             picker.dismiss(animated: true, completion: nil)
         }
     }

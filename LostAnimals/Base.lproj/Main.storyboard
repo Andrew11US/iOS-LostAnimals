@@ -11,6 +11,9 @@
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Lost-->
@@ -27,30 +30,30 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SFy-b4-bj0">
                                         <rect key="frame" x="10" y="50" width="355" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvv-yZ-y9T">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvv-yZ-y9T">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="seb-MZ-ZUB"/>
                                                     <constraint firstAttribute="height" constant="50" id="t4M-f5-sCw"/>
                                                 </constraints>
-                                                <state key="normal" title="Search"/>
+                                                <state key="normal" image="search"/>
                                                 <connections>
                                                     <action selector="searchBtnTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Z2l-jV-Rk0"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-aP-jm8">
-                                                <rect key="frame" x="129" y="0.0" width="97.333333333333314" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="103" y="0.0" width="149" height="50"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-Lm-GMI">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-Lm-GMI">
                                                 <rect key="frame" x="305" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Ws7-Pw-MS8"/>
                                                     <constraint firstAttribute="width" constant="50" id="tSy-St-oVI"/>
                                                 </constraints>
-                                                <state key="normal" title="Filter"/>
+                                                <state key="normal" image="filter"/>
                                                 <connections>
                                                     <action selector="filterBtnTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="SPm-d2-Z9i"/>
                                                 </connections>
@@ -58,7 +61,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="SFy-b4-bj0" secondAttribute="bottom" id="5Dp-oy-MS1"/>
                                     <constraint firstAttribute="trailing" secondItem="SFy-b4-bj0" secondAttribute="trailing" constant="10" id="bbQ-ZP-eLH"/>
@@ -207,7 +210,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="0SA-YV-ed0" firstAttribute="leading" secondItem="l5X-hV-IOm" secondAttribute="leading" constant="20" id="Jym-Qh-YSr"/>
                                     <constraint firstAttribute="bottom" secondItem="0SA-YV-ed0" secondAttribute="bottom" constant="10" id="M3o-K5-otL"/>
@@ -515,30 +518,30 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h8B-tS-GGn">
                                         <rect key="frame" x="10" y="50" width="355" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usu-0K-tBm">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usu-0K-tBm">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="r4h-Bm-lLl"/>
                                                     <constraint firstAttribute="width" constant="50" id="vix-Tw-ktt"/>
                                                 </constraints>
-                                                <state key="normal" title="Search"/>
+                                                <state key="normal" image="search"/>
                                                 <connections>
                                                     <action selector="searchBtnTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="jiW-VW-bAj"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei9-yy-aXt">
-                                                <rect key="frame" x="129" y="0.0" width="97.333333333333314" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="103" y="0.0" width="149" height="50"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XS-jq-DoZ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XS-jq-DoZ">
                                                 <rect key="frame" x="305" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Htu-8v-8bv"/>
                                                     <constraint firstAttribute="width" constant="50" id="IFC-OA-piV"/>
                                                 </constraints>
-                                                <state key="normal" title="Filter"/>
+                                                <state key="normal" image="filter"/>
                                                 <connections>
                                                     <action selector="filterBtnTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="CwR-ef-OQN"/>
                                                 </connections>
@@ -546,7 +549,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="h8B-tS-GGn" secondAttribute="trailing" constant="10" id="PFT-9V-iHg"/>
                                     <constraint firstAttribute="bottom" secondItem="h8B-tS-GGn" secondAttribute="bottom" id="atn-HP-fiJ"/>
@@ -695,7 +698,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="856-UQ-KMV" secondAttribute="bottom" constant="10" id="eSU-XM-whG"/>
                                     <constraint firstAttribute="trailing" secondItem="856-UQ-KMV" secondAttribute="trailing" constant="20" id="jV6-sL-Ajs"/>
@@ -756,12 +759,12 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="xjC-NF-pPh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="uS6-xo-JYF" firstAttribute="leading" secondItem="dkZ-8a-QMG" secondAttribute="leading" id="MkY-6X-Pjj"/>
                                     <constraint firstAttribute="bottom" secondItem="uS6-xo-JYF" secondAttribute="bottom" id="Oey-cZ-BwP"/>
@@ -775,25 +778,25 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-aD-GYp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1173"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqm-ji-JLn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Tap to open library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNA-Mf-GH8">
+                                                <rect key="frame" x="20" y="0.0" width="335" height="215"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqm-ji-JLn">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="215" id="aN4-eR-kgP"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="NzK-uB-XpM" appends="YES" id="zrp-A9-cQ5"/>
+                                                </connections>
                                             </scrollView>
-                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-gT-AXK">
+                                            <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-gT-AXK">
                                                 <rect key="frame" x="30" y="178" width="315" height="37"/>
                                             </pageControl>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP7-yW-aiJ" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="NeQ-IR-dsF"/>
-                                                </constraints>
-                                                <state key="normal" title="Select Images"/>
-                                                <connections>
-                                                    <action selector="openPickerBtnTapped:" destination="65Q-NE-dSV" eventType="touchUpInside" id="xe7-gz-bQO"/>
-                                                </connections>
-                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-qL-nWK">
                                                 <rect key="frame" x="40" y="223" width="295" height="530"/>
                                                 <subviews>
@@ -810,7 +813,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="EbQ-We-kz2"/>
                                                         </constraints>
-                                                        <state key="normal" title="Select Type"/>
+                                                        <state key="normal" title="Animal Type"/>
                                                         <connections>
                                                             <action selector="animalTypeBtnTapped:" destination="65Q-NE-dSV" eventType="touchUpInside" id="A7T-K8-VKd"/>
                                                         </connections>
@@ -889,24 +892,25 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstItem="YNA-Mf-GH8" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="20" id="6th-hQ-hu6"/>
                                             <constraint firstItem="Lui-gT-AXK" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="30" id="92v-ga-E9g"/>
                                             <constraint firstAttribute="trailing" secondItem="Kqm-ji-JLn" secondAttribute="trailing" id="FZw-Mg-Mxx"/>
+                                            <constraint firstAttribute="trailing" secondItem="YNA-Mf-GH8" secondAttribute="trailing" constant="20" id="Jdg-bi-BiC"/>
                                             <constraint firstItem="tt9-8B-dji" firstAttribute="top" secondItem="Bf7-qL-nWK" secondAttribute="bottom" constant="10" id="LhF-zc-nqi"/>
                                             <constraint firstAttribute="trailing" secondItem="Bf7-qL-nWK" secondAttribute="trailing" constant="40" id="MHD-RG-2ZW"/>
                                             <constraint firstItem="Bf7-qL-nWK" firstAttribute="top" secondItem="Kqm-ji-JLn" secondAttribute="bottom" constant="8" id="Q7P-IY-lbM"/>
                                             <constraint firstItem="tt9-8B-dji" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="40" id="QLM-xc-Zab"/>
-                                            <constraint firstAttribute="trailing" secondItem="QP7-yW-aiJ" secondAttribute="trailing" constant="8" id="See-P3-mtd"/>
                                             <constraint firstItem="Kqm-ji-JLn" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" id="Ts4-j9-6gp"/>
-                                            <constraint firstItem="QP7-yW-aiJ" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="8" id="UhI-m1-OUL"/>
                                             <constraint firstAttribute="trailing" secondItem="Lui-gT-AXK" secondAttribute="trailing" constant="30" id="Usz-cP-3dE"/>
                                             <constraint firstItem="Bf7-qL-nWK" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="40" id="XbU-AY-glb"/>
                                             <constraint firstAttribute="trailing" secondItem="tt9-8B-dji" secondAttribute="trailing" constant="40" id="c82-md-cUp"/>
-                                            <constraint firstItem="QP7-yW-aiJ" firstAttribute="top" secondItem="Kqm-ji-JLn" secondAttribute="top" id="cTT-Xm-F7e"/>
                                             <constraint firstAttribute="bottom" secondItem="W1l-ux-9Ew" secondAttribute="bottom" constant="250" id="cof-8c-dcz"/>
                                             <constraint firstAttribute="trailing" secondItem="W1l-ux-9Ew" secondAttribute="trailing" constant="40" id="eDf-oN-nsL"/>
                                             <constraint firstItem="Lui-gT-AXK" firstAttribute="bottom" secondItem="Kqm-ji-JLn" secondAttribute="bottom" id="eDt-9A-bDB"/>
+                                            <constraint firstItem="YNA-Mf-GH8" firstAttribute="top" secondItem="BFr-aD-GYp" secondAttribute="top" id="ioD-2W-a7H"/>
                                             <constraint firstItem="W1l-ux-9Ew" firstAttribute="top" secondItem="tt9-8B-dji" secondAttribute="bottom" constant="20" id="sHB-Jg-5RV"/>
                                             <constraint firstItem="Kqm-ji-JLn" firstAttribute="top" secondItem="BFr-aD-GYp" secondAttribute="top" id="uDT-aJ-xnT"/>
+                                            <constraint firstItem="YNA-Mf-GH8" firstAttribute="centerY" secondItem="Kqm-ji-JLn" secondAttribute="centerY" id="vb1-wM-MUL"/>
                                             <constraint firstItem="W1l-ux-9Ew" firstAttribute="leading" secondItem="BFr-aD-GYp" secondAttribute="leading" constant="40" id="wzr-7s-mnp"/>
                                         </constraints>
                                     </view>
@@ -943,7 +947,6 @@
                         <outlet property="cityTextField" destination="ShK-v5-hTE" id="WnT-8E-o7f"/>
                         <outlet property="dateTextField" destination="Uok-oK-K1F" id="5vW-LF-WCQ"/>
                         <outlet property="descriptionTextView" destination="tt9-8B-dji" id="Juc-BH-gTJ"/>
-                        <outlet property="imagePickerBtn" destination="QP7-yW-aiJ" id="q6u-Ab-DDt"/>
                         <outlet property="imagesScrollView" destination="Kqm-ji-JLn" id="2V9-0P-Enc"/>
                         <outlet property="mainStack" destination="Bf7-qL-nWK" id="Sj5-am-Vzm"/>
                         <outlet property="nameTextField" destination="HUI-Dy-I75" id="81H-ae-qs7"/>
@@ -956,6 +959,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw5-Ri-KWF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="NzK-uB-XpM">
+                    <connections>
+                        <action selector="openPickerTapped:" destination="65Q-NE-dSV" id="Pck-Gq-3xr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2285.5999999999999" y="841.62561576354688"/>
         </scene>
@@ -1055,30 +1063,30 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mkk-CZ-QXE">
                                         <rect key="frame" x="10" y="50" width="355" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K6-Q2-Wzi">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4K6-Q2-Wzi">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="bvs-SN-hud"/>
                                                     <constraint firstAttribute="width" constant="50" id="hWF-uO-dF3"/>
                                                 </constraints>
-                                                <state key="normal" title="Search"/>
+                                                <state key="normal" image="search"/>
                                                 <connections>
                                                     <action selector="searchBtnTapped:" destination="VjU-jp-B2S" eventType="touchUpInside" id="8aJ-VH-bYy"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6m-bK-0ov">
-                                                <rect key="frame" x="129" y="0.0" width="97.333333333333314" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="103" y="0.0" width="149" height="50"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-IS-uPh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-IS-uPh">
                                                 <rect key="frame" x="305" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="LVw-tq-Nab"/>
                                                     <constraint firstAttribute="height" constant="50" id="hm2-4i-sHo"/>
                                                 </constraints>
-                                                <state key="normal" title="Filter"/>
+                                                <state key="normal" image="filter"/>
                                                 <connections>
                                                     <action selector="filterBtnTapped:" destination="VjU-jp-B2S" eventType="touchUpInside" id="4wF-5q-G0v"/>
                                                 </connections>
@@ -1086,7 +1094,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="mkk-CZ-QXE" secondAttribute="bottom" id="aHE-ZM-Mgh"/>
                                     <constraint firstAttribute="trailing" secondItem="mkk-CZ-QXE" secondAttribute="trailing" constant="10" id="iWh-Lb-rfk"/>
@@ -1153,7 +1161,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="3Zc-NT-A9t" firstAttribute="leading" secondItem="kZg-dd-98o" secondAttribute="leading" constant="20" id="7of-sy-J5e"/>
                                     <constraint firstAttribute="trailing" secondItem="3Zc-NT-A9t" secondAttribute="trailing" constant="20" id="GNh-1i-CSZ"/>
@@ -1499,9 +1507,9 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="VjU-jp-B2S" kind="relationship" relationship="viewControllers" id="t9a-ac-iWV"/>
-                        <segue destination="4us-mm-pSC" kind="relationship" relationship="viewControllers" id="TC3-uU-ftD"/>
                         <segue destination="65Q-NE-dSV" kind="relationship" relationship="viewControllers" id="Ykm-D2-PWs"/>
+                        <segue destination="VjU-jp-B2S" kind="relationship" relationship="viewControllers" id="Wvg-zv-0XR"/>
+                        <segue destination="4us-mm-pSC" kind="relationship" relationship="viewControllers" id="1v6-6w-pHK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -1513,9 +1521,11 @@
         <segue reference="Ln0-Wy-LPx"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="filter" width="50" height="50"/>
         <image name="logo" width="1024" height="1024"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>
+        <image name="search" width="50" height="50"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

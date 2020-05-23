@@ -29,6 +29,7 @@ class FilterView: UIView {
     lazy var animalTypeBtn: CustomButton = {
         let button = CustomButton()
         button.setTitle("Animal Type", for: .normal)
+        button.setTitleColor(.label, for: .normal)
         button.addTarget(self, action: #selector(showAnimalPickerTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -93,7 +94,7 @@ class FilterView: UIView {
         let button = UIButton()
         button.setTitle("Apply", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .white
+        button.backgroundColor = .purple
         button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(applyDatesTapped(_:)), for: .touchUpInside)
         return button
@@ -103,7 +104,7 @@ class FilterView: UIView {
         let button = UIButton()
         button.setTitle("Cancel", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .white
+        button.backgroundColor = .purple
         button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(cancelCalendarTapped(_:)), for: .touchUpInside)
         return button
@@ -173,7 +174,7 @@ class FilterView: UIView {
     
     // MARK: - View setup
     private func setupView() {
-        backgroundColor = .systemPink
+        backgroundColor = .systemBackground
         self.animalPicker.delegate = self
         self.animalPicker.dataSource = self
         dateTextField.delegate = self

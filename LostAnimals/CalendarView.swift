@@ -112,7 +112,7 @@ class CalendarView: UIView {
     
     // MARK: - View setup
     private func setupView() {
-        backgroundColor = .orange
+        backgroundColor = .systemBackground
         
         topStack.addArrangedSubview(monthLbl)
         
