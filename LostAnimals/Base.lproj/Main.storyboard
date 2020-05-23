@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="140" id="Ux0-ta-VAZ" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="140" id="Ux0-ta-VAZ" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ux0-ta-VAZ" id="IQD-bd-Wnw">
@@ -249,7 +249,7 @@
                         <outlet property="searchView" destination="kgO-uf-9b1" id="hNc-IC-K39"/>
                         <outlet property="searchViewHeight" destination="heR-Jg-U1R" id="akg-TE-6FB"/>
                         <outlet property="tableView" destination="6kK-aD-Pm0" id="ye2-6q-5HH"/>
-                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="details" id="ngo-Wv-Ppt"/>
+                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="lostDetails" modalPresentationStyle="pageSheet" id="ngo-Wv-Ppt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -343,13 +343,13 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPH-Uw-FaT">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPH-Uw-FaT">
                                                         <rect key="frame" x="122.33333333333334" y="0.0" width="114.33333333333334" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-zT-f6a">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-zT-f6a">
                                                         <rect key="frame" x="244.66666666666666" y="0.0" width="114.33333333333334" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -490,6 +490,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ERF-1M-BuM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="akZ-uL-3fk"/>
                     <connections>
                         <outlet property="animalTypeLbl" destination="EPH-Uw-FaT" id="M5Z-nu-Aw2"/>
                         <outlet property="badgeLbl" destination="w5k-R6-eda" id="Nib-to-cFP"/>
@@ -743,6 +744,7 @@
                         <outlet property="searchView" destination="07g-Pt-w1H" id="aIh-7n-meL"/>
                         <outlet property="searchViewHeight" destination="xYh-RW-Quj" id="6Dv-MX-L2F"/>
                         <outlet property="tableView" destination="tvX-4U-nfm" id="uSD-2M-6bk"/>
+                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="foundDetails" modalPresentationStyle="pageSheet" id="RKQ-nL-mSW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -1206,6 +1208,7 @@
                         <outlet property="searchView" destination="wJB-u7-37q" id="gV8-Gm-rwH"/>
                         <outlet property="searchViewHeight" destination="RDs-UV-Fkp" id="M8J-nX-3na"/>
                         <outlet property="tableView" destination="fbv-mc-pr1" id="0It-CF-95O"/>
+                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="adoptionDetails" modalPresentationStyle="pageSheet" id="L7R-yV-aNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPQ-V5-YQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1525,6 +1528,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Ln0-Wy-LPx"/>
+        <segue reference="ngo-Wv-Ppt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="filter" width="50" height="50"/>

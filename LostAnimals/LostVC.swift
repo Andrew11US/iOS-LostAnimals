@@ -111,7 +111,7 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segue.details.rawValue, sender: advertisments[indexPath.row])
+        performSegue(withIdentifier: Segue.lostDetails.rawValue, sender: advertisments[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

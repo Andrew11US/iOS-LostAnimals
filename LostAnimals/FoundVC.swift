@@ -107,6 +107,18 @@ extension FoundVC: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Segue.foundDetails.rawValue, sender: advertisments[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailVC {
+            if let ad = sender as? Advertisment {
+                destination.ad = ad
+            }
+        }
+    }
 }
 
 // MARK: - UISearchBar Delegate

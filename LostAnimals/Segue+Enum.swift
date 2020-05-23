@@ -12,5 +12,7 @@ public enum Segue: String {
     case signedIn
     case signedUp
     case signedOut
-    case details
+    case lostDetails
+    case foundDetails
+    case adoptionDetails
 }
