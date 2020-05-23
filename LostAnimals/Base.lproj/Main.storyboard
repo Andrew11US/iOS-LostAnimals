@@ -276,7 +276,12 @@
                                                     <constraint firstAttribute="height" constant="50" id="Lgr-9t-dhF"/>
                                                     <constraint firstAttribute="width" constant="50" id="hBE-aE-QZo"/>
                                                 </constraints>
-                                                <state key="normal" title="Back"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backTapped:" destination="CMp-VX-GJS" eventType="touchUpInside" id="u6z-qh-t9s"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifr-Zu-X6Q">
                                                 <rect key="frame" x="129" y="0.0" width="97.333333333333314" height="50"/>
@@ -487,6 +492,7 @@
                     </view>
                     <connections>
                         <outlet property="animalTypeLbl" destination="EPH-Uw-FaT" id="M5Z-nu-Aw2"/>
+                        <outlet property="badgeLbl" destination="w5k-R6-eda" id="Nib-to-cFP"/>
                         <outlet property="chipLbl" destination="Ql5-Fx-ZkP" id="udU-bt-yKK"/>
                         <outlet property="dateLbl" destination="NKv-zT-f6a" id="lGo-vh-sCO"/>
                         <outlet property="descLbl" destination="AbE-zN-fTW" id="VnS-R6-jhW"/>

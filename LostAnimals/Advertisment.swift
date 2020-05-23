@@ -9,18 +9,26 @@
 import Foundation
 
 struct Advertisment: Codable {
-    var id: String
-    var name: String
     var type: String
-    var location: String
-    var badge: String
+    var animalType: String
+    var animalName: String
+    var date: String
+    var city: String
+    var region: String
+    var phone: String
+    var chipNumber: Int
+    var description: String
     
-    init(id: String, name: String, type: String, location: String, badge: String) {
-        self.id = id
-        self.name = name
+    init(type: String, animalType: String, animalName: String, date: String, city: String, region: String, phone: String, chipNumber: Int, description: String) {
         self.type = type
-        self.location = location
-        self.badge = badge
+        self.animalType = animalType
+        self.animalName = animalName
+        self.date = date
+        self.city = city
+        self.region = region
+        self.phone = phone
+        self.chipNumber = chipNumber
+        self.description = description
     }
     
 //    // MARK: - Initialize from DataSnapshot

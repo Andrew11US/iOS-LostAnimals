@@ -22,9 +22,11 @@ class DetailVC: UIViewController {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var chipLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
+    @IBOutlet weak var badgeLbl: UILabel!
     @IBOutlet weak var downloadPDFBtn: CustomButton!
     
     // MARK: - Variables
+    public var ad: Advertisment!
     private var images: [UIImage] = [UIImage(named: "t1")!, UIImage(named: "t2")!, UIImage(named: "t3")!, UIImage(named: "test")!]
     
     override func viewDidLoad() {
@@ -32,7 +34,7 @@ class DetailVC: UIViewController {
 
         imagesScrollView.delegate = self
         populateImagesScrollView()
-        setBoilerplate()
+        updateView()
     }
     
     private func populateImagesScrollView() {
@@ -51,14 +53,22 @@ class DetailVC: UIViewController {
         verticalScrollView.bringSubviewToFront(pageControl)
     }
     
-    func setBoilerplate() {
-        descLbl.text = """
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra nibh vel gravida cursus. Integer quis dignissim sapien. Praesent vulputate sapien id molestie accumsan. Integer eu aliquet arcu. Nunc scelerisque odio justo, ac ultricies sapien semper eu. In et bibendum diam. Cras dignissim risus in felis placerat convallis. Curabitur at massa quis metus ultricies ullamcorper. Mauris sit amet ex quis tortor ultrices ullamcorper. Donec sit amet lobortis dolor. Suspendisse urna libero, efficitur eget nunc id, dictum vehicula massa. Morbi at nisi vel orci pulvinar fringilla sed sagittis nulla. Nulla lectus orci, bibendum ut viverra et, fermentum sed felis. Fusce tortor sapien, euismod ut congue in, ornare in orci.
-
-Duis hendrerit tristique est, at euismod tortor sagittis a. Fusce a mi et magna tempus placerat. Vestibulum elit justo, iaculis at augue quis, ullamcorper feugiat nunc. Proin vehicula pellentesque turpis eu aliquam. Vivamus ultricies gravida aliquet. Fusce quis euismod metus, in tempus tellus. Nam at dui interdum, molestie metus vel, gravida quam. Proin non bibendum felis. Nam porta eleifend lobortis. Nullam ut elit vestibulum, consequat odio ac, laoreet neque.
-"""
+    func updateView() {
+        DispatchQueue.main.async {
+            self.locationLbl.text = self.ad.city
+            self.nameLbl.text = self.ad.animalName
+            self.dateLbl.text = self.ad.date
+            self.phoneLbl.text = self.ad.phone
+            self.chipLbl.text = String(self.ad.chipNumber)
+            self.descLbl.text = self.ad.description
+            self.animalTypeLbl.text = self.ad.animalType
+            self.badgeLbl.text = self.ad.type
+        }
     }
     
+    @IBAction func backTapped(_ sender: CustomButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 

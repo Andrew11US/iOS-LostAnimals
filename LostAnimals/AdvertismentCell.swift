@@ -28,8 +28,8 @@ class AdvertismentCell: UITableViewCell {
     
     func configureCell(ad: Advertisment) {
         self.imgView.image = UIImage(named: "test")
-        self.badgeLbl.text = ad.badge
-        self.nameLbl.text = ad.name
-        self.locationLbl.text = ad.location
+        self.badgeLbl.text = ad.type
+        self.nameLbl.text = ad.animalName
+        self.locationLbl.text = ad.city
     }
 }

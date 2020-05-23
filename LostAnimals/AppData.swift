@@ -8,9 +8,21 @@
 
 import Foundation
 
+public enum AdType: String, CaseIterable {
+    case lost = "lost"
+    case found = "found"
+    case adoption = "adoption"
+}
+
+public enum AnimalType: String, CaseIterable {
+    case cat = "cat"
+    case dog = "dog"
+    case snake = "snake"
+    case lizard = "lizard"
+}
+
 // MARK: - Data collections
 var advertisments: [Advertisment] = [
-    Advertisment(id: "1", name: "Boris", type: "cat", location: "Warsaw", badge: "lost"),
-    Advertisment(id: "1", name: "Boris2", type: "cat", location: "Warsaw", badge: "lost"),
-    Advertisment(id: "1", name: "Boris3", type: "cat", location: "Warsaw", badge: "lost")
+    Advertisment(type: AdType.lost.rawValue, animalType: AnimalType.cat.rawValue, animalName: "Boris", date: "11-05-2020", city: "Warsaw", region: "center", phone: "888", chipNumber: 12345, description: "Lost cat"),
+    Advertisment(type: AdType.found.rawValue, animalType: AnimalType.cat.rawValue, animalName: "Boris2", date: "12-05-2020", city: "Warsaw", region: "center", phone: "111", chipNumber: 12345, description: "Found cat")
 ]
