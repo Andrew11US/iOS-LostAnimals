@@ -34,6 +34,7 @@ class AddVC: UIViewController {
     
     // MARK: Variables
     private var calendarView: CalendarView!
+    private var ad: Advertisment!
     private var permissions: [SPPermission] = [.camera, .photoLibrary, .locationWhenInUse]
     private var images: [UIImage] = []
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
@@ -191,7 +192,24 @@ class AddVC: UIViewController {
     }
     
     @IBAction func publishTapped(_ sender: CustomButton) {
-        //TODO: - Create Ad and publish
+        if adTypeSegment.selectedSegmentIndex == 0 {
+            adType = AdType.lost.rawValue
+        } else if adTypeSegment.selectedSegmentIndex == 1 {
+            adType = AdType.found.rawValue
+        } else {
+            adType = AdType.adoption.rawValue
+        }
+        animalType = animalTypeBtn.title(for: .normal)!
+        name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        selectedDates = dateTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        region = regionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        phone = phoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        chip = chipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        desc = descriptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, region: region, phone: phone, chipNumber: Int(chip)!, description: desc)
+        advertisments.append(ad)
     }
     
     private func populateImagesScrollView() {

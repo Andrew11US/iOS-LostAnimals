@@ -35,6 +35,12 @@ class LostVC: UIViewController {
         self.tableView.dataSource = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        tableView.reloadData()
+    }
+    
     // MARK: - IBActions
     @IBAction func searchBtnTapped(_ sender: UIButton) {
         if searchViewHeight.constant > 0 {
