@@ -210,6 +210,7 @@ class AddVC: UIViewController {
         
         ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, region: region, phone: phone, chipNumber: Int(chip)!, description: desc)
         advertisments.append(ad)
+        //TODO: - upload to db
     }
     
     private func populateImagesScrollView() {

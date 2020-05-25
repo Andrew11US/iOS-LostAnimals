@@ -26,6 +26,7 @@ class LostVC: UIViewController {
     // MARK: - Variables
     private var filterView: FilterView!
     private var filteredAds: [Advertisment] = advertisments
+    private var spinner = Spinner()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class LostVC: UIViewController {
         self.searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        //TODO: - download ads
     }
     
     override func viewDidAppear(_ animated: Bool) {

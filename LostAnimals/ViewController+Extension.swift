@@ -43,11 +43,6 @@ public extension UIViewController {
         constraint.constant = CGFloat(to)
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
-//            if to == 0 {
-//                view.superview?.subviews[0].isUserInteractionEnabled = true
-//            } else {
-//                view.superview?.subviews[0].isUserInteractionEnabled = false
-//            }
         }
     }
     
@@ -66,14 +61,4 @@ public extension UIViewController {
             }
         }
     }
-    
-//    internal func showBadInput(bad: Bool, view: UIView) {
-//        if bad {
-//            view.layer.borderWidth = 2.0
-//            view.layer.borderColor = UIColor.appRed.cgColor
-//        } else {
-//            view.layer.borderWidth = 0
-//            view.layer.borderColor = UIColor.clear.cgColor
-//        }
-//    }
 }
