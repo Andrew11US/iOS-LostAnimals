@@ -29,10 +29,31 @@ struct NetworkWrapper {
 //    }
     
     static func getAds(with completion: @escaping ()->()) {
-        let url = "api_url"
+        let url = "https://aqueous-anchorage-15610.herokuapp.com"
         
         AF.request(url).validate().responseJSON { response in
             print(response.value ?? "x")
+            completion()
+        }
+    }
+    
+    static func signUp(credentials: (email: String, pass: String, uName: String), completion: @escaping () -> Void) {
+        let url = "https://aqueous-anchorage-15610.herokuapp.com/api/auth/signup"
+        let credentials: [String: String] = [
+            "email" : credentials.email,
+            "password" : credentials.pass,
+            "username" : credentials.uName
+        ]
+        
+        // Test credentials!!!
+//        let credentials: [String: String] = [
+//            "email" : "john.appleseed@example.com",
+//            "password" : "Qwerty4329",
+//            "username" : "jonny99"
+//        ]
+        
+        AF.request(url, method: .post, parameters: credentials, encoder: JSONParameterEncoder.default).validate().responseJSON { response in
+            print(response.value ?? "sign up response is empty")
             completion()
         }
     }

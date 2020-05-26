@@ -35,6 +35,8 @@ class DetailVC: UIViewController {
         imagesScrollView.delegate = self
         populateImagesScrollView()
         updateView()
+        
+        // TODO: - Download details
     }
     
     private func populateImagesScrollView() {
