@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class SignUpVC: UIViewController {
 
@@ -28,13 +29,19 @@ class SignUpVC: UIViewController {
     @IBAction func signUpBtnPressed(_ sender: AnyObject) {
         resignTextFields()
         guard let email = emailTextField.text else { return }
+        guard let username = emailTextField.text else { return } // <<<
         guard let password = passwordTextField.text else { return }
         guard let confirmation = confirmPassTextField.text else { return }
         
         if password == confirmation {
+            let credentials = (email: email, pass: password, uName: username)
             addSpinner(spinner)
-            self.removeSpinner(self.spinner)
-            self.performSegue(withIdentifier: Segue.signedUp.rawValue, sender: nil)
+            NetworkWrapper.signUp(credentials: credentials) {
+                self.removeSpinner(self.spinner)
+                self.performSegue(withIdentifier: Segue.signedUp.rawValue, sender: nil)
+            }
+            
+            
 //            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
 //                if let err = error {
 //                    print(err.localizedDescription)
