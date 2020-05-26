@@ -37,6 +37,7 @@ class SignUpVC: UIViewController {
             let credentials = (email: email, pass: password, uName: username)
             addSpinner(spinner)
             NetworkWrapper.signUp(credentials: credentials) {
+                // TODO: - check if success
                 self.removeSpinner(self.spinner)
                 self.performSegue(withIdentifier: Segue.signedUp.rawValue, sender: nil)
             }
