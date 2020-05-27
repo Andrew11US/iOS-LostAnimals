@@ -42,7 +42,7 @@ class AddVC: UIViewController {
     private var selectedDates: String = ""
     private var adType: String = ""
     private var city: String = ""
-    private var region: String = ""
+    private var district: String = ""
     private var phone: String = ""
     private var chip: String = ""
     private var name: String = ""
@@ -203,14 +203,39 @@ class AddVC: UIViewController {
         name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         selectedDates = dateTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        region = regionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        district = regionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         phone = phoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         chip = chipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         desc = descriptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, region: region, phone: phone, chipNumber: Int(chip)!, description: desc)
+        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, district: district, phone: phone, chipNumber: Int(chip)!, description: desc)
         advertisments.append(ad)
-        //TODO: - upload to db
+        
+        // clarify arguments to upload
+        let data: [String: String] = [
+            "chipNumber": chip,
+            "description": desc,
+            "distinguishingMarks": "string",
+            "district": district,
+            "email": "string",
+            "id": "0",
+            "image": "string",
+            "lostDate": selectedDates,
+            "name": name,
+            "phoneNumber": phone,
+            "propertyNumber": "string",
+            "state": "string",
+            "street": "string",
+            "title": "string",
+            "town": city,
+            "type": "string"
+        ]
+        
+        NetworkWrapper.publishAd(type: adType, data: data) { success in
+            if success {
+                print("uploaded")
+            }
+        }
     }
     
     private func populateImagesScrollView() {

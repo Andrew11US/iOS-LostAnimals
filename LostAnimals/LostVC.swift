@@ -36,7 +36,7 @@ class LostVC: UIViewController {
         self.tableView.dataSource = self
         
         addSpinner(spinner)
-        NetworkWrapper.getLostAds { success in
+        NetworkWrapper.getAds(type: .lost) { success in
             if success {
                 print("downloaded")
                 // TODO: - update table view

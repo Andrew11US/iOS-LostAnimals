@@ -14,18 +14,18 @@ struct Advertisment: Codable {
     var animalName: String
     var date: String
     var city: String
-    var region: String
+    var district: String
     var phone: String
     var chipNumber: Int
     var description: String
     
-    init(type: String, animalType: String, animalName: String, date: String, city: String, region: String, phone: String, chipNumber: Int, description: String) {
+    init(type: String, animalType: String, animalName: String, date: String, city: String, district: String, phone: String, chipNumber: Int, description: String) {
         self.type = type
         self.animalType = animalType
         self.animalName = animalName
         self.date = date
         self.city = city
-        self.region = region
+        self.district = district
         self.phone = phone
         self.chipNumber = chipNumber
         self.description = description

@@ -55,8 +55,8 @@ struct NetworkWrapper {
         }
     }
     
-    static func getLostAds(completion: @escaping (Bool) -> Void) {
-        let url = "https://aqueous-anchorage-15610.herokuapp.com/api/lost"
+    static func getAds(type: AdType, completion: @escaping (Bool) -> Void) {
+        let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type.rawValue)"
         
         AF.request(url).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
@@ -64,7 +64,23 @@ struct NetworkWrapper {
                 print("success")
                 completion(true)
             case let .failure(error):
-                print("Error signing in: \(error.localizedDescription)")
+                print("Error getting ads: \(error.localizedDescription)")
+                completion(false)
+            }
+            print(response.value ?? "no data")
+        }
+    }
+    
+    static func publishAd(type: String, data: [String: String], completion: @escaping (Bool) -> Void) {
+        let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type)"
+        
+        AF.request(url, method: .post, parameters: data, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success:
+                print("success")
+                completion(true)
+            case let .failure(error):
+                print("Error publishing ad: \(error.localizedDescription)")
                 completion(false)
             }
             print(response.value ?? "no data")
