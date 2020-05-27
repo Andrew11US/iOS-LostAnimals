@@ -9,31 +9,30 @@
 import Alamofire
 
 struct NetworkWrapper {
-//    static func getRates(pair: (from:String,to:String), completion: @escaping (Double) -> Void) {
-//        let url = "https://api.exchangerate-api.com/v4/latest/\(pair.from)"
-//
-//        AF.request(url).validate().responseJSON { response in
-//            print(response.value ?? " ")
-//            if let dict = response.value as? Dictionary<String, AnyObject> {
-//                if let rates = dict["rates"] as? Dictionary<String, AnyObject> {
-//                    if let rate = rates[pair.to] as? Double {
-//                        print("Rate: ", rate)
-//                        completion(rate)
-//                    }
-//                } else {
-//                    print("Unable to find currency pair.(to:)")
-//                }
-//            }
-//        }
-//
-//    }
+    // MARK: - Test credentials
+    //    let credentials: [String: String] = [
+    //        "email" : "john.appleseed@example.com",
+    //        "password" : "Qwerty4329",
+    //        "username" : "jonny99"
+    //    ]
     
-    static func getAds(with completion: @escaping ()->()) {
-        let url = "https://aqueous-anchorage-15610.herokuapp.com"
+    static func signIn(username: String, pass: String, completion: @escaping (Bool) -> Void) {
+        let url = "https://aqueous-anchorage-15610.herokuapp.com/api/auth/signin"
+        let credentials: [String: String] = [
+            "password" : pass,
+            "username" : username
+        ]
         
-        AF.request(url).validate().responseJSON { response in
-            print(response.value ?? "x")
-            completion()
+        AF.request(url, method: .post, parameters: credentials, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success:
+                print("success")
+                completion(true)
+            case let .failure(error):
+                print("Error signing in: \(error.localizedDescription)")
+                completion(false)
+            }
+            print(response.value ?? "sign in response is empty")
         }
     }
     
@@ -44,12 +43,6 @@ struct NetworkWrapper {
             "password" : credentials.pass,
             "username" : credentials.uName
         ]
-        
-//        let credentials: [String: String] = [
-//            "email" : "john.appleseed@example.com",
-//            "password" : "Qwerty4329",
-//            "username" : "jonny99"
-//        ]
         
         AF.request(url, method: .post, parameters: credentials, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {

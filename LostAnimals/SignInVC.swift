@@ -11,18 +11,17 @@ import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInBtn: CustomButton!
     
     let spinner = Spinner()
-//    let user = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // MARK: Deletes KEY for auto login if uncommented
-        KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+//        KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         
         // Auto Login if ID is found in Keychain
         if KeychainWrapper.standard.string(forKey: KEY_UID) != nil {
@@ -32,35 +31,31 @@ class SignInVC: UIViewController {
             }
         }
         
-//        print(StorageManager.shared.getUserCache().uid)
-        self.emailTextField.delegate = self
+        self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
     }
     
     @IBAction func signInBtnPressed(_ sender: AnyObject) {
         resignTextFields()
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
+        guard let username = Validator.validate.text(field: usernameTextField) else {
+            self.showAlertWithTitle("Signing in error", message: "Username field cannot be empty")
+            return
+        }
+        guard let password = Validator.validate.text(field: passwordTextField) else {
+            self.showAlertWithTitle("Signing in error", message: "Password field cannot be empty")
+            return
+        }
+        
         addSpinner(spinner)
-        
-        // Authenticate user using API
-        self.performSegue(withIdentifier: Segue.signedIn.rawValue, sender: nil)
-        self.removeSpinner(self.spinner)
-        
-        
-//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-//            if let err = error {
-//                print(err.localizedDescription)
-//                self.removeSpinner(self.spinner)
-//            } else {
-//                guard let user = user?.user else { return }
-//                print("Succesfully authenticated for: ", user.uid)
-//                KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
-//                StorageManager.shared.setUserCache(uid: user.uid)
-//                self.performSegue(withIdentifier: Segue.signedIn.rawValue, sender: nil)
-//                self.removeSpinner(self.spinner)
-//            }
-//        }
+        NetworkWrapper.signIn(username: username, pass: password) { success in
+            if success {
+                KeychainWrapper.standard.set(username, forKey: KEY_UID)
+                self.performSegue(withIdentifier: Segue.signedIn.rawValue, sender: nil)
+            } else {
+                self.showAlertWithTitle("Signing in error", message: "Unable to sign in with provided credentials")
+            }
+            self.removeSpinner(self.spinner)
+        }
     }
     
 }
@@ -74,13 +69,13 @@ extension SignInVC: UITextFieldDelegate {
     
     // Dismiss when return btn pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
     }
     
     func resignTextFields() {
-        emailTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
 }

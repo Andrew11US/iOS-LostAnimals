@@ -10,7 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 
 class SignUpVC: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -51,7 +51,7 @@ class SignUpVC: UIViewController {
             addSpinner(spinner)
             NetworkWrapper.signUp(credentials: credentials) { success in
                 if success {
-                    KeychainWrapper.standard.set(email, forKey: KEY_UID)
+                    KeychainWrapper.standard.set(username, forKey: KEY_UID)
                     self.performSegue(withIdentifier: Segue.signedUp.rawValue, sender: nil)
                 } else {
                     self.showAlertWithTitle("Signing up error", message: "Unable to create an account for provided credentials")
