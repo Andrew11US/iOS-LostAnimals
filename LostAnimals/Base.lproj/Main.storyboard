@@ -1227,7 +1227,7 @@
                                 <rect key="frame" x="157.66666666666666" y="391" width="60" height="30"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
-                                    <segue destination="y2U-5T-SC6" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0uW-hG-Tij"/>
+                                    <action selector="signOut:" destination="4us-mm-pSC" eventType="touchUpInside" id="1Yl-7a-MaT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1239,6 +1239,9 @@
                         <viewLayoutGuide key="safeArea" id="5m6-0t-hHT"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="User" image="person" catalog="system" id="XEM-cI-qPn"/>
+                    <connections>
+                        <segue destination="y2U-5T-SC6" kind="presentation" identifier="signedOut" modalPresentationStyle="fullScreen" id="txA-OJ-B26"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AT8-yy-ggA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1534,7 +1537,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GvF-hA-bd2"/>
-        <segue reference="L7R-yV-aNF"/>
+        <segue reference="RKQ-nL-mSW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="filter" width="50" height="50"/>

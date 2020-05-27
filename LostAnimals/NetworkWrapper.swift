@@ -10,11 +10,9 @@ import Alamofire
 
 struct NetworkWrapper {
     // MARK: - Test credentials
-    //    let credentials: [String: String] = [
-    //        "email" : "john.appleseed@example.com",
-    //        "password" : "Qwerty4329",
-    //        "username" : "jonny99"
-    //    ]
+//    "email" : "john.appleseed@example.com",
+//    "password" : "Qwerty4329",
+//    "username" : "jonny99"
     
     static func signIn(username: String, pass: String, completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/auth/signin"
@@ -54,6 +52,22 @@ struct NetworkWrapper {
                 completion(false)
             }
             print(response.value ?? "sign up response is empty")
+        }
+    }
+    
+    static func getLostAds(completion: @escaping (Bool) -> Void) {
+        let url = "https://aqueous-anchorage-15610.herokuapp.com/api/lost"
+        
+        AF.request(url).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success:
+                print("success")
+                completion(true)
+            case let .failure(error):
+                print("Error signing in: \(error.localizedDescription)")
+                completion(false)
+            }
+            print(response.value ?? "no data")
         }
     }
     

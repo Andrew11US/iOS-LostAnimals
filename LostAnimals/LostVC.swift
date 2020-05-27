@@ -35,7 +35,14 @@ class LostVC: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        //TODO: - download ads
+        addSpinner(spinner)
+        NetworkWrapper.getLostAds { success in
+            if success {
+                print("downloaded")
+                // TODO: - update table view
+            }
+            self.removeSpinner(self.spinner)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
