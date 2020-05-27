@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y2U-5T-SC6">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -42,7 +42,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-aP-jm8">
-                                                <rect key="frame" x="103" y="0.0" width="149" height="50"/>
+                                                <rect key="frame" x="114" y="0.0" width="127" height="50"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
             <objects>
                 <viewController id="CMp-VX-GJS" customClass="DetailVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gnN-H3-PVC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVj-gf-qcf">
@@ -537,7 +537,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ei9-yy-aXt">
-                                                <rect key="frame" x="103" y="0.0" width="149" height="50"/>
+                                                <rect key="frame" x="114" y="0.0" width="127" height="50"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1083,7 +1083,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lost Animals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6m-bK-0ov">
-                                                <rect key="frame" x="103" y="0.0" width="149" height="50"/>
+                                                <rect key="frame" x="114" y="0.0" width="127" height="50"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1369,7 +1369,7 @@
             <objects>
                 <viewController id="a8X-ch-eVJ" customClass="SignUpVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DRV-Bv-pgd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Hdt-GQ-0db">
@@ -1393,7 +1393,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="r21-up-T9I">
-                                <rect key="frame" x="50" y="289" width="275" height="180"/>
+                                <rect key="frame" x="50" y="254" width="275" height="250"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-Fv-NHk">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="40"/>
@@ -1403,13 +1403,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ojg-1W-4Lb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fg4-m7-gov">
                                         <rect key="frame" x="0.0" y="70" width="275" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ojg-1W-4Lb">
+                                        <rect key="frame" x="0.0" y="140" width="275" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ze-LW-mI6">
-                                        <rect key="frame" x="0.0" y="140" width="275" height="40"/>
+                                        <rect key="frame" x="0.0" y="210" width="275" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
@@ -1496,6 +1501,7 @@
                         <outlet property="emailTextField" destination="yR9-Fv-NHk" id="z5b-tL-hy8"/>
                         <outlet property="passwordTextField" destination="Ojg-1W-4Lb" id="AFS-dB-JuB"/>
                         <outlet property="signUpBtn" destination="24R-ql-bcD" id="1Gg-Mq-hrJ"/>
+                        <outlet property="usernameTextField" destination="Fg4-m7-gov" id="i15-aV-1CQ"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="signedUp" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Ln0-Wy-LPx"/>
                     </connections>
                 </viewController>

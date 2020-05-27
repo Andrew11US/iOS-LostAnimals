@@ -37,7 +37,7 @@ struct NetworkWrapper {
         }
     }
     
-    static func signUp(credentials: (email: String, pass: String, uName: String), completion: @escaping () -> Void) {
+    static func signUp(credentials: (email: String, pass: String, uName: String), completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/auth/signup"
         let credentials: [String: String] = [
             "email" : credentials.email,
@@ -45,16 +45,22 @@ struct NetworkWrapper {
             "username" : credentials.uName
         ]
         
-        // Test credentials!!!
 //        let credentials: [String: String] = [
 //            "email" : "john.appleseed@example.com",
 //            "password" : "Qwerty4329",
 //            "username" : "jonny99"
 //        ]
         
-        AF.request(url, method: .post, parameters: credentials, encoder: JSONParameterEncoder.default).validate().responseJSON { response in
+        AF.request(url, method: .post, parameters: credentials, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success:
+                print("success")
+                completion(true)
+            case let .failure(error):
+                print("Error signing up: \(error.localizedDescription)")
+                completion(false)
+            }
             print(response.value ?? "sign up response is empty")
-            completion()
         }
     }
     

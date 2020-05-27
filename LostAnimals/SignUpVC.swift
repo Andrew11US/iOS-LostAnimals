@@ -12,6 +12,7 @@ import SwiftKeychainWrapper
 class SignUpVC: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPassTextField: UITextField!
     @IBOutlet weak var signUpBtn: CustomButton!
@@ -28,35 +29,37 @@ class SignUpVC: UIViewController {
     
     @IBAction func signUpBtnPressed(_ sender: AnyObject) {
         resignTextFields()
-        guard let email = emailTextField.text else { return }
-        guard let username = emailTextField.text else { return } // <<<
-        guard let password = passwordTextField.text else { return }
-        guard let confirmation = confirmPassTextField.text else { return }
+        guard let email = Validator.validate.text(field: emailTextField) else {
+            self.showAlertWithTitle("Signing up error", message: "Email field cannot be empty")
+            return
+        }
+        guard let username = Validator.validate.text(field: usernameTextField) else {
+            self.showAlertWithTitle("Signing up error", message: "Username field cannot be empty")
+            return
+        }
+        guard let password = Validator.validate.text(field: passwordTextField) else {
+            self.showAlertWithTitle("Signing up error", message: "Password field cannot be empty")
+            return
+        }
+        guard let confirmation = Validator.validate.text(field: confirmPassTextField) else {
+            self.showAlertWithTitle("Signing up error", message: "Password confirmation field cannot be empty")
+            return
+        }
         
         if password == confirmation {
             let credentials = (email: email, pass: password, uName: username)
             addSpinner(spinner)
-            NetworkWrapper.signUp(credentials: credentials) {
-                // TODO: - check if success
+            NetworkWrapper.signUp(credentials: credentials) { success in
+                if success {
+                    KeychainWrapper.standard.set(email, forKey: KEY_UID)
+                    self.performSegue(withIdentifier: Segue.signedUp.rawValue, sender: nil)
+                } else {
+                    self.showAlertWithTitle("Signing up error", message: "Unable to create an account for provided credentials")
+                }
                 self.removeSpinner(self.spinner)
-                self.performSegue(withIdentifier: Segue.signedUp.rawValue, sender: nil)
             }
-            
-            
-//            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-//                if let err = error {
-//                    print(err.localizedDescription)
-//                    self.removeSpinner(self.spinner)
-//                } else {
-//                    guard let user = user?.user else { return }
-//                    print("New user has been succesfully created: ", user.uid)
-//                    StorageManager.shared.createUser(uid: user.uid)
-//                    KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
-//                    StorageManager.shared.setUserCache(uid: user.uid)
-//                    self.removeSpinner(self.spinner)
-//                    self.performSegue(withIdentifier: Segue.signedUp.rawValue, sender: nil)
-//                }
-//            }
+        } else {
+            self.showAlertWithTitle("Signing up error", message: "Password does not match with confirmation")
         }
     }
     
