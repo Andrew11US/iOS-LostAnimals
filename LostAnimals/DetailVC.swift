@@ -31,12 +31,23 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imagesScrollView.delegate = self
-        populateImagesScrollView()
+//        populateImagesScrollView()
         updateView()
         
-        // TODO: - Download details
+        NetworkWrapper.getImage(url: "https://aqueous-anchorage-15610.herokuapp.com/api/lost/1/photo.jpeg") { (data, success) in
+            if success {
+                print(data)
+                let imageView = UIImageView()
+                imageView.contentMode = .scaleAspectFill
+                imageView.image = UIImage(data: data)
+                let xPosition = self.view.frame.width
+                imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(215))
+                self.imagesScrollView.contentSize.width = self.imagesScrollView.frame.width * CGFloat(1)
+                self.imagesScrollView.addSubview(imageView)
+            }
+        }
     }
     
     private func populateImagesScrollView() {

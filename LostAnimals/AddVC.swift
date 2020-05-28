@@ -208,8 +208,8 @@ class AddVC: UIViewController {
         chip = chipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         desc = descriptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, district: district, phone: phone, chipNumber: Int(chip)!, description: desc)
-        advertisments.append(ad)
+//        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, district: district, phone: phone, chipNumber: Int(chip)!, description: desc)
+//        advertisments.append(ad)
         
         // clarify arguments to upload
         let data: [String: String] = [

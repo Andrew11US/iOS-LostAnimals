@@ -43,6 +43,8 @@ class LostVC: UIViewController {
             }
             self.removeSpinner(self.spinner)
         }
+        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

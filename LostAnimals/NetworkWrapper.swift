@@ -71,6 +71,7 @@ struct NetworkWrapper {
         }
     }
     
+    // TODO: - refactor to use access token
     static func publishAd(type: String, data: [String: String], completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type)"
         
@@ -84,6 +85,15 @@ struct NetworkWrapper {
                 completion(false)
             }
             print(response.value ?? "no data")
+        }
+    }
+    
+    static func getImage(url: String, completion: @escaping (Data, Bool) -> Void) {
+        AF.request(url).validate().responseData { (data) in
+            if let data = data.data {
+                completion(data, true)
+            }
+            print(data.result)
         }
     }
     

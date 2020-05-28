@@ -249,14 +249,14 @@
                         <outlet property="searchView" destination="kgO-uf-9b1" id="hNc-IC-K39"/>
                         <outlet property="searchViewHeight" destination="heR-Jg-U1R" id="akg-TE-6FB"/>
                         <outlet property="tableView" destination="6kK-aD-Pm0" id="ye2-6q-5HH"/>
-                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="lostDetails" modalPresentationStyle="pageSheet" id="ngo-Wv-Ppt"/>
+                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="lostDetails" modalPresentationStyle="pageSheet" id="ezA-4V-uNC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1144.8" y="0.0"/>
         </scene>
-        <!--DetailVC-->
+        <!--Details-->
         <scene sceneID="GF6-he-fQ6">
             <objects>
                 <viewController id="CMp-VX-GJS" customClass="DetailVC" customModule="LostAnimals" customModuleProvider="target" sceneMemberID="viewController">
@@ -490,7 +490,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ERF-1M-BuM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="akZ-uL-3fk"/>
+                    <navigationItem key="navigationItem" title="Details" id="akZ-uL-3fk"/>
                     <connections>
                         <outlet property="animalTypeLbl" destination="EPH-Uw-FaT" id="M5Z-nu-Aw2"/>
                         <outlet property="badgeLbl" destination="w5k-R6-eda" id="Nib-to-cFP"/>
@@ -509,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Poy-p6-lgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2285.5999999999999" y="-809.11330049261085"/>
+            <point key="canvasLocation" x="2286" y="-1032"/>
         </scene>
         <!--Found-->
         <scene sceneID="wg7-f3-ORb">
@@ -744,7 +744,7 @@
                         <outlet property="searchView" destination="07g-Pt-w1H" id="aIh-7n-meL"/>
                         <outlet property="searchViewHeight" destination="xYh-RW-Quj" id="6Dv-MX-L2F"/>
                         <outlet property="tableView" destination="tvX-4U-nfm" id="uSD-2M-6bk"/>
-                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="foundDetails" modalPresentationStyle="pageSheet" id="RKQ-nL-mSW"/>
+                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="foundDetails" modalPresentationStyle="pageSheet" id="I4M-QP-YXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -1208,7 +1208,7 @@
                         <outlet property="searchView" destination="wJB-u7-37q" id="gV8-Gm-rwH"/>
                         <outlet property="searchViewHeight" destination="RDs-UV-Fkp" id="M8J-nX-3na"/>
                         <outlet property="tableView" destination="fbv-mc-pr1" id="0It-CF-95O"/>
-                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="adoptionDetails" modalPresentationStyle="pageSheet" id="L7R-yV-aNF"/>
+                        <segue destination="CMp-VX-GJS" kind="presentation" identifier="adoptionDetails" modalPresentationStyle="pageSheet" id="THn-4l-rgu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPQ-V5-YQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1537,7 +1537,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GvF-hA-bd2"/>
-        <segue reference="RKQ-nL-mSW"/>
+        <segue reference="THn-4l-rgu"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="filter" width="50" height="50"/>
