@@ -89,11 +89,17 @@ struct NetworkWrapper {
     }
     
     static func getImage(url: String, completion: @escaping (Data, Bool) -> Void) {
-        AF.request(url).validate().responseData { (data) in
-            if let data = data.data {
+//        AF.request(url).validate().responseData { (data) in
+//            if let data = data.data {
+//                completion(data, true)
+//            }
+//            print(data.result)
+//        }
+        AF.download(url).responseData { (response) in
+            if let data = response.value {
                 completion(data, true)
             }
-            print(data.result)
+            print(response.value ?? "")
         }
     }
     

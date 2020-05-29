@@ -36,7 +36,7 @@ class DetailVC: UIViewController {
 //        populateImagesScrollView()
         updateView()
         
-        NetworkWrapper.getImage(url: "https://aqueous-anchorage-15610.herokuapp.com/api/lost/1/photo.jpeg") { (data, success) in
+        NetworkWrapper.getImage(url: "https://aqueous-anchorage-15610.herokuapp.com/api/lost/1/photo") { (data, success) in
             if success {
                 print(data)
                 let imageView = UIImageView()
