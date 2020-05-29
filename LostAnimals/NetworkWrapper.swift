@@ -62,12 +62,22 @@ struct NetworkWrapper {
             switch response.result {
             case .success:
                 print("success")
+                
+                if let data = response.value as? [String: AnyObject] {
+                    if let array = data["content"] as? [AnyObject] {
+                        for item in array {
+                            
+                            print(item as? String ?? "")
+                        }
+                    }
+                }
+                
                 completion(true)
             case let .failure(error):
                 print("Error getting ads: \(error.localizedDescription)")
                 completion(false)
             }
-            print(response.value ?? "no data")
+//            print(response.value ?? "no data")
         }
     }
     
@@ -89,17 +99,11 @@ struct NetworkWrapper {
     }
     
     static func getImage(url: String, completion: @escaping (Data, Bool) -> Void) {
-//        AF.request(url).validate().responseData { (data) in
-//            if let data = data.data {
-//                completion(data, true)
-//            }
-//            print(data.result)
-//        }
-        AF.download(url).responseData { (response) in
-            if let data = response.value {
+        AF.download(url).responseData { data in
+            if let data = data.value {
                 completion(data, true)
             }
-            print(response.value ?? "")
+            print(data.value ?? "")
         }
     }
     
