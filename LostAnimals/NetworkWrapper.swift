@@ -66,8 +66,17 @@ struct NetworkWrapper {
                 if let data = response.value as? [String: AnyObject] {
                     if let array = data["content"] as? [AnyObject] {
                         for item in array {
-                            
-                            print(item as? String ?? "")
+                            if let element = item as? [String: AnyObject] {
+                                if let state = element["state"] as? String {
+                                    print(state)
+                                }
+                                if let date = element["lostDate"] as? Int {
+                                    print(date)
+                                    let d = Date(timeIntervalSince1970: TimeInterval(date))
+                                    print(d.getShort)
+                                }
+//                                print(element)
+                            }
                         }
                     }
                 }
