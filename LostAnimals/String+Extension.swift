@@ -18,7 +18,7 @@ extension String {
     
     var dateFromShort: Date? {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "eu_EU")
+        formatter.locale = Locale(identifier: "us_US")
         formatter.dateFormat = "dd MMM YYYY"
         return formatter.date(from: self)
     }

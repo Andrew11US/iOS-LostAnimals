@@ -177,7 +177,7 @@ struct NetworkWrapper {
         }
     }
     
-    // TODO: - refactor to use access token
+    // TODO: - post new ad
     static func publishAd(type: String, data: [String: AnyObject], completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type)"
         

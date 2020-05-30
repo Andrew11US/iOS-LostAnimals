@@ -93,7 +93,7 @@ class LostVC: UIViewController {
             filtersDict["type"] = animalType
         }
         if let dates = Validator.validate.text(field: filterView.dateTextField) {
-            // convert to timestamp
+            print(Int(dates.dateFromShort!.timeIntervalSince1970))
         }
         if let town = Validator.validate.text(field: filterView.cityTextField) {
             filtersDict["town"] = town
