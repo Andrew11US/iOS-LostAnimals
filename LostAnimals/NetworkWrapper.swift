@@ -11,9 +11,9 @@ import SwiftKeychainWrapper
 
 struct NetworkWrapper {
     // MARK: - Test credentials
-//    "email" : "john.appleseed@example.com",
-//    "password" : "Qwerty4329",
-//    "username" : "jonny99"
+    //    "email" : "john.appleseed@example.com",
+    //    "password" : "Qwerty4329",
+    //    "username" : "jonny99"
     
     static func signIn(username: String, pass: String, completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/auth/signin"
@@ -28,7 +28,7 @@ struct NetworkWrapper {
                 print("success")
                 if let dict = response.value as? [String: AnyObject] {
                     if let token = dict["accessToken"] as? String {
-//                        print(token)
+                        //                        print(token)
                         KeychainWrapper.standard.set(token, forKey: ACCESS_TOKEN)
                         print("Token saved: \(token)")
                     }
@@ -38,7 +38,7 @@ struct NetworkWrapper {
                 print("Error signing in: \(error.localizedDescription)")
                 completion(false)
             }
-//            print(response.value ?? "sign in response is empty")
+            //            print(response.value ?? "sign in response is empty")
         }
     }
     
@@ -114,7 +114,66 @@ struct NetworkWrapper {
                 print("Error getting ads: \(error.localizedDescription)")
                 completion(false)
             }
-//            print(response.value ?? "no data")
+            //            print(response.value ?? "no data")
+        }
+    }
+    
+    static func getFilteredAds(type: AdType, filters: [String: String], completion: @escaping (Bool) -> Void) {
+        var url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type.rawValue)?"
+        
+        for (key, value) in filters {
+            url += "\(key)=\(value)"
+        }
+        
+        switch type {
+        case .lost:
+            lostAds.removeAll()
+        case .found:
+            foundAds.removeAll()
+        case .adoption:
+            adoptionAds.removeAll()
+        }
+        
+        AF.request(url).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success:
+                print("success")
+                
+                if let data = response.value as? [String: AnyObject] {
+                    if let ads = data["content"] as? [AnyObject] {
+                        for ad in ads {
+                            if let dict = ad as? [String: AnyObject] {
+                                let id = dict["id"] as? Int ?? 0
+                                let state = dict["state"] as? String ?? ""
+                                let animalType = dict["type"] as? String ?? ""
+                                let dateInt = dict["lostDate"] as? Int ?? 0
+                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
+                                let town = dict["town"] as? String ?? ""
+                                let district = dict["district"] as? String ?? ""
+                                let street = dict["street"] as? String ?? ""
+                                let imageUrl = dict["imageUrl"] as? String ?? ""
+                                
+                                print(dict)
+                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                switch type {
+                                case .lost:
+                                    lostAds.append(advertisment)
+                                case .found:
+                                    foundAds.append(advertisment)
+                                case .adoption:
+                                    adoptionAds.append(advertisment)
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                completion(true)
+            case let .failure(error):
+                print("Error getting ads: \(error.localizedDescription)")
+                completion(false)
+            }
+            //            print(response.value ?? "no data")
         }
     }
     
@@ -144,7 +203,7 @@ struct NetworkWrapper {
             if let data = data.value {
                 completion(data, true)
             }
-//            print(data.value ?? "")
+            //            print(data.value ?? "")
         }
     }
     

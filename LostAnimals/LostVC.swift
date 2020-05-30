@@ -49,10 +49,6 @@ class LostVC: UIViewController {
             }
             self.removeSpinner(self.spinner)
         }
-        
-        
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +87,34 @@ class LostVC: UIViewController {
     
     @IBAction func applyTapped(_ sender: CustomButton) {
         self.animate(view: filterBase, constraint: filterBaseHeight, to: 0)
-        // TODO: make filtering
+        var filtersDict: [String: String] = [:]
+        
+        let animalType = filterView.selectedAnimalType.trimmingCharacters(in: .whitespaces).lowercased()
+        if !animalType.isEmpty {
+            filtersDict["type"] = animalType
+        }
+        if let dates = Validator.validate.text(field: filterView.dateTextField) {
+            // convert to timestamp
+        }
+        if let town = Validator.validate.text(field: filterView.cityTextField) {
+            filtersDict["town"] = town
+        }
+        if let district = Validator.validate.text(field: filterView.regionTextField) {
+            filtersDict["district"] = district
+        }
+        if let chip = Validator.validate.text(field: filterView.chipTextField) {
+            filtersDict["chip"] = chip // check chip type
+        }
+        
+        NetworkWrapper.getFilteredAds(type: .lost, filters: filtersDict) { (success) in
+            if success {
+                self.filteredAds = lostAds
+                print(lostAds.count)
+                NetworkWrapper.getImages(ads: lostAds) {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     // Filter setup
