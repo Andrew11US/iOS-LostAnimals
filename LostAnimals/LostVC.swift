@@ -43,7 +43,6 @@ class LostVC: UIViewController {
                 NetworkWrapper.getImages(ads: lostAds) {
                     self.tableView.reloadData()
                 }
-//                self.tableView.reloadData()
             } else {
                 self.showAlertWithTitle("Error loading data", message: "Something went wrong, data could not be downloaded")
             }
@@ -106,12 +105,14 @@ class LostVC: UIViewController {
             filtersDict["chip"] = chip // check chip type
         }
         
-        NetworkWrapper.getFilteredAds(type: .lost, filters: filtersDict) { (success) in
-            if success {
-                self.filteredAds = lostAds
-                print(lostAds.count)
-                NetworkWrapper.getImages(ads: lostAds) {
-                    self.tableView.reloadData()
+        if !filtersDict.isEmpty {
+            NetworkWrapper.getFilteredAds(type: .lost, filters: filtersDict) { (success) in
+                if success {
+                    self.filteredAds = lostAds
+                    print(lostAds.count)
+                    NetworkWrapper.getImages(ads: lostAds) {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }
@@ -182,13 +183,22 @@ extension LostVC: UISearchBarDelegate {
     // Dismiss keyboard when Search button pressed
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        // TODO: Do search!!!
+        filteredAds.removeAll()
+        for ad in lostAds {
+            if let searchText = searchBar.text?.trimmingCharacters(in: .whitespaces).capitalized, !searchText.isEmpty {
+                if ad.district.hasPrefix(searchText) {
+                    filteredAds.append(ad)
+                }
+            }
+        }
+        tableView.reloadData()
     }
     
     // Cancel button tapped
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         filteredAds = lostAds
+        tableView.reloadData()
         animate(view: searchView, constraint: searchViewHeight, to: 0)
     }
 }
