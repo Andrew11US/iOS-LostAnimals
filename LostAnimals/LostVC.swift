@@ -25,7 +25,7 @@ class LostVC: UIViewController {
     
     // MARK: - Variables
     private var filterView: FilterView!
-    private var filteredAds: [Advertisment] = advertisments
+    private var filteredAds: [Advertisment] = lostAds
     private var spinner = Spinner()
     
     override func viewDidLoad() {
@@ -38,11 +38,19 @@ class LostVC: UIViewController {
         addSpinner(spinner)
         NetworkWrapper.getAds(type: .lost) { success in
             if success {
-                print("downloaded")
-                self.tableView.reloadData()
+                self.filteredAds = lostAds
+                print(lostAds.count)
+                NetworkWrapper.getImages(ads: lostAds) {
+                    self.tableView.reloadData()
+                }
+//                self.tableView.reloadData()
+            } else {
+                self.showAlertWithTitle("Error loading data", message: "Something went wrong, data could not be downloaded")
             }
             self.removeSpinner(self.spinner)
         }
+        
+        
         
 
     }
@@ -105,7 +113,7 @@ class LostVC: UIViewController {
 // MARK: - UITableView Delegate
 extension LostVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return advertisments.count
+        return filteredAds.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -120,8 +128,15 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
             
-            let advertisment = advertisments[indexPath.row]
-            cell.configureCell(ad: advertisment)
+            let advertisment = filteredAds[indexPath.row]
+            var image = UIImage(named: "test")!
+            if lostImages.count > 0 {
+                if indexPath.row < lostImages.count {
+                    image = lostImages[indexPath.row]
+                    
+                }
+            }
+            cell.configureCell(ad: advertisment, image: image)
             return cell
         } else {
             return AdvertismentCell()
@@ -129,7 +144,7 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segue.lostDetails.rawValue, sender: advertisments[indexPath.row])
+        performSegue(withIdentifier: Segue.lostDetails.rawValue, sender: filteredAds[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -153,7 +168,7 @@ extension LostVC: UISearchBarDelegate {
     // Cancel button tapped
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        filteredAds = advertisments
+        filteredAds = lostAds
         animate(view: searchView, constraint: searchViewHeight, to: 0)
     }
 }

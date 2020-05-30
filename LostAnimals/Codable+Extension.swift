@@ -23,18 +23,18 @@ extension Encodable {
 }
 
 // Transaction decodable
-extension Decodable {
-    var convertToObject: Advertisment? {
-        let jsonDecoder = JSONDecoder()
-        do {
-            if let data = self as? Data {
-                let object = try jsonDecoder.decode(Advertisment.self, from: data)
-                return object
-            } else {
-                return nil
-            }
-        } catch {
-            return nil
-        }
-    }
-}
+//extension Decodable {
+//    var convertToObject: Advertisment? {
+//        let jsonDecoder = JSONDecoder()
+//        do {
+//            if let data = self as? Data {
+//                let object = try jsonDecoder.decode(Advertisment.self, from: data)
+//                return object
+//            } else {
+//                return nil
+//            }
+//        } catch {
+//            return nil
+//        }
+//    }
+//}

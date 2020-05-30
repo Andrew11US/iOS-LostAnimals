@@ -58,6 +58,15 @@ struct NetworkWrapper {
     static func getAds(type: AdType, completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type.rawValue)"
         
+        switch type {
+        case .lost:
+            lostAds.removeAll()
+        case .found:
+            foundAds.removeAll()
+        case .adoption:
+            adoptionAds.removeAll()
+        }
+        
         AF.request(url).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
@@ -69,17 +78,24 @@ struct NetworkWrapper {
                             if let dict = ad as? [String: AnyObject] {
                                 let id = dict["id"] as? Int ?? 0
                                 let state = dict["state"] as? String ?? ""
-                                let type = dict["type"] as? String ?? ""
+//                                let type = dict["type"] as? String ?? ""
                                 let dateInt = dict["lostDate"] as? Int ?? 0
                                 let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
                                 let town = dict["town"] as? String ?? ""
                                 let district = dict["district"] as? String ?? ""
                                 let street = dict["street"] as? String ?? ""
                                 let imageUrl = dict["imageUrl"] as? String ?? ""
-                        
+                                
                                 print(dict)
-                                let advertisment = Advertisment(id: id, state: state, type: type, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
-                                advertisments.append(advertisment)
+                                let advertisment = Advertisment(id: id, state: state, type: type.rawValue, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                switch type {
+                                case .lost:
+                                    lostAds.append(advertisment)
+                                case .found:
+                                    foundAds.append(advertisment)
+                                case .adoption:
+                                    adoptionAds.append(advertisment)
+                                }
                             }
                         }
                     }
@@ -118,6 +134,17 @@ struct NetworkWrapper {
             }
             print(data.value ?? "")
         }
+    }
+    
+    static func getImages(ads: [Advertisment], completion: @escaping () -> Void) {
+        for ad in ads {
+            AF.download(ad.imageUrl).responseData { data in
+                if let data = data.value {
+                    lostImages.append(UIImage(data: data) ?? UIImage(named: "test")!)
+                }
+            }
+        }
+        completion()
     }
     
 }

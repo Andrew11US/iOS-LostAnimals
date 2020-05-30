@@ -102,7 +102,7 @@ extension AdoptionVC: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
             
             let advertisment = advertisments[indexPath.row]
-            cell.configureCell(ad: advertisment)
+            cell.configureCell(ad: advertisment, image: UIImage())
             return cell
         } else {
             return UITableViewCell()

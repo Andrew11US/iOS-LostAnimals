@@ -26,8 +26,8 @@ class AdvertismentCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(ad: Advertisment) {
-        self.imgView.image = UIImage(named: "test")
+    func configureCell(ad: Advertisment, image: UIImage) {
+        self.imgView.image = image
         self.badgeLbl.text = ad.state
         self.nameLbl.text = ad.animalName
         self.locationLbl.text = ad.town
