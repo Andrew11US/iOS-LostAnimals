@@ -141,10 +141,10 @@ struct NetworkWrapper {
             AF.download(ad.imageUrl).responseData { data in
                 if let data = data.value {
                     lostImages.append(UIImage(data: data) ?? UIImage(named: "test")!)
+                    completion()
                 }
             }
         }
-        completion()
     }
     
 }
