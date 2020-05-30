@@ -128,15 +128,12 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
             
-            let advertisment = filteredAds[indexPath.row]
+            let ad = filteredAds[indexPath.row]
             var image = UIImage(named: "test")!
-            if lostImages.count > 0 {
-                if indexPath.row < lostImages.count {
-                    image = lostImages[indexPath.row]
-                    
-                }
+            if lostImagesDict.count > 0 {
+                image = lostImagesDict[ad.id] ?? UIImage(named: "test")!
             }
-            cell.configureCell(ad: advertisment, image: image)
+            cell.configureCell(ad: ad, image: image)
             return cell
         } else {
             return AdvertismentCell()

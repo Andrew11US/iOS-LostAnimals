@@ -137,10 +137,12 @@ struct NetworkWrapper {
     }
     
     static func getImages(ads: [Advertisment], completion: @escaping () -> Void) {
+        lostImagesDict.removeAll()
         for ad in ads {
             AF.download(ad.imageUrl).responseData { data in
                 if let data = data.value {
-                    lostImages.append(UIImage(data: data) ?? UIImage(named: "test")!)
+//                    lostImages.append(UIImage(data: data) ?? UIImage(named: "test")!)
+                    lostImagesDict[ad.id] = UIImage(data: data) ?? UIImage(named: "test")!
                     completion()
                 }
             }
