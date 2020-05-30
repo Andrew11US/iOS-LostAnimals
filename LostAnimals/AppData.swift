@@ -27,6 +27,6 @@ var advertisments: [Advertisment] = []
 var lostAds: [Advertisment] = []
 var foundAds: [Advertisment] = []
 var adoptionAds: [Advertisment] = []
-//var lostImages: [UIImage] = []
-var lostImagesDict: [Int: UIImage] = [:]
+
+var lostImagesDict: [String: UIImage] = [:]
 

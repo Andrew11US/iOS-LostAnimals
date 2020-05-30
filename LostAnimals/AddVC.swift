@@ -212,24 +212,24 @@ class AddVC: UIViewController {
 //        advertisments.append(ad)
         
         // clarify arguments to upload
-        let data: [String: String] = [
+        let data = [
             "chipNumber": chip,
             "description": desc,
             "distinguishingMarks": "string",
             "district": district,
             "email": "string",
-            "id": "0",
+            "id": 6 as Int64,
             "image": "string",
-            "lostDate": selectedDates,
+            "lostDate": 0 as Int64,
             "name": name,
             "phoneNumber": phone,
             "propertyNumber": "string",
-            "state": "string",
+            "state": "OPENED",
             "street": "string",
             "title": "string",
             "town": city,
             "type": "string"
-        ]
+        ] as [String: AnyObject]
         
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {

@@ -131,7 +131,7 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
             let ad = filteredAds[indexPath.row]
             var image = UIImage(named: "test")!
             if lostImagesDict.count > 0 {
-                image = lostImagesDict[ad.id] ?? UIImage(named: "test")!
+                image = lostImagesDict[ad.imageUrl] ?? UIImage(named: "test")!
             }
             cell.configureCell(ad: ad, image: image)
             return cell

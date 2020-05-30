@@ -16,6 +16,13 @@ extension String {
         return formatter.date(from: self)
     }
     
+    var dateFromShort: Date? {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "eu_EU")
+        formatter.dateFormat = "dd MMM YYYY"
+        return formatter.date(from: self)
+    }
+    
     var monthToDate: Date? {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "eu_EU")

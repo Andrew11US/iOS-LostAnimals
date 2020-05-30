@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import SwiftKeychainWrapper
 
 struct NetworkWrapper {
     // MARK: - Test credentials
@@ -25,12 +26,19 @@ struct NetworkWrapper {
             switch response.result {
             case .success:
                 print("success")
+                if let dict = response.value as? [String: AnyObject] {
+                    if let token = dict["accessToken"] as? String {
+//                        print(token)
+                        KeychainWrapper.standard.set(token, forKey: ACCESS_TOKEN)
+                        print("Token saved: \(token)")
+                    }
+                }
                 completion(true)
             case let .failure(error):
                 print("Error signing in: \(error.localizedDescription)")
                 completion(false)
             }
-            print(response.value ?? "sign in response is empty")
+//            print(response.value ?? "sign in response is empty")
         }
     }
     
@@ -111,10 +119,14 @@ struct NetworkWrapper {
     }
     
     // TODO: - refactor to use access token
-    static func publishAd(type: String, data: [String: String], completion: @escaping (Bool) -> Void) {
+    static func publishAd(type: String, data: [String: AnyObject], completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type)"
         
-        AF.request(url, method: .post, parameters: data, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+        let headers: HTTPHeaders = [
+            .authorization(bearerToken: KeychainWrapper.standard.string(forKey: ACCESS_TOKEN) ?? "token")
+        ]
+        
+        AF.request(url, method: .post, parameters: data, encoding: URLEncoding.default, headers: headers, interceptor: nil).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
                 print("success")
@@ -141,8 +153,7 @@ struct NetworkWrapper {
         for ad in ads {
             AF.download(ad.imageUrl).responseData { data in
                 if let data = data.value {
-//                    lostImages.append(UIImage(data: data) ?? UIImage(named: "test")!)
-                    lostImagesDict[ad.id] = UIImage(data: data) ?? UIImage(named: "test")!
+                    lostImagesDict[ad.imageUrl] = UIImage(data: data) ?? UIImage(named: "test")!
                     completion()
                 }
             }

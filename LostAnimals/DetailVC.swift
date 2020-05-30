@@ -80,6 +80,24 @@ class DetailVC: UIViewController {
         }
     }
     
+    @IBAction func downloadPDFTapped(_ sender: CustomButton) {
+        
+    }
+    
+    @IBAction func shareBtnTapped(_ sender: UIButton) {
+        let items = [ad] // data to share
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        
+        // If device is iPad anchor rect for alert is needed
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            activityController.popoverPresentationController?.sourceView = sender
+            activityController.popoverPresentationController?.sourceRect = sender.bounds
+            activityController.popoverPresentationController?.permittedArrowDirections = [.down, .up]
+        }
+        
+        present(activityController, animated: true)
+    }
+    
     @IBAction func backTapped(_ sender: CustomButton) {
         dismiss(animated: true, completion: nil)
     }
