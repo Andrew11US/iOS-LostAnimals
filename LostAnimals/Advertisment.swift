@@ -11,7 +11,8 @@ import Foundation
 struct Advertisment: Codable {
     var id: Int
     var state: String
-    var type: String
+    var adType: String
+    var animalType: String
     var animalName: String
     var date: String
     var town: String
@@ -22,10 +23,11 @@ struct Advertisment: Codable {
     var chipNumber: Int
     var description: String
     
-    init(id: Int, state: String, type: String, animalName: String, date: String, town: String, district: String, street: String, phone: String, chipNumber: Int, description: String, imageUrl: String) {
+    init(id: Int, state: String, adType: String, animalType: String, animalName: String, date: String, town: String, district: String, street: String, phone: String, chipNumber: Int, description: String, imageUrl: String) {
         self.id = id
-        self.state = type
-        self.type = type
+        self.state = adType
+        self.adType = adType
+        self.animalType = animalType
         self.animalName = animalName
         self.date = date
         self.town = town

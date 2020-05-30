@@ -33,21 +33,7 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         
         imagesScrollView.delegate = self
-//        populateImagesScrollView()
         updateView()
-        
-        NetworkWrapper.getImage(url: "https://aqueous-anchorage-15610.herokuapp.com/api/lost/1/photo") { (data, success) in
-            if success {
-                print(data)
-                let imageView = UIImageView()
-                imageView.contentMode = .scaleAspectFill
-                imageView.image = UIImage(data: data)
-                let xPosition = self.view.frame.width
-                imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(215))
-                self.imagesScrollView.contentSize.width = self.imagesScrollView.frame.width * CGFloat(1)
-                self.imagesScrollView.addSubview(imageView)
-            }
-        }
     }
     
     private func populateImagesScrollView() {
@@ -74,8 +60,23 @@ class DetailVC: UIViewController {
             self.phoneLbl.text = self.ad.phone
             self.chipLbl.text = String(self.ad.chipNumber)
             self.descLbl.text = self.ad.description
-            self.animalTypeLbl.text = self.ad.type
-            self.badgeLbl.text = self.ad.state
+            self.animalTypeLbl.text = self.ad.animalType
+            self.badgeLbl.text = self.ad.adType
+            self.updateImage()
+        }
+    }
+    
+    func updateImage() {
+        NetworkWrapper.getImage(url: ad.imageUrl) { (data, success) in
+            if success {
+                let imageView = UIImageView()
+                imageView.contentMode = .scaleAspectFill
+                imageView.image = UIImage(data: data)
+//                let xPosition = self.view.frame.width
+                imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(215))
+                self.imagesScrollView.contentSize.width = self.imagesScrollView.frame.width * CGFloat(1)
+                self.imagesScrollView.addSubview(imageView)
+            }
         }
     }
     

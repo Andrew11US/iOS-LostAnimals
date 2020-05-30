@@ -78,7 +78,7 @@ struct NetworkWrapper {
                             if let dict = ad as? [String: AnyObject] {
                                 let id = dict["id"] as? Int ?? 0
                                 let state = dict["state"] as? String ?? ""
-//                                let type = dict["type"] as? String ?? ""
+                                let animalType = dict["type"] as? String ?? ""
                                 let dateInt = dict["lostDate"] as? Int ?? 0
                                 let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
                                 let town = dict["town"] as? String ?? ""
@@ -87,7 +87,7 @@ struct NetworkWrapper {
                                 let imageUrl = dict["imageUrl"] as? String ?? ""
                                 
                                 print(dict)
-                                let advertisment = Advertisment(id: id, state: state, type: type.rawValue, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
                                 switch type {
                                 case .lost:
                                     lostAds.append(advertisment)
@@ -132,7 +132,7 @@ struct NetworkWrapper {
             if let data = data.value {
                 completion(data, true)
             }
-            print(data.value ?? "")
+//            print(data.value ?? "")
         }
     }
     
