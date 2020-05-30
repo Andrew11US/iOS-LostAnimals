@@ -22,7 +22,8 @@ public enum AnimalType: String, CaseIterable {
 }
 
 // MARK: - Data collections
-var advertisments: [Advertisment] = [
-    Advertisment(type: AdType.lost.rawValue, animalType: AnimalType.cat.rawValue, animalName: "Boris", date: "11-05-2020", city: "Warsaw", district: "center", phone: "888", chipNumber: 12345, description: "Lost cat"),
-    Advertisment(type: AdType.found.rawValue, animalType: AnimalType.cat.rawValue, animalName: "Boris2", date: "12-05-2020", city: "Warsaw", district: "center", phone: "111", chipNumber: 12345, description: "Found cat")
-]
+var advertisments: [Advertisment] = []
+
+var lostAds: [Advertisment] = []
+var foundAds: [Advertisment] = []
+var adoptionAds: [Advertisment] = []

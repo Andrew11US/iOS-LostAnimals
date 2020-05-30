@@ -9,26 +9,32 @@
 import Foundation
 
 struct Advertisment: Codable {
+    var id: Int
+    var state: String
     var type: String
-    var animalType: String
     var animalName: String
     var date: String
-    var city: String
+    var town: String
     var district: String
+    var street: String
+    var imageUrl: String
     var phone: String
     var chipNumber: Int
     var description: String
     
-    init(type: String, animalType: String, animalName: String, date: String, city: String, district: String, phone: String, chipNumber: Int, description: String) {
+    init(id: Int, state: String, type: String, animalName: String, date: String, town: String, district: String, street: String, phone: String, chipNumber: Int, description: String, imageUrl: String) {
+        self.id = id
+        self.state = type
         self.type = type
-        self.animalType = animalType
         self.animalName = animalName
         self.date = date
-        self.city = city
+        self.town = town
         self.district = district
+        self.street = street
         self.phone = phone
         self.chipNumber = chipNumber
         self.description = description
+        self.imageUrl = imageUrl
     }
     
 //    // MARK: - Initialize from DataSnapshot

@@ -39,7 +39,7 @@ class LostVC: UIViewController {
         NetworkWrapper.getAds(type: .lost) { success in
             if success {
                 print("downloaded")
-                // TODO: - update table view
+                self.tableView.reloadData()
             }
             self.removeSpinner(self.spinner)
         }
@@ -124,7 +124,7 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
             cell.configureCell(ad: advertisment)
             return cell
         } else {
-            return UITableViewCell()
+            return AdvertismentCell()
         }
     }
     

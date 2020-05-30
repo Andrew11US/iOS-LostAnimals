@@ -64,18 +64,22 @@ struct NetworkWrapper {
                 print("success")
                 
                 if let data = response.value as? [String: AnyObject] {
-                    if let array = data["content"] as? [AnyObject] {
-                        for item in array {
-                            if let element = item as? [String: AnyObject] {
-                                if let state = element["state"] as? String {
-                                    print(state)
-                                }
-                                if let date = element["lostDate"] as? Int {
-                                    print(date)
-                                    let d = Date(timeIntervalSince1970: TimeInterval(date))
-                                    print(d.getShort)
-                                }
-//                                print(element)
+                    if let ads = data["content"] as? [AnyObject] {
+                        for ad in ads {
+                            if let dict = ad as? [String: AnyObject] {
+                                let id = dict["id"] as? Int ?? 0
+                                let state = dict["state"] as? String ?? ""
+                                let type = dict["type"] as? String ?? ""
+                                let dateInt = dict["lostDate"] as? Int ?? 0
+                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
+                                let town = dict["town"] as? String ?? ""
+                                let district = dict["district"] as? String ?? ""
+                                let street = dict["street"] as? String ?? ""
+                                let imageUrl = dict["imageUrl"] as? String ?? ""
+                        
+                                print(dict)
+                                let advertisment = Advertisment(id: id, state: state, type: type, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                advertisments.append(advertisment)
                             }
                         }
                     }
