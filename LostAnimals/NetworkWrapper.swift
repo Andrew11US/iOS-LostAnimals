@@ -177,19 +177,20 @@ struct NetworkWrapper {
         }
     }
     
-    static func publishAd(type: String, data: [String: AnyObject], completion: @escaping (Bool) -> Void) {
+    static func publishAd(type: String, data: [String: String], completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type)"
         
         let headers: HTTPHeaders = [
             .authorization(bearerToken: KeychainWrapper.standard.string(forKey: ACCESS_TOKEN) ?? "token"),
-            .acceptEncoding("gzip, deflate, br"),
+            .acceptEncoding("gzip"),
             .contentType("application/json"),
-            .accept("application/json")
+//            .accept("*/*")
         ]
         
-        AF.request(url, method: .post, parameters: data, encoding: URLEncoding.default, headers: headers, interceptor: nil).validate(statusCode: 200..<300).responseJSON { response in
+        AF.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers, interceptor: nil).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
+//                print(response)
                 print("success")
                 completion(true)
             case let .failure(error):

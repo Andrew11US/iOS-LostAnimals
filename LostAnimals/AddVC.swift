@@ -210,7 +210,7 @@ class AddVC: UIViewController {
         
 //        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, district: district, phone: phone, chipNumber: Int(chip)!, description: desc)
 //        advertisments.append(ad)
-        let strBase64 = images[0].toBase64(format: .jpeg(80)) ?? "no_data"
+//        let strBase64 = images[0].toBase64(format: .jpeg(80)) ?? "no_data"
 //        print(strBase64)
         
         // clarify arguments to upload
@@ -226,8 +226,8 @@ class AddVC: UIViewController {
             "title": "Lost spider",
             "town": "Warszawa",
             "type": "spider",
-            "image": strBase64
-        ] as [String: AnyObject]
+            "image": "sgshgsjhgsjhgs"
+        ] as [String: String]
         
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {

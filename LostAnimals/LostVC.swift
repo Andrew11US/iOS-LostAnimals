@@ -94,6 +94,8 @@ class LostVC: UIViewController {
         }
         if let dates = Validator.validate.text(field: filterView.dateTextField) {
             print(Int(dates.dateFromShort!.timeIntervalSince1970))
+            filtersDict["dateAfter"] = String(dates.dateFromShort!.timeIntervalSince1970)
+            filtersDict["dateBefore"] = String(dates.dateFromShort!.timeIntervalSince1970)
         }
         if let town = Validator.validate.text(field: filterView.cityTextField) {
             filtersDict["town"] = town
