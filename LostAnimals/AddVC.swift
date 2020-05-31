@@ -210,25 +210,23 @@ class AddVC: UIViewController {
         
 //        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, district: district, phone: phone, chipNumber: Int(chip)!, description: desc)
 //        advertisments.append(ad)
+        let strBase64 = images[0].toBase64(format: .jpeg(80)) ?? "no_data"
+//        print(strBase64)
         
         // clarify arguments to upload
         let data = [
-            "chipNumber": chip,
-            "description": desc,
-            "distinguishingMarks": "string",
-            "district": district,
-            "email": "string",
-            "id": 6 as Int64,
-            "image": "string",
-            "lostDate": 0 as Int64,
-            "name": name,
-            "phoneNumber": phone,
-            "propertyNumber": "string",
-            "state": "OPENED",
-            "street": "string",
-            "title": "string",
-            "town": city,
-            "type": "string"
+            "chipNumber": "ABC12345",
+            "description": "spider",
+            "distinguishingMarks": "6 legs",
+            "district": "Wola",
+            "email": "john.doe@gmail.com",
+            "lostDate": "0",
+            "phoneNumber": "111-222-333",
+            "street": "Newelska",
+            "title": "Lost spider",
+            "town": "Warszawa",
+            "type": "spider",
+            "image": strBase64
         ] as [String: AnyObject]
         
         NetworkWrapper.publishAd(type: adType, data: data) { success in
