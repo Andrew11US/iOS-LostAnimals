@@ -29,24 +29,11 @@ extension String {
         formatter.dateFormat = "MMM"
         return formatter.date(from: self)
     }
-}
-
-public enum ImageFormat {
-    case png
-    case jpeg(CGFloat)
-}
-
-extension UIImage {
-    public func toBase64(format: ImageFormat) -> String? {
-        var imageData: Data?
-
-        switch format {
-        case .png:
-            imageData = self.pngData()
-        case .jpeg(let compression):
-            imageData = self.jpegData(compressionQuality: compression)
-        }
-
-        return imageData?.base64EncodedString()
+    
+    var getPOSIX: TimeInterval? {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "us_US")
+        formatter.dateFormat = "dd MMM YYYY"
+        return formatter.date(from: self)?.timeIntervalSince1970
     }
 }

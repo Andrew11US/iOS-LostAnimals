@@ -11,7 +11,7 @@ import Koyomi
 
 class CalendarView: UIView {
 
-    public var selectedDates: String = ""
+    public var dates: (from: Date, to: Date?) = (Date(), nil)
     
     // MARK: - Lazy properties (calculated only when first time is used)
     lazy var monthLbl: UILabel = {
@@ -172,11 +172,14 @@ extension CalendarView: KoyomiDelegate {
     func koyomi(_ koyomi: Koyomi, shouldSelectDates date: Date?, to toDate: Date?, withPeriodLength length: Int) -> Bool {
 
         if let dateFrom = date {
-            selectedDates = "\(dateFrom.getShort)"
-            monthLbl.text = selectedDates
+//            dates = "\(dateFrom.getShort)"
+            dates.from = dateFrom
+            monthLbl.text = dateFrom.getShort
             if let dateTo = toDate {
-                selectedDates = "\(dateFrom.getShort) - \(dateTo.getShort)"
-                monthLbl.text = selectedDates
+//                dates = "\(dateFrom.getShort) - \(dateTo.getShort)"
+//                monthLbl.text = dates
+                dates.to = dateTo
+                monthLbl.text = "\(dateFrom.getShort) - \(dateTo.getShort)"
             }
             return true
         }

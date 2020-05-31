@@ -39,7 +39,7 @@ class AddVC: UIViewController {
     private var images: [UIImage] = []
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
     private var animalType: String = ""
-    private var selectedDates: String = ""
+    private var dates: (from: Date, to: Date?) = (Date(), nil)
     private var adType: String = ""
     private var city: String = ""
     private var district: String = ""
@@ -182,8 +182,8 @@ class AddVC: UIViewController {
     }
     
     @objc func applyDatesTapped(_ sender: UIButton!) {
-        self.selectedDates = calendarView.selectedDates
-        dateTextField.text = selectedDates
+        self.dates = calendarView.dates
+        dateTextField.text = dates.from.getShort
         calendarView.isHidden = true
     }
     
@@ -201,33 +201,29 @@ class AddVC: UIViewController {
         }
         animalType = animalTypeBtn.title(for: .normal)!
         name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        selectedDates = dateTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         district = regionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         phone = phoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         chip = chipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         desc = descriptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-//        ad = Advertisment(type: adType, animalType: animalType, animalName: name, date: selectedDates, city: city, district: district, phone: phone, chipNumber: Int(chip)!, description: desc)
-//        advertisments.append(ad)
-//        let strBase64 = images[0].toBase64(format: .jpeg(80)) ?? "no_data"
-//        print(strBase64)
-        
-        // clarify arguments to upload
+        let base64Image = images[0].toBase64(format: .jpeg(80)) ?? "no_data"
+        print(String(dates.from.timeIntervalSince1970 + 3600*25))
+        let date = Int(dates.from.timeIntervalSince1970)
         let data = [
             "chipNumber": "ABC12345",
             "description": "spider",
             "distinguishingMarks": "6 legs",
             "district": "Wola",
-            "email": "john.doe@gmail.com",
-            "lostDate": "0",
+            "email": "john.doe4@gmail.com",
+            "lostDate": date,
             "phoneNumber": "111-222-333",
             "street": "Newelska",
             "title": "Lost spider",
             "town": "Warszawa",
             "type": "spider",
-            "image": "sgshgsjhgsjhgs"
-        ] as [String: String]
+            "image": base64Image
+        ] as [String: AnyObject]
         
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {

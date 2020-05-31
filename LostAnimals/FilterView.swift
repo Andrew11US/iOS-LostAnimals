@@ -10,7 +10,7 @@ import UIKit
 
 class FilterView: UIView {
 
-    public var selectedDates: String = ""
+    public var dates: (from: Date, to: Date?) = (Date(), nil)
     public var selectedAnimalType: String = ""
     
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
@@ -231,8 +231,12 @@ class FilterView: UIView {
     }
     
     @objc func applyDatesTapped(_ sender: UIButton!) {
-        self.selectedDates = calendarView.selectedDates
-        dateTextField.text = selectedDates
+        self.dates = calendarView.dates
+        if dates.to != nil {
+            dateTextField.text = "\(dates.from.getShort) - \(dates.to?.getShort)"
+        } else {
+            dateTextField.text = "\(dates.from)"
+        }
         calendarView.isHidden = true
         stackView.isHidden = false
     }
