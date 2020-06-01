@@ -27,6 +27,7 @@ class LostVC: UIViewController {
     private var filterView: FilterView!
     private var filteredAds: [Advertisment] = lostAds
     private var spinner = Spinner()
+    private var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class LostVC: UIViewController {
         self.searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        setRefreshControl()
         
         addSpinner(spinner)
         NetworkWrapper.getAds(type: .lost) { success in
@@ -135,6 +137,28 @@ class LostVC: UIViewController {
         ])
     }
     
+    private func setRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc private func refresh(_ sender: AnyObject) {
+        addSpinner(spinner)
+        NetworkWrapper.getAds(type: .lost) { success in
+            if success {
+                self.filteredAds = lostAds
+                print(lostAds.count)
+                self.refreshControl.endRefreshing()
+                NetworkWrapper.getImages(ads: lostAds) {
+                    self.tableView.reloadData()
+                }
+            } else {
+                self.showAlertWithTitle("Error loading data", message: "Something went wrong, data could not be downloaded")
+            }
+            self.removeSpinner(self.spinner)
+        }
+    }
 }
 
 // MARK: - UITableView Delegate
