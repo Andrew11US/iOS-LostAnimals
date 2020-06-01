@@ -784,7 +784,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="629"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-aD-GYp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1173"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1383"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Tap to open library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNA-Mf-GH8">
                                                 <rect key="frame" x="20" y="0.0" width="335" height="215"/>
@@ -805,10 +805,34 @@
                                             <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-gT-AXK">
                                                 <rect key="frame" x="30" y="178" width="315" height="37"/>
                                             </pageControl>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="tt9-8B-dji">
+                                                <rect key="frame" x="40" y="973" width="295" height="100"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="zlH-9t-Dp2"/>
+                                                </constraints>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done" smartInsertDeleteType="yes"/>
+                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1l-ux-9Ew" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                                <rect key="frame" x="40" y="1093" width="295" height="40"/>
+                                                <color key="backgroundColor" red="0.82745098039999998" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="ryi-6X-yD9"/>
+                                                </constraints>
+                                                <state key="normal" title="Publish">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="publishTapped:" destination="65Q-NE-dSV" eventType="touchUpInside" id="wlR-lB-aJ5"/>
+                                                </connections>
+                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bf7-qL-nWK">
-                                                <rect key="frame" x="40" y="223" width="295" height="530"/>
+                                                <rect key="frame" x="40" y="223" width="295" height="740"/>
                                                 <subviews>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wdh-2b-Bks">
+                                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wdh-2b-Bks">
                                                         <rect key="frame" x="0.0" y="0.0" width="295" height="41"/>
                                                         <segments>
                                                             <segment title="Lost"/>
@@ -851,7 +875,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Region" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-Op-jxk">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="District" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-Op-jxk">
                                                         <rect key="frame" x="0.0" y="280" width="295" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -866,37 +890,28 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUI-Dy-I75">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LmL-VP-Vn3">
                                                         <rect key="frame" x="0.0" y="490" width="295" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LlG-Mg-KZT">
+                                                        <rect key="frame" x="0.0" y="560" width="295" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Kb-kO-x0a">
+                                                        <rect key="frame" x="0.0" y="630" width="295" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distinguishing marks" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUI-Dy-I75">
+                                                        <rect key="frame" x="0.0" y="700" width="295" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="tt9-8B-dji">
-                                                <rect key="frame" x="40" y="763" width="295" height="100"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="zlH-9t-Dp2"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" smartInsertDeleteType="yes"/>
-                                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                                            </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1l-ux-9Ew" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
-                                                <rect key="frame" x="40" y="883" width="295" height="40"/>
-                                                <color key="backgroundColor" red="0.82745098039999998" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="ryi-6X-yD9"/>
-                                                </constraints>
-                                                <state key="normal" title="Publish">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="publishTapped:" destination="65Q-NE-dSV" eventType="touchUpInside" id="wlR-lB-aJ5"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -955,13 +970,16 @@
                         <outlet property="cityTextField" destination="ShK-v5-hTE" id="WnT-8E-o7f"/>
                         <outlet property="dateTextField" destination="Uok-oK-K1F" id="5vW-LF-WCQ"/>
                         <outlet property="descriptionTextView" destination="tt9-8B-dji" id="Juc-BH-gTJ"/>
+                        <outlet property="distingMarksTextField" destination="HUI-Dy-I75" id="81H-ae-qs7"/>
+                        <outlet property="emailTextField" destination="LmL-VP-Vn3" id="gQX-v6-32E"/>
                         <outlet property="imagesScrollView" destination="Kqm-ji-JLn" id="2V9-0P-Enc"/>
                         <outlet property="mainStack" destination="Bf7-qL-nWK" id="Sj5-am-Vzm"/>
-                        <outlet property="nameTextField" destination="HUI-Dy-I75" id="81H-ae-qs7"/>
                         <outlet property="pageControl" destination="Lui-gT-AXK" id="Xkr-i9-67j"/>
                         <outlet property="phoneTextField" destination="YME-Gk-eBP" id="cbY-4S-Xtw"/>
                         <outlet property="publishBtn" destination="W1l-ux-9Ew" id="eT3-mp-vUZ"/>
                         <outlet property="regionTextField" destination="UNz-Op-jxk" id="WGd-50-mav"/>
+                        <outlet property="streetTextField" destination="LlG-Mg-KZT" id="fLs-qz-yo1"/>
+                        <outlet property="titleTextField" destination="4Kb-kO-x0a" id="l60-ZT-aU0"/>
                         <outlet property="verticalContentView" destination="BFr-aD-GYp" id="lK8-IV-ge5"/>
                         <outlet property="verticalScrollView" destination="D8B-sZ-TWC" id="Cxp-IM-Zk4"/>
                     </connections>
@@ -1537,7 +1555,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GvF-hA-bd2"/>
-        <segue reference="THn-4l-rgu"/>
+        <segue reference="ezA-4V-uNC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="filter" width="50" height="50"/>

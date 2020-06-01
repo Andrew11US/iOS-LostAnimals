@@ -27,7 +27,10 @@ class AddVC: UIViewController {
     @IBOutlet weak var regionTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var chipTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var distingMarksTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var publishBtn: CustomButton!
     
@@ -38,15 +41,18 @@ class AddVC: UIViewController {
     private var permissions: [SPPermission] = [.camera, .photoLibrary, .locationWhenInUse]
     private var images: [UIImage] = []
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
-    private var animalType: String = ""
     private var dates: (from: Date, to: Date?) = (Date(), nil)
+    private var animalType: String = ""
     private var adType: String = ""
-    private var city: String = ""
-    private var district: String = ""
-    private var phone: String = ""
-    private var chip: String = ""
-    private var name: String = ""
-    private var desc: String = ""
+//    private var city: String = ""
+//    private var district: String = ""
+//    private var phone: String = ""
+//    private var chip: String = ""
+//    private var distingMarks: String = ""
+//    private var desc: String = ""
+//    private var email: String = ""
+//    private var street: String = ""
+//    private var adTitle: String = ""
     
     // MARK: - Programmatic views
     lazy var animalPicker: UIPickerView = {
@@ -96,7 +102,7 @@ class AddVC: UIViewController {
         cityTextField.delegate = self
         regionTextField.delegate = self
         chipTextField.delegate = self
-        nameTextField.delegate = self
+        distingMarksTextField.delegate = self
         phoneTextField.delegate = self
         
         setDoneToolBar(field: chipTextField)
@@ -192,42 +198,110 @@ class AddVC: UIViewController {
     }
     
     @IBAction func publishTapped(_ sender: CustomButton) {
-        if adTypeSegment.selectedSegmentIndex == 0 {
-            adType = AdType.lost.rawValue
-        } else if adTypeSegment.selectedSegmentIndex == 1 {
-            adType = AdType.found.rawValue
-        } else {
-            adType = AdType.adoption.rawValue
-        }
-        animalType = animalTypeBtn.title(for: .normal)!
-        name = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        district = regionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        phone = phoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        chip = chipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        desc = descriptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        var data: [String: AnyObject] = [:]
         
-        let base64Image = images[0].toBase64(format: .jpeg(80)) ?? "no_data"
-        print(String(dates.from.timeIntervalSince1970 + 3600*25))
-        let date = Int(dates.from.timeIntervalSince1970)
-        let data = [
-            "chipNumber": "ABC12345",
-            "description": "spider",
-            "distinguishingMarks": "6 legs",
-            "district": "Wola",
-            "email": "john.doe4@gmail.com",
-            "lostDate": date,
-            "phoneNumber": "111-222-333",
-            "street": "Newelska",
-            "title": "Lost spider",
-            "town": "Warszawa",
-            "type": "spider",
-            "image": base64Image
-        ] as [String: AnyObject]
+        switch adTypeSegment.selectedSegmentIndex {
+        case 0: adType = AdType.lost.rawValue
+        case 1: adType = AdType.found.rawValue
+        default: adType = AdType.adoption.rawValue
+        }
+        
+        if animalType != "Animal Type" {
+            data["type"] = animalType as AnyObject
+        } else {
+            self.showAlertWithTitle("Compound error", message: "Animal type should be selected")
+            return
+        }
+        
+        if let town = Validator.validate.text(field: cityTextField) {
+            data["town"] = town as AnyObject
+        } else {
+            self.showAlertWithTitle("Compound error", message: "Town should be provided")
+            return
+        }
+        
+        if let phone = Validator.validate.text(field: phoneTextField) {
+            data["phoneNumber"] = phone as AnyObject
+        } else {
+            self.showAlertWithTitle("Compound error", message: "Phone should be provided")
+            return
+        }
+        
+        if let email = Validator.validate.text(field: emailTextField) {
+            data["email"] = email as AnyObject
+        } else {
+            self.showAlertWithTitle("Compound error", message: "Email should be provided")
+            return
+        }
+        
+        if let title = Validator.validate.text(field: titleTextField) {
+            data["title"] = title as AnyObject
+        } else {
+            self.showAlertWithTitle("Compound error", message: "Title should be provided")
+            return
+        }
+        
+        if let chip = Validator.validate.text(field: chipTextField) {
+            data["chipNumber"] = chip as AnyObject
+        } else {
+            self.showAlertWithTitle("Compound error", message: "Chip number should be provided")
+            return
+        }
+        
+        if let district = Validator.validate.text(field: regionTextField) {
+            data["district"] = district as AnyObject
+        }
+        
+        if let street = Validator.validate.text(field: streetTextField) {
+            data["street"] = street as AnyObject
+        }
+        
+        if let distingMarks = Validator.validate.text(field: distingMarksTextField) {
+            data["distinguishingMarks"] = distingMarks as AnyObject
+        }
+        
+        if let description = Validator.validate.text(field: descriptionTextView) {
+            data["description"] = description as AnyObject
+        }
+        
+//        city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        district = regionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        phone = phoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        chip = chipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        desc = descriptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        street = streetTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+//        adTitle = titleTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if images.count > 0, let imgBase64 = images[0].toBase64(format: .jpeg(80)) {
+            data["image"] = imgBase64 as AnyObject
+        } else {
+            showAlertWithTitle("Image error", message: "Unable to process the image, JPEG expected")
+            return
+        }
+        
+        data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject
+        
+//        let date =
+        
+//        data = [
+//            "chipNumber": chip,
+//            "description": desc,
+//            "distinguishingMarks": distingMarks,
+//            "district": district,
+//            "email": email,
+//            "lostDate": date,
+//            "phoneNumber": phone,
+//            "street": street,
+//            "title": adTitle,
+////            "town": town,
+//            "type": animalType,
+//            "image": imgBase64
+//        ] as [String: AnyObject]
         
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {
-                print("uploaded")
+                print("ad uploaded successfully")
             }
         }
     }

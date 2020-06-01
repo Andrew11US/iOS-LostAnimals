@@ -21,6 +21,15 @@ struct Validator {
         }
     }
     
+    func text(field: UITextView) -> String? {
+        if let str = field.text?.trimmingCharacters(in: .whitespacesAndNewlines), !str.isEmpty {
+            return str
+        } else {
+            print("Empty TV!")
+            return nil
+        }
+    }
+    
 //    func currency(field: CurrencyTextField) -> Double? {
 //        if let str = field.text?.trimmingCharacters(in: .whitespacesAndNewlines), !str.isEmpty {
 //            let formattedStr = str.replacingOccurrences(of: " ", with: "")
