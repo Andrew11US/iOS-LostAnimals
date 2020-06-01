@@ -11,5 +11,6 @@ import Foundation
 // SwiftKeychainWrapper KEY
 let KEY_UID = "uid"
 let ACCESS_TOKEN = "token"
+let CREDENTIALS = "token_retrier"
 
 let defaults = UserDefaults.standard

@@ -50,6 +50,7 @@ class SignInVC: UIViewController {
         NetworkWrapper.signIn(username: username, pass: password) { success in
             if success {
                 KeychainWrapper.standard.set(username, forKey: KEY_UID)
+                defaults.set(password, forKey: CREDENTIALS)
                 self.performSegue(withIdentifier: Segue.signedIn.rawValue, sender: nil)
             } else {
                 self.showAlertWithTitle("Signing in error", message: "Unable to sign in with provided credentials")
