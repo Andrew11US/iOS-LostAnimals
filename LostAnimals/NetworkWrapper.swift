@@ -135,19 +135,10 @@ struct NetworkWrapper {
                     if let ads = data["content"] as? [AnyObject] {
                         for ad in ads {
                             if let dict = ad as? [String: AnyObject] {
-                                //                                let id = dict["id"] as? Int ?? 0
-                                //                                let state = dict["state"] as? String ?? ""
-                                //                                let animalType = dict["type"] as? String ?? ""
-                                //                                let dateInt = dict["lostDate"] as? Int ?? 0
-                                //                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
-                                //                                let town = dict["town"] as? String ?? ""
-                                //                                let district = dict["district"] as? String ?? ""
-                                //                                let street = dict["street"] as? String ?? ""
-                                //                                let imageUrl = dict["imageUrl"] as? String ?? ""
                                 
                                 print(dict)
                                 let ad = Advertisment(adType: type, dict: dict)
-                                //                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                
                                 switch type {
                                 case .lost:
                                     lostAds.append(ad)
@@ -226,9 +217,10 @@ struct NetworkWrapper {
     static func getImages(ads: [Advertisment], completion: @escaping () -> Void) {
         lostImagesDict.removeAll()
         for ad in ads {
-            AF.download(ad.imageUrl).responseData { data in
+            AF.download(ad.imageURLs[0]).responseData { data in
+                print(ad.imageURLs[0])
                 if let data = data.value {
-                    lostImagesDict[ad.imageUrl] = UIImage(data: data) ?? UIImage(named: "test")!
+                    lostImagesDict[ad.imageURLs[0]] = UIImage(data: data) ?? UIImage(named: "test")!
                     completion()
                 }
             }
