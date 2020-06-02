@@ -206,10 +206,12 @@ struct NetworkWrapper {
         }
     }
     
-    static func getImage(url: String, completion: @escaping (Data, Bool) -> Void) {
-        AF.download(url).responseData { data in
-            if let data = data.value {
-                completion(data, true)
+    static func getImages(urls: [String], completion: @escaping (Data, Bool) -> Void) {
+        for url in urls {
+            AF.download(url).responseData { data in
+                if let data = data.value {
+                    completion(data, true)
+                }
             }
         }
     }

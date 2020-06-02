@@ -46,6 +46,7 @@ class DetailVC: UIViewController {
                 print(ad)
                 self.ad = ad
                 self.updateView()
+                self.updateImages()
             }
         }
     }
@@ -66,36 +67,33 @@ class DetailVC: UIViewController {
         self.distMarksLbl.text = self.ad.distingMarks
     }
     
-//    private func populateImagesScrollView() {
-//        for i in 0..<images.count {
-//            let imageView = UIImageView()
-//            imageView.contentMode = .scaleAspectFill
-//            imageView.image = images[i]
-//            let xPosition = self.view.frame.width * CGFloat(i)
-//            imageView.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: CGFloat(215))
-//            
-//            imagesScrollView.contentSize.width = imagesScrollView.frame.width * CGFloat(i + 1)
-//            imagesScrollView.addSubview(imageView)
-//        }
-//        pageControl.numberOfPages = images.count
-//        pageControl.currentPage = 0
-//        verticalScrollView.bringSubviewToFront(pageControl)
-//    }
-    
     func updateImages() {
+        var images: [UIImage] = []
         addSpinner(spinner)
-        NetworkWrapper.getImage(url: ad.imageUrl) { (data, success) in
+        NetworkWrapper.getImages(urls: ad.imageURLs) { (data, success) in
             if success {
-                let imageView = UIImageView()
-                imageView.contentMode = .scaleAspectFill
-                imageView.image = UIImage(data: data)
-//                let xPosition = self.view.frame.width
-                imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(215))
-                self.imagesScrollView.contentSize.width = self.imagesScrollView.frame.width * CGFloat(1)
-                self.imagesScrollView.addSubview(imageView)
+                images.append(UIImage(data: data) ?? UIImage())
             }
+            self.populateImagesScrollView(images: images)
             self.removeSpinner(self.spinner)
         }
+    }
+    
+    private func populateImagesScrollView(images: [UIImage]) {
+        for i in 0..<images.count {
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFill
+            imageView.image = images[i]
+            let xPosition = self.view.frame.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: CGFloat(215))
+            
+            imagesScrollView.contentSize.width = imagesScrollView.frame.width * CGFloat(i + 1)
+            imagesScrollView.addSubview(imageView)
+        }
+        pageControl.numberOfPages = images.count
+        pageControl.currentPage = 0
+        verticalScrollView.bringSubviewToFront(pageControl)
+        pageControl.isHidden = false
     }
     
     @IBAction func downloadPDFTapped(_ sender: CustomButton) {
