@@ -20,39 +20,52 @@ struct Advertisment: Codable {
     var street: String
     var imageUrl: String
     var phone: String
-    var chipNumber: Int
+    var email: String
+    var title: String
+    var chipNumber: String
+    var distingMarks: String
     var description: String
     
-    init(id: Int, state: String, adType: String, animalType: String, animalName: String, date: String, town: String, district: String, street: String, phone: String, chipNumber: Int, description: String, imageUrl: String) {
-        self.id = id
-        self.state = adType
-        self.adType = adType
-        self.animalType = animalType
-        self.animalName = animalName
-        self.date = date
-        self.town = town
-        self.district = district
-        self.street = street
-        self.phone = phone
-        self.chipNumber = chipNumber
-        self.description = description
-        self.imageUrl = imageUrl
-    }
+//    init(id: Int, state: String, adType: String, animalType: String, animalName: String, date: String, town: String, district: String, street: String, phone: String, chipNumber: Int, description: String, imageUrl: String) {
+//        self.id = id
+//        self.state = adType
+//        self.adType = adType
+//        self.animalType = animalType
+//        self.animalName = animalName
+//        self.date = date
+//        self.town = town
+//        self.district = district
+//        self.street = street
+//        self.phone = phone
+//        self.chipNumber = chipNumber
+//        self.description = description
+//        self.imageUrl = imageUrl
+//    }
+    
+
+    
+
     
 //    // MARK: - Initialize from DataSnapshot
-//    init(id: String, data: Dictionary<String, AnyObject>) {
-//        self.id = id
-//        self.name = data["name"] as? String ?? "name"
-//        self.type = data["type"] as? String ?? "type"
-//        self.category = data["category"] as? String ?? "category"
-//        self.currencyCode = data["currencyCode"] as? String ?? "currencyCode"
-//        self.unifiedCurrencyCode = data["unifiedCurrencyCode"] as? String ?? "unifiedCurrencyCode"
-//        self.originalAmount = data["originalAmount"] as? Double ?? 0.0
-//        self.unifiedAmount = data["unifiedAmount"] as? Double ?? 0.0
-//        self.dateCreated = data["dateCreated"] as? String ?? "dateCreated"
-//        self.walletName = data["walletName"] as? String ?? "_walletName"
-//        self.walletID = data["walletID"] as? String ?? "walletID"
-//    }
+    init(adType: AdType, dict: Dictionary<String, AnyObject>) {
+        self.adType = adType.rawValue
+        self.animalName = dict["name"] as? String ?? ""
+        self.id = dict["id"] as? Int ?? 0
+        self.state = dict["state"] as? String ?? ""
+        self.animalType = dict["type"] as? String ?? ""
+        let dateInt = dict["lostDate"] as? Int ?? 0
+        self.date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
+        self.town = dict["town"] as? String ?? ""
+        self.district = dict["district"] as? String ?? ""
+        self.street = dict["street"] as? String ?? ""
+        self.imageUrl = dict["imageUrl"] as? String ?? ""
+        self.phone = dict["phoneNumber"] as? String ?? ""
+        self.email = dict["email"] as? String ?? ""
+        self.title = dict["title"] as? String ?? ""
+        self.chipNumber = dict["chipNumber"] as? String ?? ""
+        self.distingMarks = dict["distinguishingMarks"] as? String ?? ""
+        self.description = dict["description"] as? String ?? ""
+    }
 //
 //    // MARK: - Returns transaction like Dictionary<String, AnyObject>
 //    func getDictionary() -> [String : AnyObject] {

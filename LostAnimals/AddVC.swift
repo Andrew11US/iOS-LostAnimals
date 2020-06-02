@@ -16,7 +16,6 @@ class AddVC: UIViewController {
     @IBOutlet weak var verticalScrollView: UIScrollView!
     @IBOutlet weak var imagesScrollView: UIScrollView!
     @IBOutlet weak var verticalContentView: UIView!
-    @IBOutlet weak var imagePickerBtn: CustomButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var mainStack: UIStackView!
     @IBOutlet weak var animalTypeBtn: CustomButton!
@@ -33,7 +32,6 @@ class AddVC: UIViewController {
     @IBOutlet weak var distingMarksTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var publishBtn: CustomButton!
-    
     
     // MARK: Variables
     private var calendarView: CalendarView!
@@ -264,15 +262,6 @@ class AddVC: UIViewController {
             data["description"] = description as AnyObject
         }
         
-//        city = cityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        district = regionTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        phone = phoneTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        chip = chipTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        desc = descriptionTextView.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        street = streetTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        adTitle = titleTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
         if images.count > 0, let imgBase64 = images[0].toBase64(format: .jpeg(80)) {
             data["image"] = imgBase64 as AnyObject
         } else {
@@ -282,26 +271,9 @@ class AddVC: UIViewController {
         
         data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject
         
-//        let date =
-        
-//        data = [
-//            "chipNumber": chip,
-//            "description": desc,
-//            "distinguishingMarks": distingMarks,
-//            "district": district,
-//            "email": email,
-//            "lostDate": date,
-//            "phoneNumber": phone,
-//            "street": street,
-//            "title": adTitle,
-////            "town": town,
-//            "type": animalType,
-//            "image": imgBase64
-//        ] as [String: AnyObject]
-        
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {
-                print("ad uploaded successfully")
+                print("ad has been uploaded successfully")
             }
         }
     }
@@ -321,8 +293,6 @@ class AddVC: UIViewController {
         pageControl.currentPage = 0
         verticalScrollView.bringSubviewToFront(pageControl)
     }
-
-    
     
     // MARK: - Request mandatory authrizations method
     private func requestPermissions() {

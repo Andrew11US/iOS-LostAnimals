@@ -84,25 +84,29 @@ struct NetworkWrapper {
                     if let ads = data["content"] as? [AnyObject] {
                         for ad in ads {
                             if let dict = ad as? [String: AnyObject] {
-                                let id = dict["id"] as? Int ?? 0
-                                let state = dict["state"] as? String ?? ""
-                                let animalType = dict["type"] as? String ?? ""
-                                let dateInt = dict["lostDate"] as? Int ?? 0
-                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
-                                let town = dict["town"] as? String ?? ""
-                                let district = dict["district"] as? String ?? ""
-                                let street = dict["street"] as? String ?? ""
-                                let imageUrl = dict["imageUrl"] as? String ?? ""
+//                                let id = dict["id"] as? Int ?? 0
+//                                let state = dict["state"] as? String ?? ""
+//                                let animalType = dict["type"] as? String ?? ""
+//                                let dateInt = dict["lostDate"] as? Int ?? 0
+//                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
+//                                let town = dict["town"] as? String ?? ""
+//                                let district = dict["district"] as? String ?? ""
+//                                let street = dict["street"] as? String ?? ""
+//                                let imageUrl = dict["imageUrl"] as? String ?? ""
+//                                let phone = dict["phone"] as? String ?? ""
+                                
+                                
                                 
                                 print(dict)
-                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                let ad = Advertisment(adType: type, dict: dict)
+//                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: phone, chipNumber: 0, description: "", imageUrl: imageUrl)
                                 switch type {
                                 case .lost:
-                                    lostAds.append(advertisment)
+                                    lostAds.append(ad)
                                 case .found:
-                                    foundAds.append(advertisment)
+                                    foundAds.append(ad)
                                 case .adoption:
-                                    adoptionAds.append(advertisment)
+                                    adoptionAds.append(ad)
                                 }
                             }
                         }
@@ -144,25 +148,26 @@ struct NetworkWrapper {
                     if let ads = data["content"] as? [AnyObject] {
                         for ad in ads {
                             if let dict = ad as? [String: AnyObject] {
-                                let id = dict["id"] as? Int ?? 0
-                                let state = dict["state"] as? String ?? ""
-                                let animalType = dict["type"] as? String ?? ""
-                                let dateInt = dict["lostDate"] as? Int ?? 0
-                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
-                                let town = dict["town"] as? String ?? ""
-                                let district = dict["district"] as? String ?? ""
-                                let street = dict["street"] as? String ?? ""
-                                let imageUrl = dict["imageUrl"] as? String ?? ""
+//                                let id = dict["id"] as? Int ?? 0
+//                                let state = dict["state"] as? String ?? ""
+//                                let animalType = dict["type"] as? String ?? ""
+//                                let dateInt = dict["lostDate"] as? Int ?? 0
+//                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
+//                                let town = dict["town"] as? String ?? ""
+//                                let district = dict["district"] as? String ?? ""
+//                                let street = dict["street"] as? String ?? ""
+//                                let imageUrl = dict["imageUrl"] as? String ?? ""
                                 
                                 print(dict)
-                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                let ad = Advertisment(adType: type, dict: dict)
+//                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
                                 switch type {
                                 case .lost:
-                                    lostAds.append(advertisment)
+                                    lostAds.append(ad)
                                 case .found:
-                                    foundAds.append(advertisment)
+                                    foundAds.append(ad)
                                 case .adoption:
-                                    adoptionAds.append(advertisment)
+                                    adoptionAds.append(ad)
                                 }
                             }
                         }
@@ -194,13 +199,10 @@ struct NetworkWrapper {
                 completion(true)
             case let .failure(error):
                 print("Error publishing ad: \(error.localizedDescription)")
-//                if error.responseCode == 500 {
-//                    print(error.responseCode)
-//                }
+                
                 if let credentials = defaults.string(forKey: CREDENTIALS), let un = KeychainWrapper.standard.string(forKey: KEY_UID) {
                     signIn(username: un, pass: credentials) { _ in }
                 }
-                
                 completion(false)
             }
             print(response.value ?? "no data")
