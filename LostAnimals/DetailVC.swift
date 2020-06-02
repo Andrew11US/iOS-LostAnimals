@@ -23,7 +23,6 @@ class DetailVC: UIViewController {
     @IBOutlet weak var chipLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var badgeLbl: UILabel!
-    
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var streetLbl: UILabel!

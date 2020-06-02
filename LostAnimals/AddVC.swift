@@ -219,6 +219,20 @@ class AddVC: UIViewController {
         default: adType = AdType.adoption.rawValue
         }
         
+        if images.count > 0 {
+            var arr : [AnyObject] = []
+
+            for image in images {
+                let imgBase64 = image.toBase64(format: .jpeg(80)) ?? ""
+                let dict: [String: String] = ["image": imgBase64]
+                arr.append(dict as AnyObject)
+            }
+            data["photos"] = arr as AnyObject
+        } else {
+            showAlertWithTitle("Image error", message: "Unable to process the image, JPEG expected")
+            return
+        }
+        
         if animalType != "Animal Type" {
             data["type"] = animalType as AnyObject
         } else {
@@ -279,13 +293,6 @@ class AddVC: UIViewController {
         
         if let description = Validator.validate.text(field: descriptionTextView) {
             data["description"] = description as AnyObject
-        }
-        
-        if images.count > 0, let imgBase64 = images[0].toBase64(format: .jpeg(80)) {
-            data["image"] = imgBase64 as AnyObject
-        } else {
-            showAlertWithTitle("Image error", message: "Unable to process the image, JPEG expected")
-            return
         }
         
         data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject

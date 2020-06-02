@@ -196,9 +196,10 @@ struct NetworkWrapper {
                 completion(true)
             case let .failure(error):
                 print("Error publishing ad: \(error.localizedDescription)")
-                
-                if let credentials = defaults.string(forKey: CREDENTIALS), let un = KeychainWrapper.standard.string(forKey: KEY_UID) {
-                    signIn(username: un, pass: credentials) { _ in }
+                if error.responseCode == 401 || error.responseCode == 500 {
+                    if let credentials = defaults.string(forKey: CREDENTIALS), let un = KeychainWrapper.standard.string(forKey: KEY_UID) {
+                        signIn(username: un, pass: credentials) { _ in }
+                    }
                 }
                 completion(false)
             }
