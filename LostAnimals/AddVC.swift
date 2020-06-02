@@ -44,15 +44,6 @@ class AddVC: UIViewController {
     private var dates: (from: Date, to: Date?) = (Date(), nil)
     private var animalType: String = ""
     private var adType: String = ""
-//    private var city: String = ""
-//    private var district: String = ""
-//    private var phone: String = ""
-//    private var chip: String = ""
-//    private var distingMarks: String = ""
-//    private var desc: String = ""
-//    private var email: String = ""
-//    private var street: String = ""
-//    private var adTitle: String = ""
     
     // MARK: - Programmatic views
     lazy var animalPicker: UIPickerView = {
@@ -217,8 +208,6 @@ class AddVC: UIViewController {
         for s in self.imagesScrollView.subviews {
             s.removeFromSuperview()
         }
-        
-        
     }
     
     @IBAction func publishTapped(_ sender: CustomButton) {

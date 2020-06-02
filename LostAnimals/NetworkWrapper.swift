@@ -84,22 +84,9 @@ struct NetworkWrapper {
                     if let ads = data["content"] as? [AnyObject] {
                         for ad in ads {
                             if let dict = ad as? [String: AnyObject] {
-                                //                                let id = dict["id"] as? Int ?? 0
-                                //                                let state = dict["state"] as? String ?? ""
-                                //                                let animalType = dict["type"] as? String ?? ""
-                                //                                let dateInt = dict["lostDate"] as? Int ?? 0
-                                //                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
-                                //                                let town = dict["town"] as? String ?? ""
-                                //                                let district = dict["district"] as? String ?? ""
-                                //                                let street = dict["street"] as? String ?? ""
-                                //                                let imageUrl = dict["imageUrl"] as? String ?? ""
-                                //                                let phone = dict["phone"] as? String ?? ""
-                                
-                                
-                                
-                                print(dict)
+//                                print(dict)
                                 let ad = Advertisment(adType: type, dict: dict)
-                                //                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: phone, chipNumber: 0, description: "", imageUrl: imageUrl)
+
                                 switch type {
                                 case .lost:
                                     lostAds.append(ad)

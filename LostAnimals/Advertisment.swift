@@ -19,6 +19,7 @@ struct Advertisment: Codable {
     var district: String
     var street: String
     var imageUrl: String
+    var imageURLs: [String] = []
     var phone: String
     var email: String
     var title: String
@@ -65,6 +66,13 @@ struct Advertisment: Codable {
         self.chipNumber = dict["chipNumber"] as? String ?? ""
         self.distingMarks = dict["distinguishingMarks"] as? String ?? ""
         self.description = dict["description"] as? String ?? ""
+        
+        let imgURLs = dict["imageURLs"] as? [AnyObject] ?? []
+        for urlDict in imgURLs {
+            let url = urlDict["url"] as? String ?? ""
+            self.imageURLs.append(url)
+        }
+        print(imageURLs)
     }
 //
 //    // MARK: - Returns transaction like Dictionary<String, AnyObject>

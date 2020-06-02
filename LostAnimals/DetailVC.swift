@@ -40,7 +40,7 @@ class DetailVC: UIViewController {
         
         imagesScrollView.delegate = self
         updateView()
-        updateImage()
+        updateImages()
         NetworkWrapper.getByID(type: AdType(rawValue: ad.adType)!, id: ad.id) { (success, ad) in
             if success {
                 print(ad)
@@ -66,7 +66,23 @@ class DetailVC: UIViewController {
         self.distMarksLbl.text = self.ad.distingMarks
     }
     
-    func updateImage() {
+//    private func populateImagesScrollView() {
+//        for i in 0..<images.count {
+//            let imageView = UIImageView()
+//            imageView.contentMode = .scaleAspectFill
+//            imageView.image = images[i]
+//            let xPosition = self.view.frame.width * CGFloat(i)
+//            imageView.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: CGFloat(215))
+//            
+//            imagesScrollView.contentSize.width = imagesScrollView.frame.width * CGFloat(i + 1)
+//            imagesScrollView.addSubview(imageView)
+//        }
+//        pageControl.numberOfPages = images.count
+//        pageControl.currentPage = 0
+//        verticalScrollView.bringSubviewToFront(pageControl)
+//    }
+    
+    func updateImages() {
         addSpinner(spinner)
         NetworkWrapper.getImage(url: ad.imageUrl) { (data, success) in
             if success {

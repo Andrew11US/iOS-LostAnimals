@@ -158,7 +158,6 @@ class LostVC: UIViewController {
     }
     
     @objc private func refresh(_ sender: AnyObject) {
-        addSpinner(spinner)
         NetworkWrapper.getAds(type: .lost) { success in
             if success {
                 self.filteredAds = lostAds
@@ -170,7 +169,6 @@ class LostVC: UIViewController {
             } else {
                 self.showAlertWithTitle("Error loading data", message: "Something went wrong, data could not be downloaded")
             }
-            self.removeSpinner(self.spinner)
         }
     }
 }
