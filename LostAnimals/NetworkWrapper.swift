@@ -84,22 +84,22 @@ struct NetworkWrapper {
                     if let ads = data["content"] as? [AnyObject] {
                         for ad in ads {
                             if let dict = ad as? [String: AnyObject] {
-//                                let id = dict["id"] as? Int ?? 0
-//                                let state = dict["state"] as? String ?? ""
-//                                let animalType = dict["type"] as? String ?? ""
-//                                let dateInt = dict["lostDate"] as? Int ?? 0
-//                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
-//                                let town = dict["town"] as? String ?? ""
-//                                let district = dict["district"] as? String ?? ""
-//                                let street = dict["street"] as? String ?? ""
-//                                let imageUrl = dict["imageUrl"] as? String ?? ""
-//                                let phone = dict["phone"] as? String ?? ""
+                                //                                let id = dict["id"] as? Int ?? 0
+                                //                                let state = dict["state"] as? String ?? ""
+                                //                                let animalType = dict["type"] as? String ?? ""
+                                //                                let dateInt = dict["lostDate"] as? Int ?? 0
+                                //                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
+                                //                                let town = dict["town"] as? String ?? ""
+                                //                                let district = dict["district"] as? String ?? ""
+                                //                                let street = dict["street"] as? String ?? ""
+                                //                                let imageUrl = dict["imageUrl"] as? String ?? ""
+                                //                                let phone = dict["phone"] as? String ?? ""
                                 
                                 
                                 
                                 print(dict)
                                 let ad = Advertisment(adType: type, dict: dict)
-//                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: phone, chipNumber: 0, description: "", imageUrl: imageUrl)
+                                //                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: phone, chipNumber: 0, description: "", imageUrl: imageUrl)
                                 switch type {
                                 case .lost:
                                     lostAds.append(ad)
@@ -148,19 +148,19 @@ struct NetworkWrapper {
                     if let ads = data["content"] as? [AnyObject] {
                         for ad in ads {
                             if let dict = ad as? [String: AnyObject] {
-//                                let id = dict["id"] as? Int ?? 0
-//                                let state = dict["state"] as? String ?? ""
-//                                let animalType = dict["type"] as? String ?? ""
-//                                let dateInt = dict["lostDate"] as? Int ?? 0
-//                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
-//                                let town = dict["town"] as? String ?? ""
-//                                let district = dict["district"] as? String ?? ""
-//                                let street = dict["street"] as? String ?? ""
-//                                let imageUrl = dict["imageUrl"] as? String ?? ""
+                                //                                let id = dict["id"] as? Int ?? 0
+                                //                                let state = dict["state"] as? String ?? ""
+                                //                                let animalType = dict["type"] as? String ?? ""
+                                //                                let dateInt = dict["lostDate"] as? Int ?? 0
+                                //                                let date = Date(timeIntervalSince1970: TimeInterval(dateInt)).getShort
+                                //                                let town = dict["town"] as? String ?? ""
+                                //                                let district = dict["district"] as? String ?? ""
+                                //                                let street = dict["street"] as? String ?? ""
+                                //                                let imageUrl = dict["imageUrl"] as? String ?? ""
                                 
                                 print(dict)
                                 let ad = Advertisment(adType: type, dict: dict)
-//                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
+                                //                                let advertisment = Advertisment(id: id, state: state, adType: type.rawValue, animalType: animalType, animalName: "", date: date, town: town, district: district, street: street, phone: "", chipNumber: 0, description: "", imageUrl: imageUrl)
                                 switch type {
                                 case .lost:
                                     lostAds.append(ad)
@@ -180,6 +180,25 @@ struct NetworkWrapper {
                 completion(false)
             }
             //            print(response.value ?? "no data")
+        }
+    }
+    
+    static func getByID(type: AdType, id: Int, completion: @escaping (Bool, Advertisment?) -> Void) {
+        let url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type.rawValue)/\(id)"
+        
+        AF.request(url).validate(statusCode: 200..<300).responseJSON { response in
+            switch response.result {
+            case .success:
+                print("success")
+                
+                if let dict = response.value as? [String: AnyObject] {
+                    let ad = Advertisment(adType: type, dict: dict)
+                    completion(true, ad)
+                }
+            case let .failure(error):
+                print("Error getting ads: \(error.localizedDescription)")
+                completion(false, nil)
+            }
         }
     }
     

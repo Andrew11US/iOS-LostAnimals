@@ -20,6 +20,7 @@ class AddVC: UIViewController {
     @IBOutlet weak var mainStack: UIStackView!
     @IBOutlet weak var animalTypeBtn: CustomButton!
     @IBOutlet weak var calendarBtn: CustomButton!
+    @IBOutlet weak var resetBtn: CustomButton!
     @IBOutlet weak var adTypeSegment: UISegmentedControl!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
@@ -28,6 +29,7 @@ class AddVC: UIViewController {
     @IBOutlet weak var chipTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var distingMarksTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -195,6 +197,30 @@ class AddVC: UIViewController {
         calendarView.isHidden = true
     }
     
+    @IBAction func resetTapped(_ sender: CustomButton) {
+        animalType = "Animal Type"
+        animalTypeBtn.setTitle(animalType, for: .normal)
+        cityTextField.text?.removeAll()
+        dateTextField.text?.removeAll()
+        phoneTextField.text?.removeAll()
+        emailTextField.text?.removeAll()
+        titleTextField.text?.removeAll()
+        chipTextField.text?.removeAll()
+        regionTextField.text?.removeAll()
+        regionTextField.text?.removeAll()
+        streetTextField.text?.removeAll()
+        nameTextField.text?.removeAll()
+        distingMarksTextField.text?.removeAll()
+        descriptionTextView.text?.removeAll()
+        images.removeAll()
+        
+        for s in self.imagesScrollView.subviews {
+            s.removeFromSuperview()
+        }
+        
+        
+    }
+    
     @IBAction func publishTapped(_ sender: CustomButton) {
         var data: [String: AnyObject] = [:]
         
@@ -256,6 +282,10 @@ class AddVC: UIViewController {
         
         if let distingMarks = Validator.validate.text(field: distingMarksTextField) {
             data["distinguishingMarks"] = distingMarks as AnyObject
+        }
+        
+        if let name = Validator.validate.text(field: nameTextField) {
+            data["name"] = name as AnyObject
         }
         
         if let description = Validator.validate.text(field: descriptionTextView) {

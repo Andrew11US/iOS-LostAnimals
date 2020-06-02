@@ -23,62 +23,51 @@ class DetailVC: UIViewController {
     @IBOutlet weak var chipLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var badgeLbl: UILabel!
+    
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var streetLbl: UILabel!
+    @IBOutlet weak var districtLbl: UILabel!
+    @IBOutlet weak var distMarksLbl: UILabel!
     @IBOutlet weak var downloadPDFBtn: CustomButton!
     
     // MARK: - Variables
     public var ad: Advertisment!
-//    private var images: [UIImage] = [UIImage(named: "t1")!, UIImage(named: "t2")!, UIImage(named: "t3")!, UIImage(named: "test")!]
+    private var spinner = Spinner()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagesScrollView.delegate = self
         updateView()
+        updateImage()
+        NetworkWrapper.getByID(type: AdType(rawValue: ad.adType)!, id: ad.id) { (success, ad) in
+            if success {
+                print(ad)
+                self.ad = ad
+                self.updateView()
+            }
+        }
     }
     
-//    private func populateImagesScrollView() {
-//        for i in 0..<images.count {
-//            let imageView = UIImageView()
-//            imageView.contentMode = .scaleAspectFill
-//            imageView.image = images[i]
-//            let xPosition = self.view.frame.width * CGFloat(i)
-//            imageView.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: CGFloat(215))
-//
-//            imagesScrollView.contentSize.width = imagesScrollView.frame.width * CGFloat(i + 1)
-//            imagesScrollView.addSubview(imageView)
-//        }
-//        pageControl.numberOfPages = images.count
-//        pageControl.currentPage = 0
-//        verticalScrollView.bringSubviewToFront(pageControl)
-//    }
-    
     func updateView() {
-//        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
-//            self.locationLbl.text = self.ad.town
-//            self.nameLbl.text = self.ad.animalName
-//            self.dateLbl.text = self.ad.date
-//            self.phoneLbl.text = self.ad.phone
-//            self.chipLbl.text = String(self.ad.chipNumber)
-//            self.descLbl.text = self.ad.description
-//            self.animalTypeLbl.text = self.ad.animalType
-//            self.badgeLbl.text = self.ad.adType
-//        }
-        DispatchQueue.main.async {
-            self.locationLbl.text = self.ad.town
-            self.nameLbl.text = self.ad.animalName
-            self.dateLbl.text = self.ad.date
-            self.phoneLbl.text = self.ad.phone
-            self.chipLbl.text = String(self.ad.chipNumber)
-            self.descLbl.text = self.ad.description
-            self.animalTypeLbl.text = self.ad.animalType
-            self.badgeLbl.text = self.ad.adType
-            self.updateImage()
-            print(self.ad)
-        }
-//        updateImage()
+        self.locationLbl.text = self.ad.town
+        self.nameLbl.text = self.ad.animalName
+        self.dateLbl.text = self.ad.date
+        self.phoneLbl.text = self.ad.phone
+        self.chipLbl.text = String(self.ad.chipNumber)
+        self.descLbl.text = self.ad.description
+        self.animalTypeLbl.text = self.ad.animalType
+        self.badgeLbl.text = self.ad.adType
+        self.titleLbl.text = self.ad.title
+        self.emailLbl.text = self.ad.email
+        self.streetLbl.text = self.ad.street
+        self.districtLbl.text = self.ad.district
+        self.distMarksLbl.text = self.ad.distingMarks
     }
     
     func updateImage() {
+        addSpinner(spinner)
         NetworkWrapper.getImage(url: ad.imageUrl) { (data, success) in
             if success {
                 let imageView = UIImageView()
@@ -89,6 +78,7 @@ class DetailVC: UIViewController {
                 self.imagesScrollView.contentSize.width = self.imagesScrollView.frame.width * CGFloat(1)
                 self.imagesScrollView.addSubview(imageView)
             }
+            self.removeSpinner(self.spinner)
         }
     }
     
