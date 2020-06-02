@@ -53,7 +53,7 @@ class DetailVC: UIViewController {
     }
     
     func updateView() {
-        DispatchQueue.main.async {
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (_) in
             self.locationLbl.text = self.ad.town
             self.nameLbl.text = self.ad.animalName
             self.dateLbl.text = self.ad.date
@@ -62,8 +62,19 @@ class DetailVC: UIViewController {
             self.descLbl.text = self.ad.description
             self.animalTypeLbl.text = self.ad.animalType
             self.badgeLbl.text = self.ad.adType
-            self.updateImage()
         }
+//        DispatchQueue.main.async {
+//            self.locationLbl.text = self.ad.town
+//            self.nameLbl.text = self.ad.animalName
+//            self.dateLbl.text = self.ad.date
+//            self.phoneLbl.text = self.ad.phone
+//            self.chipLbl.text = String(self.ad.chipNumber)
+//            self.descLbl.text = self.ad.description
+//            self.animalTypeLbl.text = self.ad.animalType
+//            self.badgeLbl.text = self.ad.adType
+//            self.updateImage()
+//        }
+        updateImage()
     }
     
     func updateImage() {

@@ -124,6 +124,7 @@ struct NetworkWrapper {
         for (key, value) in filters {
             url += "\(key)=\(value)"
         }
+        print(url)
         
         switch type {
         case .lost:

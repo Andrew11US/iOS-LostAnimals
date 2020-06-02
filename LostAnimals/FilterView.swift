@@ -232,10 +232,10 @@ class FilterView: UIView {
     
     @objc func applyDatesTapped(_ sender: UIButton!) {
         self.dates = calendarView.dates
-        if dates.to != nil {
-            dateTextField.text = "\(dates.from.getShort) - \(dates.to?.getShort)"
+        if let to = dates.to {
+            dateTextField.text = "\(dates.from.getShort) - \(to.getShort)"
         } else {
-            dateTextField.text = "\(dates.from)"
+            dateTextField.text = "\(dates.from.getShort)"
         }
         calendarView.isHidden = true
         stackView.isHidden = false

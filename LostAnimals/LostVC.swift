@@ -45,6 +45,7 @@ class LostVC: UIViewController {
                 NetworkWrapper.getImages(ads: lostAds) {
                     self.tableView.reloadData()
                 }
+                self.tableView.reloadData()
             } else {
                 self.showAlertWithTitle("Error loading data", message: "Something went wrong, data could not be downloaded")
             }
@@ -94,17 +95,30 @@ class LostVC: UIViewController {
         if !animalType.isEmpty {
             filtersDict["type"] = animalType
         }
-        if let dates = Validator.validate.text(field: filterView.dateTextField) {
-            print(Int(dates.dateFromShort!.timeIntervalSince1970))
-            filtersDict["dateAfter"] = String(dates.dateFromShort!.timeIntervalSince1970)
-            filtersDict["dateBefore"] = String(dates.dateFromShort!.timeIntervalSince1970)
-            // TODO: - Refactor with date tuple
+        
+        if Validator.validate.text(field: filterView.dateTextField) != nil {
+            filtersDict["dateAfter"] = String(Int(filterView.dates.from.timeIntervalSince1970))
+            if let to = filterView.dates.to {
+                filtersDict["&dateBefore"] = "\(Int(to.timeIntervalSince1970))"
+            } else {
+                filtersDict["&dateBefore"] = String(Int(Date().timeIntervalSince1970))
+            }
+            print(filtersDict)
         }
+        
         if let town = Validator.validate.text(field: filterView.cityTextField) {
-            filtersDict["town"] = town
+            var temp = ""
+            for item in town.split(separator: " ") {
+                temp += item + "%20"
+            }
+            filtersDict["town"] = temp
         }
         if let district = Validator.validate.text(field: filterView.regionTextField) {
-            filtersDict["district"] = district
+            var temp = ""
+            for item in district.split(separator: " ") {
+                temp += item + "%20"
+            }
+            filtersDict["district"] = temp
         }
         if let chip = Validator.validate.text(field: filterView.chipTextField) {
             filtersDict["chip"] = chip // check chip type
