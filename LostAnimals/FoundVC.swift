@@ -216,7 +216,7 @@ extension FoundVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         filteredAds.removeAll()
-        for ad in lostAds {
+        for ad in foundAds {
             if let searchText = searchBar.text?.trimmingCharacters(in: .whitespaces).capitalized, !searchText.isEmpty {
                 if ad.district.hasPrefix(searchText) {
                     filteredAds.append(ad)

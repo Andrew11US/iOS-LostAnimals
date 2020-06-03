@@ -25,7 +25,9 @@ class AdoptionVC: UIViewController {
     
     // MARK: - Variables
     private var filterView: FilterView!
-    private var filteredAds: [Advertisment] = advertisments
+    private var filteredAds: [Advertisment] = adoptionAds
+    private var spinner = Spinner()
+    private var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,25 @@ class AdoptionVC: UIViewController {
         self.searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        setRefreshControl()
+        
+        addSpinner(spinner)
+        NetworkWrapper.getAds(type: .adoption) { success in
+            if success {
+                self.filteredAds = adoptionAds
+                print(adoptionAds.count)
+                NetworkWrapper.getImages(ads: adoptionAds) {
+                    self.tableView.reloadData()
+                }
+                self.tableView.reloadData()
+            } else {
+                self.showAlertWithTitle("Error loading data", message: "Something went wrong, data could not be downloaded")
+            }
+            self.removeSpinner(self.spinner)
+        }
     }
 
+    // MARK: - IBActions
     @IBAction func searchBtnTapped(_ sender: UIButton) {
         if searchViewHeight.constant > 0 {
             self.animate(view: searchView, constraint: searchViewHeight, to: 0)
@@ -64,7 +83,52 @@ class AdoptionVC: UIViewController {
     
     @IBAction func applyTapped(_ sender: CustomButton) {
         self.animate(view: filterBase, constraint: filterBaseHeight, to: 0)
-        // TODO: make filtering
+        var filtersDict: [String: String] = [:]
+        
+        let animalType = filterView.selectedAnimalType.trimmingCharacters(in: .whitespaces).lowercased()
+        if !animalType.isEmpty {
+            filtersDict["type"] = animalType
+        }
+        
+        if Validator.validate.text(field: filterView.dateTextField) != nil {
+            filtersDict["dateAfter"] = "\(Int(filterView.dates.from.timeIntervalSince1970))"
+            if let to = filterView.dates.to {
+                filtersDict["&dateBefore"] = "\(Int(to.timeIntervalSince1970))"
+            } else {
+                filtersDict["&dateBefore"] = "\(Int(Date().timeIntervalSince1970))"
+            }
+            print(filtersDict)
+        }
+        
+        if let town = Validator.validate.text(field: filterView.cityTextField) {
+            var temp = ""
+            for item in town.split(separator: " ") {
+                temp += item + "%20"
+            }
+            filtersDict["town"] = temp
+        }
+        if let district = Validator.validate.text(field: filterView.regionTextField) {
+            var temp = ""
+            for item in district.split(separator: " ") {
+                temp += item + "%20"
+            }
+            filtersDict["district"] = temp
+        }
+        if let chip = Validator.validate.text(field: filterView.chipTextField) {
+            filtersDict["chip"] = chip // check chip type
+        }
+        
+        if !filtersDict.isEmpty {
+            NetworkWrapper.getFilteredAds(type: .adoption, filters: filtersDict) { (success) in
+                if success {
+                    self.filteredAds = adoptionAds
+                    print(adoptionAds.count)
+                    NetworkWrapper.getImages(ads: adoptionAds) {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     // Filter setup
@@ -81,12 +145,32 @@ class AdoptionVC: UIViewController {
         ])
     }
 
+    private func setRefreshControl() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc private func refresh(_ sender: AnyObject) {
+        NetworkWrapper.getAds(type: .adoption) { success in
+            if success {
+                self.filteredAds = adoptionAds
+                print(adoptionAds.count)
+                self.refreshControl.endRefreshing()
+                NetworkWrapper.getImages(ads: adoptionAds) {
+                    self.tableView.reloadData()
+                }
+            } else {
+                self.showAlertWithTitle("Error loading data", message: "Something went wrong, data could not be downloaded")
+            }
+        }
+    }
 }
 
 // MARK: - UITableView delegate and data source
 extension AdoptionVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return advertisments.count
+        return filteredAds.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -101,16 +185,20 @@ extension AdoptionVC: UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
             
-            let advertisment = advertisments[indexPath.row]
-            cell.configureCell(ad: advertisment, image: UIImage())
+            let ad = filteredAds[indexPath.row]
+            var image = UIImage(named: "logo")!
+            if adoptImagesDict.count > 0 {
+                image = adoptImagesDict[ad.imageURLs[0]] ?? UIImage(named: "logo")!
+            }
+            cell.configureCell(ad: ad, image: image)
             return cell
         } else {
-            return UITableViewCell()
+            return AdvertismentCell()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segue.adoptionDetails.rawValue, sender: advertisments[indexPath.row])
+        performSegue(withIdentifier: Segue.adoptionDetails.rawValue, sender: filteredAds[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -127,13 +215,24 @@ extension AdoptionVC: UISearchBarDelegate {
     // Dismiss keyboard when Search button pressed
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        // TODO: Do search!!!
+        filteredAds.removeAll()
+        for ad in adoptionAds {
+            if let searchText = searchBar.text?.trimmingCharacters(in: .whitespaces).capitalized, !searchText.isEmpty {
+                if ad.district.hasPrefix(searchText) {
+                    filteredAds.append(ad)
+                } else if ad.town.hasPrefix(searchText) {
+                    filteredAds.append(ad)
+                }
+            }
+        }
+        tableView.reloadData()
     }
     
     // Cancel button tapped
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        filteredAds = advertisments
+        filteredAds = adoptionAds
+        tableView.reloadData()
         animate(view: searchView, constraint: searchViewHeight, to: 0)
     }
 }
