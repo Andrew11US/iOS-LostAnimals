@@ -21,6 +21,7 @@ class AdvertismentCell: UITableViewCell {
         
         baseView.layer.cornerRadius = 12
         badgeLbl.layer.cornerRadius = badgeLbl.bounds.height / 2
+        badgeLbl.textColor = .white
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,14 +32,14 @@ class AdvertismentCell: UITableViewCell {
     
     func configureCell(ad: Advertisment, image: UIImage) {
         self.imgView.image = image
-        self.badgeLbl.text = ad.adType
-        self.nameLbl.text = ad.animalName
+        self.badgeLbl.text = ad.adType.capitalized
+        self.nameLbl.text = ad.date
         self.locationLbl.text = ad.town
         
         switch AdType(rawValue: ad.adType) {
-        case .lost: badgeLbl.layer.backgroundColor = UIColor.red.cgColor
-        case .found: badgeLbl.layer.backgroundColor = UIColor.green.cgColor
-        case .adoption: badgeLbl.layer.backgroundColor = UIColor.yellow.cgColor
+        case .lost: badgeLbl.layer.backgroundColor = UIColor.badgeRed.cgColor
+        case .found: badgeLbl.layer.backgroundColor = UIColor.badgeGreen.cgColor
+        case .adoption: badgeLbl.layer.backgroundColor = UIColor.badgeYellow.cgColor
         default:
             badgeLbl.layer.backgroundColor = UIColor.red.cgColor
         }

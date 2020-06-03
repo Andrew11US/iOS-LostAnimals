@@ -21,7 +21,7 @@ class FilterView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18.0, weight: .medium)
-        label.textColor = .black
+        label.textColor = .label
         label.text = "Filters"
         return label
     }()

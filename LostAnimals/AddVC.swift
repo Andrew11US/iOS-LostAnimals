@@ -65,9 +65,10 @@ class AddVC: UIViewController {
     lazy var applyDatesBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Apply", for: .normal)
-        button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 20
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .appGreen
+        button.layer.cornerRadius = 7
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(applyDatesTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -75,9 +76,10 @@ class AddVC: UIViewController {
     lazy var cancelCalendarBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Cancel", for: .normal)
-        button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 20
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .appGreen
+        button.layer.cornerRadius = 7
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(cancelCalendarTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -300,6 +302,7 @@ class AddVC: UIViewController {
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {
                 print("ad has been uploaded successfully")
+                self.showAlertWithTitle("Success!", message: "Your advertisment has been succsessfully uploaded")
             }
         }
     }
