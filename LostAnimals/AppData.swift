@@ -29,4 +29,6 @@ var foundAds: [Advertisment] = []
 var adoptionAds: [Advertisment] = []
 
 var lostImagesDict: [String: UIImage] = [:]
+var foundImagesDict: [String: UIImage] = [:]
+var adoptImagesDict: [String: UIImage] = [:]
 

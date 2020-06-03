@@ -624,7 +624,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUP-Nk-ucI">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUP-Nk-ucI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h8B-tS-GGn">
@@ -661,7 +661,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.48627450979999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="h8B-tS-GGn" secondAttribute="trailing" constant="10" id="PFT-9V-iHg"/>
                                     <constraint firstAttribute="bottom" secondItem="h8B-tS-GGn" secondAttribute="bottom" id="atn-HP-fiJ"/>
@@ -669,7 +669,7 @@
                                     <constraint firstItem="h8B-tS-GGn" firstAttribute="leading" secondItem="nUP-Nk-ucI" secondAttribute="leading" constant="10" id="xed-Fc-bQj"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tvX-4U-nfm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tvX-4U-nfm">
                                 <rect key="frame" x="0.0" y="100" width="375" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -689,24 +689,24 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-3t-tfM">
                                                             <rect key="frame" x="0.0" y="85" width="335" height="35"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7ci-qG-U9D">
-                                                                    <rect key="frame" x="10" y="0.0" width="315" height="35"/>
+                                                                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7ci-qG-U9D">
+                                                                    <rect key="frame" x="10" y="5" width="315" height="25"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD0-vA-xuD">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="99.666666666666671" height="35"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD0-vA-xuD">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJN-eQ-3qs">
-                                                                            <rect key="frame" x="107.66666666666666" y="0.0" width="99.666666666666657" height="35"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <rect key="frame" x="108.33333333333334" y="0.0" width="98.333333333333343" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9e-Dr-drm">
-                                                                            <rect key="frame" x="215.33333333333334" y="0.0" width="99.666666666666657" height="35"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <rect key="frame" x="216.66666666666666" y="0.0" width="98.333333333333343" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -715,8 +715,8 @@
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
-                                                                <constraint firstItem="7ci-qG-U9D" firstAttribute="top" secondItem="aLS-3t-tfM" secondAttribute="top" id="IM8-qt-PjB"/>
-                                                                <constraint firstAttribute="bottom" secondItem="7ci-qG-U9D" secondAttribute="bottom" id="VHc-Wm-q98"/>
+                                                                <constraint firstItem="7ci-qG-U9D" firstAttribute="top" secondItem="aLS-3t-tfM" secondAttribute="top" constant="5" id="IM8-qt-PjB"/>
+                                                                <constraint firstAttribute="bottom" secondItem="7ci-qG-U9D" secondAttribute="bottom" constant="5" id="VHc-Wm-q98"/>
                                                                 <constraint firstItem="7ci-qG-U9D" firstAttribute="leading" secondItem="aLS-3t-tfM" secondAttribute="leading" constant="10" id="nMg-ZG-1Ny"/>
                                                                 <constraint firstAttribute="height" constant="35" id="rhk-aQ-SGV"/>
                                                                 <constraint firstAttribute="trailing" secondItem="7ci-qG-U9D" secondAttribute="trailing" constant="10" id="tDD-Nx-oag"/>
@@ -744,6 +744,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="badgeLbl" destination="wD0-vA-xuD" id="WLa-4f-0NH"/>
+                                            <outlet property="baseView" destination="TnV-9H-OAY" id="jJj-Gf-YBn"/>
                                             <outlet property="imgView" destination="SA9-T3-l6j" id="7Gy-Xd-TvI"/>
                                             <outlet property="locationLbl" destination="H9e-Dr-drm" id="Kr3-4p-P9l"/>
                                             <outlet property="nameLbl" destination="fJN-eQ-3qs" id="YGV-pU-DXh"/>
@@ -763,7 +764,7 @@
                                         </scopeButtonTitles>
                                     </searchBar>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="QQ8-pz-y2b" secondAttribute="bottom" constant="5" id="Yj4-An-b47"/>
                                     <constraint firstItem="QQ8-pz-y2b" firstAttribute="top" secondItem="07g-Pt-w1H" secondAttribute="top" constant="5" id="hcC-CK-nLH"/>
@@ -778,30 +779,41 @@
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="856-UQ-KMV">
                                         <rect key="frame" x="20" y="-50" width="335" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiG-p0-x9G" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOU-DS-scj" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Cancel"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.01176470588" green="0.48627450979999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
+                                                        <real key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.01176470588" green="0.48627450979999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="cancelTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="inT-U1-40T"/>
+                                                    <action selector="cancelTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="PpU-ky-9aV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUq-pN-Zsq" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzJ-pp-Rl9" customClass="CustomButton" customModule="LostAnimals" customModuleProvider="target">
                                                 <rect key="frame" x="182.66666666666663" y="0.0" width="152.33333333333337" height="40"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Apply"/>
+                                                <color key="backgroundColor" red="0.01176470588" green="0.48627450979999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <state key="normal" title="Apply">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
+                                                        <real key="value" value="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="applyTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="INC-7D-g1a"/>
+                                                    <action selector="applyTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="LPv-qK-kOd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -810,7 +822,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.55294117649999996" green="0.4549019608" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="856-UQ-KMV" secondAttribute="bottom" constant="10" id="eSU-XM-whG"/>
                                     <constraint firstAttribute="trailing" secondItem="856-UQ-KMV" secondAttribute="trailing" constant="20" id="jV6-sL-Ajs"/>
@@ -839,8 +851,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Found" image="circle.grid.hex.fill" catalog="system" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="applyFilterBtn" destination="VUq-pN-Zsq" id="LEt-is-qDe"/>
-                        <outlet property="cancelFilterBtn" destination="fiG-p0-x9G" id="Ynp-PS-9o1"/>
+                        <outlet property="applyFilterBtn" destination="wzJ-pp-Rl9" id="KD8-iq-0Cl"/>
+                        <outlet property="cancelFilterBtn" destination="bOU-DS-scj" id="Ik9-Dd-7ok"/>
                         <outlet property="filterBase" destination="pAS-Ap-For" id="J86-FW-CVn"/>
                         <outlet property="filterBaseHeight" destination="oZA-eL-6Ni" id="XJ6-Qb-wJg"/>
                         <outlet property="filterBtn" destination="5XS-jq-DoZ" id="zMM-rG-j9w"/>
@@ -1699,7 +1711,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Ln0-Wy-LPx"/>
-        <segue reference="ezA-4V-uNC"/>
+        <segue reference="I4M-QP-YXt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
