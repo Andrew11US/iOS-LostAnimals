@@ -29,20 +29,4 @@ struct Validator {
             return nil
         }
     }
-    
-//    func currency(field: CurrencyTextField) -> Double? {
-//        if let str = field.text?.trimmingCharacters(in: .whitespacesAndNewlines), !str.isEmpty {
-//            let formattedStr = str.replacingOccurrences(of: " ", with: "")
-//            if let doubleValue = Double(formattedStr) {
-//                print("Double parsed: ", doubleValue)
-//                return Double(round(doubleValue*100)/100)
-//            } else {
-//                print("Not a number!")
-//                return nil
-//            }
-//        } else {
-//            print("TF bad input!")
-//            return nil
-//        }
-//    }
 }

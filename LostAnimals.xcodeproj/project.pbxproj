@@ -267,6 +267,7 @@
 				0160EE7724882686005AB8A5 /* CustomLabel.swift */,
 				015613F62473F4F600380333 /* CalendarView.swift */,
 				0152437124742FE00009026D /* FilterView.swift */,
+				01094D7F24719B1A00A1A3AF /* Spinner.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -300,7 +301,6 @@
 		01687885246062C4000B0D9D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				01094D7F24719B1A00A1A3AF /* Spinner.swift */,
 				01094D8824719F9800A1A3AF /* Segue+Enum.swift */,
 				01094D8A2471A02800A1A3AF /* Date+Extension.swift */,
 				01094D8C2471A06A00A1A3AF /* String+Extension.swift */,
@@ -800,7 +800,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 81;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -824,7 +824,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 80;
+				CURRENT_PROJECT_VERSION = 81;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				INFOPLIST_FILE = LostAnimals/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

@@ -11,7 +11,7 @@ import Foundation
 public enum AdType: String, CaseIterable {
     case lost = "lost"
     case found = "found"
-    case adoption = "adoption"
+    case adoption = "to-adopt"
 }
 
 public enum AnimalType: String, CaseIterable {
@@ -22,8 +22,6 @@ public enum AnimalType: String, CaseIterable {
 }
 
 // MARK: - Data collections
-var advertisments: [Advertisment] = []
-
 var lostAds: [Advertisment] = []
 var foundAds: [Advertisment] = []
 var adoptionAds: [Advertisment] = []

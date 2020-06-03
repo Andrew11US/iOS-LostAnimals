@@ -58,7 +58,7 @@ class DetailVC: UIViewController {
         self.chipLbl.text = String(self.ad.chipNumber)
         self.descLbl.text = self.ad.description
         self.animalTypeLbl.text = self.ad.animalType
-        self.badgeLbl.text = self.ad.adType
+        self.badgeLbl.text = self.ad.adType.replacingOccurrences(of: "-", with: " ").capitalized
         self.titleLbl.text = self.ad.title
         self.emailLbl.text = self.ad.email
         self.streetLbl.text = self.ad.street

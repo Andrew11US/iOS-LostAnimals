@@ -36,6 +36,7 @@ class AddVC: UIViewController {
     @IBOutlet weak var publishBtn: CustomButton!
     
     // MARK: Variables
+    private var spinner = Spinner()
     private var calendarView: CalendarView!
     private var ad: Advertisment!
     private var permissions: [SPPermission] = [.camera, .photoLibrary, .locationWhenInUse]
@@ -303,12 +304,15 @@ class AddVC: UIViewController {
         }
         
         data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject
-        
+        addSpinner(spinner)
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {
                 print("ad has been uploaded successfully")
                 self.showAlertWithTitle("Success!", message: "Your advertisment has been succsessfully uploaded")
+            } else {
+                self.showAlertWithTitle("Error", message: "Could not upload ad, internal error")
             }
+            self.removeSpinner(self.spinner)
         }
     }
     

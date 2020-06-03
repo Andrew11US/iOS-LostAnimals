@@ -32,7 +32,7 @@ class AdvertismentCell: UITableViewCell {
     
     func configureCell(ad: Advertisment, image: UIImage) {
         self.imgView.image = image
-        self.badgeLbl.text = ad.adType.capitalized
+        self.badgeLbl.text = ad.adType.replacingOccurrences(of: "-", with: " ").capitalized
         self.nameLbl.text = ad.date
         self.locationLbl.text = ad.town
         
