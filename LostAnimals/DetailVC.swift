@@ -45,7 +45,7 @@ class DetailVC: UIViewController {
                 print(ad)
                 self.ad = ad
                 self.updateView()
-                self.updateImages()
+//                self.updateImages()
             }
         }
     }
@@ -64,6 +64,14 @@ class DetailVC: UIViewController {
         self.streetLbl.text = self.ad.street
         self.districtLbl.text = self.ad.district
         self.distMarksLbl.text = self.ad.distingMarks
+        
+        switch AdType(rawValue: ad.adType) {
+        case .lost: badgeLbl.layer.backgroundColor = UIColor.badgeRed.cgColor
+        case .found: badgeLbl.layer.backgroundColor = UIColor.badgeGreen.cgColor
+        case .adoption: badgeLbl.layer.backgroundColor = UIColor.badgeYellow.cgColor
+        default:
+            badgeLbl.layer.backgroundColor = UIColor.red.cgColor
+        }
     }
     
     func updateImages() {

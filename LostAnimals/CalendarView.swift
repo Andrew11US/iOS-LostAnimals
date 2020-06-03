@@ -33,7 +33,7 @@ class CalendarView: UIView {
         calendar.circularViewDiameter = 0.2
         calendar.calendarDelegate = self
         calendar.inset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        calendar.weeks = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+        calendar.weeks = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
         calendar.style = .standard
         calendar.dayPosition = .center
         calendar.selectionMode = .sequence(style: .semicircleEdge)
@@ -48,6 +48,7 @@ class CalendarView: UIView {
         let button = UIButton()
         button.setTitle("Previous", for: .normal)
         button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(previousTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -56,6 +57,7 @@ class CalendarView: UIView {
         let button = UIButton()
         button.setTitle("Current", for: .normal)
         button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(currentTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -64,6 +66,7 @@ class CalendarView: UIView {
         let button = UIButton()
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(nextTapped(_:)), for: .touchUpInside)
         return button
     }()

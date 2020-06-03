@@ -20,7 +20,7 @@ class FilterView: UIView {
     lazy var nameLbl: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18.0, weight: .medium)
+        label.font = UIFont(name: "Montserrat-Bold", size: 18)
         label.textColor = .label
         label.text = "Filters"
         return label
@@ -29,7 +29,8 @@ class FilterView: UIView {
     lazy var animalTypeBtn: CustomButton = {
         let button = CustomButton()
         button.setTitle("Animal Type", for: .normal)
-        button.setTitleColor(.label, for: .normal)
+        button.setTitleColor(.appGreen, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(showAnimalPickerTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -43,8 +44,8 @@ class FilterView: UIView {
     lazy var dateTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
-        field.placeholder = "Enter date"
+        field.font = UIFont(name: "Montserrat-Bold", size: 14)
+        field.placeholder = "Select dates"
         field.returnKeyType = .done
         field.addTarget(self, action: #selector(validateDate(_:)), for: .editingDidEnd)
         return field
@@ -53,7 +54,7 @@ class FilterView: UIView {
     lazy var cityTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        field.font = UIFont(name: "Montserrat-Bold", size: 14)
         field.placeholder = "City"
         field.returnKeyType = .done
         field.addTarget(self, action: #selector(validateCity(_:)), for: .editingDidEnd)
@@ -63,7 +64,7 @@ class FilterView: UIView {
     lazy var regionTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        field.font = UIFont(name: "Montserrat-Bold", size: 14)
         field.placeholder = "Region"
         field.returnKeyType = .done
         field.addTarget(self, action: #selector(validateRegion(_:)), for: .editingDidEnd)
@@ -73,7 +74,7 @@ class FilterView: UIView {
     lazy var chipTextField: UITextField = {
         let field = UITextField()
         field.textAlignment = .center
-        field.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
+        field.font = UIFont(name: "Montserrat-Bold", size: 14)
         field.placeholder = "Chip number"
         field.keyboardType = .numberPad
         field.returnKeyType = .done
@@ -83,8 +84,9 @@ class FilterView: UIView {
     
     lazy var calendarBtn: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
-        button.setTitle("C", for: .normal)
         button.setTitleColor(.label, for: .normal)
+        button.setBackgroundImage(UIImage(systemName: "calendar"), for: .normal)
+        button.tintColor = .appGreen
         button.addTarget(self, action: #selector(showCalendarTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -93,9 +95,10 @@ class FilterView: UIView {
     lazy var applyDatesBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Apply", for: .normal)
-        button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .purple
-        button.layer.cornerRadius = 20
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .appGreen
+        button.layer.cornerRadius = 7
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(applyDatesTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -103,9 +106,12 @@ class FilterView: UIView {
     lazy var cancelCalendarBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Cancel", for: .normal)
-        button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = .purple
-        button.layer.cornerRadius = 20
+        button.setTitleColor(.appGreen, for: .normal)
+        button.backgroundColor = .clear
+        button.layer.cornerRadius = 7
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.appGreen.cgColor
+        button.titleLabel?.font = UIFont(name: "Montserrat-Bold", size: 14)
         button.addTarget(self, action: #selector(cancelCalendarTapped(_:)), for: .touchUpInside)
         return button
     }()
@@ -189,8 +195,8 @@ class FilterView: UIView {
         stackView.addArrangedSubview(nameLbl)
         stackView.addArrangedSubview(animalTypeBtn)
         stackView.addArrangedSubview(animalPicker)
-        stackView2.addArrangedSubview(dateTextField)
         stackView2.addArrangedSubview(calendarBtn)
+        stackView2.addArrangedSubview(dateTextField)
         stackView.addArrangedSubview(stackView2)
         stackView.addArrangedSubview(cityTextField)
         stackView.addArrangedSubview(regionTextField)

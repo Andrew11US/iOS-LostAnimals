@@ -223,7 +223,7 @@ struct NetworkWrapper {
             AF.download(ad.imageURLs[0]).responseData { data in
                 print(ad.imageURLs[0])
                 if let data = data.value {
-                    lostImagesDict[ad.imageURLs[0]] = UIImage(data: data) ?? UIImage(named: "test")!
+                    lostImagesDict[ad.imageURLs[0]] = UIImage(data: data) ?? UIImage(named: "logo")!
                     completion()
                 }
             }

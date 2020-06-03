@@ -97,6 +97,11 @@ class AddVC: UIViewController {
         chipTextField.delegate = self
         distingMarksTextField.delegate = self
         phoneTextField.delegate = self
+        emailTextField.delegate = self
+        streetTextField.delegate = self
+        nameTextField.delegate = self
+        titleTextField.delegate = self
+        descriptionTextView.delegate = self
         
         setDoneToolBar(field: chipTextField)
         setDoneToolBar(field: phoneTextField)
@@ -371,7 +376,7 @@ extension AddVC: UIPickerViewDelegate, UIPickerViewDataSource {
 }
 
 // MARK: - TextField delegate
-extension AddVC: UITextFieldDelegate {
+extension AddVC: UITextFieldDelegate, UITextViewDelegate {
     // Keyboard handling
     func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
         self.view.endEditing(true)
