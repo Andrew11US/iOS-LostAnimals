@@ -19,7 +19,7 @@ class AdvertismentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        baseView.layer.cornerRadius = 12
+//        baseView.layer.cornerRadius = 12
         badgeLbl.layer.cornerRadius = badgeLbl.bounds.height / 2
         badgeLbl.textColor = .white
     }

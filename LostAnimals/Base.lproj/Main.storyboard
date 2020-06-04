@@ -76,28 +76,28 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="140" id="Ux0-ta-VAZ" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="220" id="Ux0-ta-VAZ" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ux0-ta-VAZ" id="IQD-bd-Wnw">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGM-QO-bPA">
-                                                    <rect key="frame" x="20" y="10" width="335" height="120"/>
+                                                    <rect key="frame" x="0.0" y="3" width="375" height="214"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QmU-iy-WRu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="120"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                                         </imageView>
                                                         <view clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zLF-4D-NcJ">
-                                                            <rect key="frame" x="0.0" y="85" width="335" height="35"/>
+                                                            <rect key="frame" x="0.0" y="179" width="375" height="35"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dqT-lS-FDH">
-                                                                    <rect key="frame" x="10" y="5" width="315" height="25"/>
+                                                                    <rect key="frame" x="10" y="5" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxW-d7-c9M">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                             <userDefinedRuntimeAttributes>
@@ -107,14 +107,14 @@
                                                                             </userDefinedRuntimeAttributes>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jwA-Tv-MwZ">
-                                                                            <rect key="frame" x="108.33333333333334" y="0.0" width="98.333333333333343" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="121.66666666666666" y="0.0" width="111.66666666666666" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1xZ-Oz-tWA">
-                                                                            <rect key="frame" x="216.66666666666666" y="0.0" width="98.333333333333343" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="243.33333333333334" y="0.0" width="111.66666666666666" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -144,10 +144,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="qGM-QO-bPA" firstAttribute="top" secondItem="IQD-bd-Wnw" secondAttribute="top" constant="10" id="2AK-UC-KL9"/>
-                                                <constraint firstItem="qGM-QO-bPA" firstAttribute="leading" secondItem="IQD-bd-Wnw" secondAttribute="leading" constant="20" id="cOv-RZ-C28"/>
-                                                <constraint firstAttribute="trailing" secondItem="qGM-QO-bPA" secondAttribute="trailing" constant="20" id="i6G-YJ-CCe"/>
-                                                <constraint firstAttribute="bottom" secondItem="qGM-QO-bPA" secondAttribute="bottom" constant="10" id="qun-xT-3Mb"/>
+                                                <constraint firstItem="qGM-QO-bPA" firstAttribute="top" secondItem="IQD-bd-Wnw" secondAttribute="top" constant="3" id="2AK-UC-KL9"/>
+                                                <constraint firstItem="qGM-QO-bPA" firstAttribute="leading" secondItem="IQD-bd-Wnw" secondAttribute="leading" id="cOv-RZ-C28"/>
+                                                <constraint firstAttribute="trailing" secondItem="qGM-QO-bPA" secondAttribute="trailing" id="i6G-YJ-CCe"/>
+                                                <constraint firstAttribute="bottom" secondItem="qGM-QO-bPA" secondAttribute="bottom" constant="3" id="qun-xT-3Mb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1808,8 +1808,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ln0-Wy-LPx"/>
-        <segue reference="THn-4l-rgu"/>
+        <segue reference="GvF-hA-bd2"/>
+        <segue reference="ezA-4V-uNC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>

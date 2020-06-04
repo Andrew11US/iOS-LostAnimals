@@ -18,7 +18,7 @@ class CalendarView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 16.0, weight: .medium)
-        label.textColor = .black
+        label.textColor = .label
         label.text = "Current month"
         return label
     }()
