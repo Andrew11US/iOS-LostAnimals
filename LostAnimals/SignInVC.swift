@@ -70,8 +70,7 @@ extension SignInVC: UITextFieldDelegate {
     
     // Dismiss when return btn pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        usernameTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+        resignTextFields()
         return true
     }
     

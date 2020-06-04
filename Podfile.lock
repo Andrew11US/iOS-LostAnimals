@@ -12,6 +12,7 @@ PODS:
     - SPPermissions/Core
   - SteviaLayout (4.7.3)
   - SwiftKeychainWrapper (3.4.0)
+  - TextFieldEffects (1.6.0)
   - YPImagePicker (4.2.0):
     - PryntTrimmerView (~> 4.0.0)
     - SteviaLayout (~> 4.7.3)
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - SPPermissions/Location
   - SPPermissions/PhotoLibrary
   - SwiftKeychainWrapper
+  - TextFieldEffects
   - YPImagePicker
 
 SPEC REPOS:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - SPPermissions
     - SteviaLayout
     - SwiftKeychainWrapper
+    - TextFieldEffects
     - YPImagePicker
 
 SPEC CHECKSUMS:
@@ -45,8 +48,9 @@ SPEC CHECKSUMS:
   SPPermissions: f1f82ba07d1a07e1d73521b19e7c3550b0bc0ddb
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   YPImagePicker: accf310f9526641a84372c0ecf943547d9b1e52c
 
-PODFILE CHECKSUM: d80b11598994eac67632f7b7edb6300039151560
+PODFILE CHECKSUM: 6cca76a1f280dbc8edfd71df7a644ac50b63abc3
 
 COCOAPODS: 1.8.4

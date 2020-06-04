@@ -23,6 +23,7 @@ class SignUpVC: UIViewController {
         super.viewDidLoad()
         
         self.emailTextField.delegate = self
+        self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
         self.confirmPassTextField.delegate = self
     }
@@ -77,14 +78,13 @@ extension SignUpVC: UITextFieldDelegate {
     
     // Dismiss when return btn pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-        confirmPassTextField.resignFirstResponder()
+        resignTextFields()
         return true
     }
     
     func resignTextFields() {
         emailTextField.resignFirstResponder()
+        usernameTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         confirmPassTextField.resignFirstResponder()
     }

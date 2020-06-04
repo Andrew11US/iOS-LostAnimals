@@ -13,6 +13,7 @@ target 'LostAnimals' do
   pod 'SPPermissions/Location'
   pod 'Koyomi', '~> 1.2'
   pod 'YPImagePicker'
+  pod 'TextFieldEffects'
 
   target 'LostAnimalsTests' do
     inherit! :search_paths

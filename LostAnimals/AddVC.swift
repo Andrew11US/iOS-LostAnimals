@@ -39,7 +39,7 @@ class AddVC: UIViewController {
     private var spinner = Spinner()
     private var calendarView: CalendarView!
     private var ad: Advertisment!
-    private var permissions: [SPPermission] = [.camera, .photoLibrary, .locationWhenInUse]
+    private var permissions: [SPPermission] = [.camera, .photoLibrary]
     private var images: [UIImage] = []
     private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
     private var dates: (from: Date, to: Date?) = (Date(), nil)
