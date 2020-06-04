@@ -308,6 +308,7 @@ class AddVC: UIViewController {
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {
                 print("ad has been uploaded successfully")
+                self.resetTapped(CustomButton())
                 self.showAlertWithTitle("Success!", message: "Your advertisment has been succsessfully uploaded")
             } else {
                 self.showAlertWithTitle("Error", message: "Could not upload ad, internal error")
