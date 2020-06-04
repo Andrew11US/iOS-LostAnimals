@@ -187,7 +187,7 @@ extension FoundVC: UITableViewDelegate, UITableViewDataSource {
             
             let ad = filteredAds[indexPath.row]
             var image = UIImage(named: "logo")!
-            if foundImagesDict.count > 0 {
+            if foundImagesDict.count > 0 && ad.imageURLs.count > 0 {
                 image = foundImagesDict[ad.imageURLs[0]] ?? UIImage(named: "logo")!
             }
             cell.configureCell(ad: ad, image: image)

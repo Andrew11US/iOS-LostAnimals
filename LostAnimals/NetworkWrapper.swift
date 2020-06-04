@@ -218,12 +218,27 @@ struct NetworkWrapper {
     }
     
     static func getImages(ads: [Advertisment], completion: @escaping () -> Void) {
-        lostImagesDict.removeAll()
+        switch AdType(rawValue: ads[0].adType) {
+        case .lost: lostImagesDict.removeAll()
+        case .found: foundImagesDict.removeAll()
+        case .adoption: adoptImagesDict.removeAll()
+        default: return
+        }
+        
         for ad in ads {
+            guard ad.imageURLs.count > 0 else {
+                completion()
+                return
+            }
+            print(ad.imageURLs[0])
             AF.download(ad.imageURLs[0]).responseData { data in
-                print(ad.imageURLs[0])
                 if let data = data.value {
-                    lostImagesDict[ad.imageURLs[0]] = UIImage(data: data) ?? UIImage(named: "logo")!
+                    switch AdType(rawValue: ads[0].adType) {
+                    case .lost: lostImagesDict[ad.imageURLs[0]] = UIImage(data: data) ?? UIImage(named: "logo")!
+                    case .found: foundImagesDict[ad.imageURLs[0]] = UIImage(data: data) ?? UIImage(named: "logo")!
+                    case .adoption: adoptImagesDict[ad.imageURLs[0]] = UIImage(data: data) ?? UIImage(named: "logo")!
+                    default: return
+                    }
                     completion()
                 }
             }

@@ -41,7 +41,7 @@ class AdoptionVC: UIViewController {
         NetworkWrapper.getAds(type: .adoption) { success in
             if success {
                 self.filteredAds = adoptionAds
-                print(adoptionAds.count)
+                print(adoptionAds[0].imageURLs)
                 NetworkWrapper.getImages(ads: adoptionAds) {
                     self.tableView.reloadData()
                 }
@@ -187,7 +187,7 @@ extension AdoptionVC: UITableViewDelegate, UITableViewDataSource {
             
             let ad = filteredAds[indexPath.row]
             var image = UIImage(named: "logo")!
-            if adoptImagesDict.count > 0 {
+            if adoptImagesDict.count > 0 && ad.imageURLs.count > 0 {
                 image = adoptImagesDict[ad.imageURLs[0]] ?? UIImage(named: "logo")!
             }
             cell.configureCell(ad: ad, image: image)
