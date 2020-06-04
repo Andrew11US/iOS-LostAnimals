@@ -305,7 +305,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifr-Zu-X6Q">
-                                                <rect key="frame" x="161.66666666666666" y="0.0" width="32" height="50"/>
+                                                <rect key="frame" x="164.33333333333334" y="0.0" width="26.333333333333343" height="50"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -334,7 +334,7 @@
                                 <rect key="frame" x="0.0" y="60" width="375" height="664"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZQ-K5-JBM">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="666.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="665.33333333333337"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAo-BM-UUR">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
@@ -520,7 +520,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-zN-fTW">
-                                                <rect key="frame" x="40" y="579" width="295" height="17.333333333333371"/>
+                                                <rect key="frame" x="40" y="579" width="295" height="16.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -573,6 +573,9 @@
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="downloadPDFTapped:" destination="CMp-VX-GJS" eventType="touchUpInside" id="0Dx-pW-G2q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -673,40 +676,40 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="140" id="l0n-w8-LjT" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="220" id="l0n-w8-LjT" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l0n-w8-LjT" id="o28-XT-ZcP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnV-9H-OAY">
-                                                    <rect key="frame" x="20" y="10" width="335" height="120"/>
+                                                    <rect key="frame" x="0.0" y="3" width="375" height="214"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SA9-T3-l6j">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="120"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                                         </imageView>
                                                         <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-3t-tfM">
-                                                            <rect key="frame" x="0.0" y="85" width="335" height="35"/>
+                                                            <rect key="frame" x="0.0" y="179" width="375" height="35"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7ci-qG-U9D">
-                                                                    <rect key="frame" x="10" y="5" width="315" height="25"/>
+                                                                    <rect key="frame" x="10" y="5" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD0-vA-xuD">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJN-eQ-3qs">
-                                                                            <rect key="frame" x="108.33333333333334" y="0.0" width="98.333333333333343" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="121.66666666666666" y="0.0" width="111.66666666666666" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9e-Dr-drm">
-                                                                            <rect key="frame" x="216.66666666666666" y="0.0" width="98.333333333333343" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="243.33333333333334" y="0.0" width="111.66666666666666" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -736,10 +739,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="TnV-9H-OAY" secondAttribute="bottom" constant="10" id="0Iw-f4-wqj"/>
-                                                <constraint firstItem="TnV-9H-OAY" firstAttribute="leading" secondItem="o28-XT-ZcP" secondAttribute="leading" constant="20" id="cgJ-zK-bgc"/>
-                                                <constraint firstAttribute="trailing" secondItem="TnV-9H-OAY" secondAttribute="trailing" constant="20" id="ctq-5e-L95"/>
-                                                <constraint firstItem="TnV-9H-OAY" firstAttribute="top" secondItem="o28-XT-ZcP" secondAttribute="top" constant="10" id="vN3-oB-t57"/>
+                                                <constraint firstAttribute="bottom" secondItem="TnV-9H-OAY" secondAttribute="bottom" constant="3" id="0Iw-f4-wqj"/>
+                                                <constraint firstItem="TnV-9H-OAY" firstAttribute="leading" secondItem="o28-XT-ZcP" secondAttribute="leading" id="cgJ-zK-bgc"/>
+                                                <constraint firstAttribute="trailing" secondItem="TnV-9H-OAY" secondAttribute="trailing" id="ctq-5e-L95"/>
+                                                <constraint firstItem="TnV-9H-OAY" firstAttribute="top" secondItem="o28-XT-ZcP" secondAttribute="top" constant="3" id="vN3-oB-t57"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1156,40 +1159,40 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="140" id="Je1-ak-Cda" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertismentCell" rowHeight="220" id="Je1-ak-Cda" customClass="AdvertismentCell" customModule="LostAnimals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Je1-ak-Cda" id="wgn-vs-BOk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsZ-3R-hQv">
-                                                    <rect key="frame" x="20" y="10" width="335" height="120"/>
+                                                    <rect key="frame" x="0.0" y="3" width="375" height="214"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hg1-jo-Obf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="120"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
                                                         </imageView>
                                                         <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkn-7m-4zH">
-                                                            <rect key="frame" x="0.0" y="85" width="335" height="35"/>
+                                                            <rect key="frame" x="0.0" y="179" width="375" height="35"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ruc-Hm-VVW">
-                                                                    <rect key="frame" x="10" y="5" width="315" height="25"/>
+                                                                    <rect key="frame" x="10" y="5" width="355" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gt4-iX-Ip0">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="98.333333333333329" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="111.66666666666667" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mW5-sd-45c">
-                                                                            <rect key="frame" x="108.33333333333334" y="0.0" width="98.333333333333343" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="121.66666666666666" y="0.0" width="111.66666666666666" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSQ-k1-Ea2">
-                                                                            <rect key="frame" x="216.66666666666666" y="0.0" width="98.333333333333343" height="25"/>
-                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                                                            <rect key="frame" x="243.33333333333334" y="0.0" width="111.66666666666666" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -1219,10 +1222,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="FsZ-3R-hQv" firstAttribute="top" secondItem="wgn-vs-BOk" secondAttribute="top" constant="10" id="Fhc-o4-1jw"/>
-                                                <constraint firstAttribute="trailing" secondItem="FsZ-3R-hQv" secondAttribute="trailing" constant="20" id="PST-do-xF3"/>
-                                                <constraint firstItem="FsZ-3R-hQv" firstAttribute="leading" secondItem="wgn-vs-BOk" secondAttribute="leading" constant="20" id="a0h-nH-zU9"/>
-                                                <constraint firstAttribute="bottom" secondItem="FsZ-3R-hQv" secondAttribute="bottom" constant="10" id="sVB-ja-Htf"/>
+                                                <constraint firstItem="FsZ-3R-hQv" firstAttribute="top" secondItem="wgn-vs-BOk" secondAttribute="top" constant="3" id="Fhc-o4-1jw"/>
+                                                <constraint firstAttribute="trailing" secondItem="FsZ-3R-hQv" secondAttribute="trailing" id="PST-do-xF3"/>
+                                                <constraint firstItem="FsZ-3R-hQv" firstAttribute="leading" secondItem="wgn-vs-BOk" secondAttribute="leading" id="a0h-nH-zU9"/>
+                                                <constraint firstAttribute="bottom" secondItem="FsZ-3R-hQv" secondAttribute="bottom" constant="3" id="sVB-ja-Htf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

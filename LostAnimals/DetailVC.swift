@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailVC: UIViewController {
     
@@ -40,12 +41,12 @@ class DetailVC: UIViewController {
         imagesScrollView.delegate = self
         updateView()
         updateImages()
+        
         NetworkWrapper.getByID(type: AdType(rawValue: ad.adType)!, id: ad.id) { (success, ad) in
             if success {
                 print(ad)
                 self.ad = ad
                 self.updateView()
-//                self.updateImages()
             }
         }
     }
@@ -104,27 +105,19 @@ class DetailVC: UIViewController {
     }
     
     @IBAction func downloadPDFTapped(_ sender: CustomButton) {
+        let path = "https://aqueous-anchorage-15610.herokuapp.com/api/\(ad.adType)/\(ad.id)/pdf"
+        guard let url = URL(string: path) else { return }
         
-    }
-    
-    @IBAction func shareBtnTapped(_ sender: UIButton) {
-        let items = [ad] // data to share
-        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        
-        // If device is iPad anchor rect for alert is needed
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            activityController.popoverPresentationController?.sourceView = sender
-            activityController.popoverPresentationController?.sourceRect = sender.bounds
-            activityController.popoverPresentationController?.permittedArrowDirections = [.down, .up]
+        UIApplication.shared.open(url, options: [:]) { (success) in
+            if !success {
+                self.showAlertWithTitle("PDF error", message: "Cannot fulfill the request at the time")
+            }
         }
-        
-        present(activityController, animated: true)
     }
     
     @IBAction func backTapped(_ sender: CustomButton) {
         dismiss(animated: true, completion: nil)
     }
-
 }
 
 // MARK: - UIScrollView delegate
