@@ -10,11 +10,22 @@ import UIKit
 import SwiftKeychainWrapper
 
 class UserVC: UIViewController {
+    @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        getUserData()
+    }
+    
+    func getUserData() {
+        if let username = defaults.string(forKey: USERNAME) {
+            usernameLbl.text = username
+        }
+        if let email = defaults.string(forKey: EMAIL) {
+            emailLbl.text = email
+        }
     }
     
     @IBAction func signOut(_ sender: AnyObject) {

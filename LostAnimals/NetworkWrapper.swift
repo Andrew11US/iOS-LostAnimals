@@ -28,9 +28,14 @@ struct NetworkWrapper {
                 print("success")
                 if let dict = response.value as? [String: AnyObject] {
                     if let token = dict["accessToken"] as? String {
-                        //                        print(token)
                         KeychainWrapper.standard.set(token, forKey: ACCESS_TOKEN)
                         print("Token saved: \(token)")
+                    }
+                    if let username = dict["username"] as? String {
+                        defaults.set(username, forKey: USERNAME)
+                    }
+                    if let mail = dict["email"] as? String {
+                        defaults.set(mail, forKey: EMAIL)
                     }
                 }
                 completion(true)
@@ -38,7 +43,7 @@ struct NetworkWrapper {
                 print("Error signing in: \(error.localizedDescription)")
                 completion(false)
             }
-            //            print(response.value ?? "sign in response is empty")
+            print(response.value ?? "sign in response is empty")
         }
     }
     
@@ -54,6 +59,18 @@ struct NetworkWrapper {
             switch response.result {
             case .success:
                 print("success")
+                if let dict = response.value as? [String: AnyObject] {
+                    if let token = dict["accessToken"] as? String {
+                        KeychainWrapper.standard.set(token, forKey: ACCESS_TOKEN)
+                        print("Token saved: \(token)")
+                    }
+                    if let username = dict["username"] as? String {
+                        defaults.set(username, forKey: USERNAME)
+                    }
+                    if let mail = dict["email"] as? String {
+                        defaults.set(mail, forKey: EMAIL)
+                    }
+                }
                 completion(true)
             case let .failure(error):
                 print("Error signing up: \(error.localizedDescription)")

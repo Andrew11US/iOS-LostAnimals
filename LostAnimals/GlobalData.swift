@@ -12,5 +12,7 @@ import Foundation
 let KEY_UID = "uid"
 let ACCESS_TOKEN = "token"
 let CREDENTIALS = "token_retrier"
+let USERNAME = "username"
+let EMAIL = "email"
 
 let defaults = UserDefaults.standard
