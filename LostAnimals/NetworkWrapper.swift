@@ -49,26 +49,28 @@ struct NetworkWrapper {
     
     static func signUp(credentials: (email: String, pass: String, uName: String), completion: @escaping (Bool) -> Void) {
         let url = "https://aqueous-anchorage-15610.herokuapp.com/api/auth/signup"
-        let credentials: [String: String] = [
+        let data: [String: String] = [
             "email" : credentials.email,
             "password" : credentials.pass,
             "username" : credentials.uName
         ]
         
-        AF.request(url, method: .post, parameters: credentials, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
+        AF.request(url, method: .post, parameters: data, encoder: JSONParameterEncoder.default).validate(statusCode: 200..<300).responseJSON { response in
             switch response.result {
             case .success:
                 print("success")
-                if let dict = response.value as? [String: AnyObject] {
-                    if let token = dict["accessToken"] as? String {
-                        KeychainWrapper.standard.set(token, forKey: ACCESS_TOKEN)
-                        print("Token saved: \(token)")
-                    }
-                    if let username = dict["username"] as? String {
-                        defaults.set(username, forKey: USERNAME)
-                    }
-                    if let mail = dict["email"] as? String {
-                        defaults.set(mail, forKey: EMAIL)
+                signIn(username: credentials.uName, pass: credentials.pass) { (success) in
+                    if let dict = response.value as? [String: AnyObject] {
+                        if let token = dict["accessToken"] as? String {
+                            KeychainWrapper.standard.set(token, forKey: ACCESS_TOKEN)
+                            print("Token saved: \(token)")
+                        }
+                        if let username = dict["username"] as? String {
+                            defaults.set(username, forKey: USERNAME)
+                        }
+                        if let mail = dict["email"] as? String {
+                            defaults.set(mail, forKey: EMAIL)
+                        }
                     }
                 }
                 completion(true)
