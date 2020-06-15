@@ -220,7 +220,9 @@ class AddVC: UIViewController {
     
     @IBAction func publishTapped(_ sender: CustomButton) {
         var data: [String: AnyObject] = [:]
-        
+        defer {
+            print(data)
+        }
         switch adTypeSegment.selectedSegmentIndex {
         case 0: adType = AdType.lost.rawValue
         case 1: adType = AdType.found.rawValue
@@ -241,7 +243,7 @@ class AddVC: UIViewController {
             return
         }
         
-        if animalType != "Animal Type" {
+        if animalType != "Animal Type" && animalType.trimmingCharacters(in: .whitespaces) != "" {
             data["type"] = animalType as AnyObject
         } else {
             self.showAlertWithTitle("Compound error", message: "Animal type should be selected")
