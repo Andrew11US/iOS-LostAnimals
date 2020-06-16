@@ -41,7 +41,7 @@ class AddVC: UIViewController {
     private var ad: Advertisment!
     private var permissions: [SPPermission] = [.camera, .photoLibrary]
     private var images: [UIImage] = []
-    private let animalTypes: [String] = ["Cat", "Dog", "Spider", "Lizard"]
+    private let animalTypes: [String] = ["alpaca", "camel", "cat", "chicken", "cow", "dog", "donkey", "duck", "ferret", "fox", "geese", "giraffe", "goat", "goldfish", "hamster", "hedgehog", "horse", "llama", "mice", "parrot", "pig", "rabbit", "spider", "turkey"]
     private var dates: (from: Date, to: Date?) = (Date(), nil)
     private var animalType: String = ""
     private var adType: String = ""
@@ -371,12 +371,12 @@ extension AddVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return animalTypes[row]
+        return animalTypes[row].capitalized
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         animalType = animalTypes[row]
-        animalTypeBtn.setTitle(animalTypes[row], for: .normal)
+        animalTypeBtn.setTitle(animalTypes[row].capitalized, for: .normal)
         animalTypeBtn.isHidden = false
         pickerView.isHidden = true
     }

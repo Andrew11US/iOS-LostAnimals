@@ -93,9 +93,9 @@ class AdoptionVC: UIViewController {
         if Validator.validate.text(field: filterView.dateTextField) != nil {
             filtersDict["dateAfter"] = "\(Int(filterView.dates.from.timeIntervalSince1970))"
             if let to = filterView.dates.to {
-                filtersDict["&dateBefore"] = "\(Int(to.timeIntervalSince1970))"
+                filtersDict["dateBefore"] = "\(Int(to.timeIntervalSince1970))"
             } else {
-                filtersDict["&dateBefore"] = "\(Int(Date().timeIntervalSince1970))"
+                filtersDict["dateBefore"] = "\(Int(Date().timeIntervalSince1970))"
             }
             print(filtersDict)
         }

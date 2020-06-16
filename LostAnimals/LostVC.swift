@@ -93,9 +93,9 @@ class LostVC: UIViewController {
         if Validator.validate.text(field: filterView.dateTextField) != nil {
             filtersDict["dateAfter"] = "\(Int(filterView.dates.from.timeIntervalSince1970))"
             if let to = filterView.dates.to {
-                filtersDict["&dateBefore"] = "\(Int(to.timeIntervalSince1970))"
+                filtersDict["dateBefore"] = "\(Int(to.timeIntervalSince1970))"
             } else {
-                filtersDict["&dateBefore"] = "\(Int(Date().timeIntervalSince1970))"
+                filtersDict["dateBefore"] = "\(Int(Date().timeIntervalSince1970))"
             }
             print(filtersDict)
         }
@@ -119,6 +119,7 @@ class LostVC: UIViewController {
         }
         
         if !filtersDict.isEmpty {
+            addSpinner(spinner)
             NetworkWrapper.getFilteredAds(type: .lost, filters: filtersDict) { (success) in
                 if success {
                     self.filteredAds = lostAds
@@ -127,6 +128,7 @@ class LostVC: UIViewController {
                         self.tableView.reloadData()
                     }
                 }
+                self.removeSpinner(self.spinner)
             }
         }
     }
@@ -217,8 +219,8 @@ extension LostVC: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         filteredAds.removeAll()
         for ad in lostAds {
-            if let searchText = searchBar.text?.trimmingCharacters(in: .whitespaces).capitalized, !searchText.isEmpty {
-                if ad.district.hasPrefix(searchText) {
+            if let searchText = searchBar.text?.trimmingCharacters(in: .whitespaces).lowercased(), !searchText.isEmpty {
+                if ad.town.lowercased().hasPrefix(searchText) {
                     filteredAds.append(ad)
                 } else if ad.town.hasPrefix(searchText) {
                     filteredAds.append(ad)

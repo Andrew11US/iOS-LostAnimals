@@ -131,8 +131,13 @@ struct NetworkWrapper {
     static func getFilteredAds(type: AdType, filters: [String: String], completion: @escaping (Bool) -> Void) {
         var url = "https://aqueous-anchorage-15610.herokuapp.com/api/\(type.rawValue)?"
         
+        var counter = 1
         for (key, value) in filters {
             url += "\(key)=\(value)"
+            if counter < filters.count {
+                url += "&"
+            }
+            counter += 1
         }
         print(url)
         
