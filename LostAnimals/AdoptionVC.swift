@@ -119,6 +119,7 @@ class AdoptionVC: UIViewController {
         }
         
         if !filtersDict.isEmpty {
+            addSpinner(spinner)
             NetworkWrapper.getFilteredAds(type: .adoption, filters: filtersDict) { (success) in
                 if success {
                     self.filteredAds = adoptionAds
@@ -126,6 +127,7 @@ class AdoptionVC: UIViewController {
                     NetworkWrapper.getImages(ads: adoptionAds) {
                         self.tableView.reloadData()
                     }
+                    self.removeSpinner(self.spinner)
                 }
             }
         }
@@ -218,7 +220,7 @@ extension AdoptionVC: UISearchBarDelegate {
         filteredAds.removeAll()
         for ad in adoptionAds {
             if let searchText = searchBar.text?.trimmingCharacters(in: .whitespaces).capitalized, !searchText.isEmpty {
-                if ad.district.hasPrefix(searchText) {
+                if ad.town.hasPrefix(searchText) {
                     filteredAds.append(ad)
                 } else if ad.town.hasPrefix(searchText) {
                     filteredAds.append(ad)

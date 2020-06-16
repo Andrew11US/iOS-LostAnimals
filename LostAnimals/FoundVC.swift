@@ -119,6 +119,7 @@ class FoundVC: UIViewController {
         }
         
         if !filtersDict.isEmpty {
+            addSpinner(spinner)
             NetworkWrapper.getFilteredAds(type: .found, filters: filtersDict) { (success) in
                 if success {
                     self.filteredAds = foundAds
@@ -126,6 +127,7 @@ class FoundVC: UIViewController {
                     NetworkWrapper.getImages(ads: foundAds) {
                         self.tableView.reloadData()
                     }
+                    self.removeSpinner(self.spinner)
                 }
             }
         }
@@ -218,7 +220,7 @@ extension FoundVC: UISearchBarDelegate {
         filteredAds.removeAll()
         for ad in foundAds {
             if let searchText = searchBar.text?.trimmingCharacters(in: .whitespaces).capitalized, !searchText.isEmpty {
-                if ad.district.hasPrefix(searchText) {
+                if ad.town.hasPrefix(searchText) {
                     filteredAds.append(ad)
                 } else if ad.town.hasPrefix(searchText) {
                     filteredAds.append(ad)

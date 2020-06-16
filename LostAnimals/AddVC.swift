@@ -220,9 +220,9 @@ class AddVC: UIViewController {
     
     @IBAction func publishTapped(_ sender: CustomButton) {
         var data: [String: AnyObject] = [:]
-        defer {
-            print(data)
-        }
+//        defer {
+//            print(data)
+//        }
         switch adTypeSegment.selectedSegmentIndex {
         case 0: adType = AdType.lost.rawValue
         case 1: adType = AdType.found.rawValue
