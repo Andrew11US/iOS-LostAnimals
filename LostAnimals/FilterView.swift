@@ -13,7 +13,7 @@ class FilterView: UIView {
     public var dates: (from: Date, to: Date?) = (Date(), nil)
     public var selectedAnimalType: String = ""
     
-    private let animalTypes: [String] = ["alpaca", "camel", "cat", "chicken", "cow", "dog", "donkey", "duck", "ferret", "fox", "geese", "giraffe", "goat", "goldfish", "hamster", "hedgehog", "horse", "llama", "mice", "parrot", "pig", "rabbit", "spider", "turkey"]
+    private let animalTypes: [String] = ["cat", "dog", "rabbit", "parrot", "hedgehog", "pig", "others"]
     private var calendarView: CalendarView!
     
     // MARK: - Lazy properties (calculated only when first time is used)
@@ -65,7 +65,7 @@ class FilterView: UIView {
         let field = UITextField()
         field.textAlignment = .center
         field.font = UIFont(name: "Montserrat-Bold", size: 14)
-        field.placeholder = "Region"
+        field.placeholder = "District"
         field.returnKeyType = .done
         field.addTarget(self, action: #selector(validateRegion(_:)), for: .editingDidEnd)
         return field

@@ -11,7 +11,7 @@ import SPPermissions
 import YPImagePicker
 
 class AddVC: UIViewController {
-
+    
     //MARK: - IBOutlets
     @IBOutlet weak var verticalScrollView: UIScrollView!
     @IBOutlet weak var imagesScrollView: UIScrollView!
@@ -41,7 +41,7 @@ class AddVC: UIViewController {
     private var ad: Advertisment!
     private var permissions: [SPPermission] = [.camera, .photoLibrary]
     private var images: [UIImage] = []
-    private let animalTypes: [String] = ["alpaca", "camel", "cat", "chicken", "cow", "dog", "donkey", "duck", "ferret", "fox", "geese", "giraffe", "goat", "goldfish", "hamster", "hedgehog", "horse", "llama", "mice", "parrot", "pig", "rabbit", "spider", "turkey"]
+    private let animalTypes: [String] = ["cat", "dog", "rabbit", "parrot", "hedgehog", "pig", "others"]
     private var dates: (from: Date, to: Date?) = (Date(), nil)
     private var animalType: String = ""
     private var adType: String = ""
@@ -88,7 +88,7 @@ class AddVC: UIViewController {
     // ViewDidLoad method
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imagesScrollView.delegate = self
         animalPicker.delegate = self
         animalPicker.dataSource = self
@@ -220,9 +220,9 @@ class AddVC: UIViewController {
     
     @IBAction func publishTapped(_ sender: CustomButton) {
         var data: [String: AnyObject] = [:]
-//        defer {
-//            print(data)
-//        }
+        //        defer {
+        //            print(data)
+        //        }
         switch adTypeSegment.selectedSegmentIndex {
         case 0: adType = AdType.lost.rawValue
         case 1: adType = AdType.found.rawValue
@@ -231,7 +231,7 @@ class AddVC: UIViewController {
         
         if images.count > 0 {
             var arr : [AnyObject] = []
-
+            
             for image in images {
                 let imgBase64 = image.toBase64(format: .jpeg(80)) ?? ""
                 let dict: [String: String] = ["image": imgBase64]
@@ -306,6 +306,46 @@ class AddVC: UIViewController {
         }
         
         data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject
+        addSpinner(spinner)
+        NetworkWrapper.publishAd(type: adType, data: data) { success in
+            if success {
+                print("ad has been uploaded successfully")
+                self.resetTapped(CustomButton())
+                self.showAlertWithTitle("Success!", message: "Your advertisment has been succsessfully uploaded")
+            } else {
+                self.showAlertWithTitle("Error", message: "Could not upload ad, internal error")
+            }
+            self.removeSpinner(self.spinner)
+        }
+    }
+    
+    @IBAction func demo(_ sender: AnyObject) {
+        var data: [String: AnyObject] = [:]
+        adType = AdType.adoption.rawValue
+        images = [UIImage(named: "cat2")!, UIImage(named: "cat4")!]
+        
+        var arr : [AnyObject] = []
+        
+        for image in images {
+            let imgBase64 = image.toBase64(format: .jpeg(80)) ?? ""
+            let dict: [String: String] = ["image": imgBase64]
+            arr.append(dict as AnyObject)
+        }
+        data["photos"] = arr as AnyObject
+        data["type"] = animalTypes[0] as AnyObject
+        data["town"] = "Warszawa" as AnyObject
+        data["phoneNumber"] = "333-254-551" as AnyObject
+        data["email"] = "weq@gmail.com" as AnyObject
+        data["title"] = "Cat for adoption" as AnyObject
+        data["chipNumber"] = "126162612" as AnyObject
+        data["district"] = "Wola" as AnyObject
+        data["street"] = "Kolo" as AnyObject
+        data["distinguishingMarks"] = "Small kitten" as AnyObject
+        data["name"] = "Sam" as AnyObject
+        data["description"] = "Call me if you lost it" as AnyObject
+        data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject
+        print("Filled")
+        
         addSpinner(spinner)
         NetworkWrapper.publishAd(type: adType, data: data) { success in
             if success {

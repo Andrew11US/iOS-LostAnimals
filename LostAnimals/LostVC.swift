@@ -40,7 +40,7 @@ class LostVC: UIViewController {
         addSpinner(spinner)
         NetworkWrapper.getAds(type: .lost) { success in
             if success {
-                self.filteredAds = lostAds
+                self.filteredAds = lostAds.sorted { $0.date < $1.date }
                 print(lostAds.count)
                 NetworkWrapper.getImages(ads: lostAds) {
                     self.tableView.reloadData()

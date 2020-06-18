@@ -310,7 +310,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiL-zW-UEV">
+                                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiL-zW-UEV">
                                                 <rect key="frame" x="305" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="EqQ-Ha-ZqI"/>
@@ -906,6 +906,17 @@
                                             <action selector="resetTapped:" destination="65Q-NE-dSV" eventType="touchUpInside" id="CQx-LP-aIV"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELw-rd-TQz">
+                                        <rect key="frame" x="8" y="50" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="GIJ-Mu-ZDI"/>
+                                            <constraint firstAttribute="height" constant="50" id="HDf-A2-0Ft"/>
+                                        </constraints>
+                                        <state key="normal" title="Demo"/>
+                                        <connections>
+                                            <action selector="demo:" destination="65Q-NE-dSV" eventType="touchUpInside" id="pfB-lO-7ha"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.01176470588" green="0.48627450979999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -913,7 +924,9 @@
                                     <constraint firstAttribute="trailing" secondItem="wAi-Q6-I9q" secondAttribute="trailing" constant="10" id="H2y-5A-SES"/>
                                     <constraint firstItem="uS6-xo-JYF" firstAttribute="leading" secondItem="dkZ-8a-QMG" secondAttribute="leading" id="MkY-6X-Pjj"/>
                                     <constraint firstAttribute="bottom" secondItem="uS6-xo-JYF" secondAttribute="bottom" id="Oey-cZ-BwP"/>
+                                    <constraint firstItem="ELw-rd-TQz" firstAttribute="leading" secondItem="dkZ-8a-QMG" secondAttribute="leading" constant="8" id="Sxj-Lh-tBA"/>
                                     <constraint firstAttribute="height" constant="100" id="W5j-Er-Cxq"/>
+                                    <constraint firstAttribute="bottom" secondItem="ELw-rd-TQz" secondAttribute="bottom" id="fvm-ye-26f"/>
                                     <constraint firstAttribute="trailing" secondItem="uS6-xo-JYF" secondAttribute="trailing" id="r56-e5-HM0"/>
                                 </constraints>
                             </view>
@@ -1881,7 +1894,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Ln0-Wy-LPx"/>
-        <segue reference="THn-4l-rgu"/>
+        <segue reference="I4M-QP-YXt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
