@@ -320,43 +320,40 @@ class AddVC: UIViewController {
     }
     
     @IBAction func demo(_ sender: AnyObject) {
-        var data: [String: AnyObject] = [:]
-        adType = AdType.adoption.rawValue
-        images = [UIImage(named: "cat2")!, UIImage(named: "cat4")!]
+//        var data: [String: AnyObject] = [:]
+//        adType = AdType.adoption.rawValue
+//        images = [UIImage(named: "cat2")!, UIImage(named: "cat4")!]
+//        var arr : [AnyObject] = []
+//        for image in images {
+//            let imgBase64 = image.toBase64(format: .jpeg(80)) ?? ""
+//            let dict: [String: String] = ["image": imgBase64]
+//            arr.append(dict as AnyObject)
+//        }
+//        data["photos"] = arr as AnyObject
+//        data["type"] = animalTypes[0] as AnyObject
+//        data["town"] = "Warszawa" as AnyObject
+//        data["phoneNumber"] = "333-254-551" as AnyObject
+//        data["email"] = "weq@gmail.com" as AnyObject
+//        data["title"] = "Cat for adoption" as AnyObject
+//        data["chipNumber"] = "126162612" as AnyObject
+//        data["district"] = "Wola" as AnyObject
+//        data["street"] = "Kolo" as AnyObject
+//        data["distinguishingMarks"] = "Small kitten" as AnyObject
+//        data["name"] = "Sam" as AnyObject
+//        data["description"] = "Call me if you lost it" as AnyObject
+//        data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject
+//        print("Filled")
         
-        var arr : [AnyObject] = []
-        
-        for image in images {
-            let imgBase64 = image.toBase64(format: .jpeg(80)) ?? ""
-            let dict: [String: String] = ["image": imgBase64]
-            arr.append(dict as AnyObject)
-        }
-        data["photos"] = arr as AnyObject
-        data["type"] = animalTypes[0] as AnyObject
-        data["town"] = "Warszawa" as AnyObject
-        data["phoneNumber"] = "333-254-551" as AnyObject
-        data["email"] = "weq@gmail.com" as AnyObject
-        data["title"] = "Cat for adoption" as AnyObject
-        data["chipNumber"] = "126162612" as AnyObject
-        data["district"] = "Wola" as AnyObject
-        data["street"] = "Kolo" as AnyObject
-        data["distinguishingMarks"] = "Small kitten" as AnyObject
-        data["name"] = "Sam" as AnyObject
-        data["description"] = "Call me if you lost it" as AnyObject
-        data["lostDate"] = Int(dates.from.timeIntervalSince1970) as AnyObject
-        print("Filled")
-        
-        addSpinner(spinner)
-        NetworkWrapper.publishAd(type: adType, data: data) { success in
-            if success {
-                print("ad has been uploaded successfully")
-                self.resetTapped(CustomButton())
-                self.showAlertWithTitle("Success!", message: "Your advertisment has been succsessfully uploaded")
-            } else {
-                self.showAlertWithTitle("Error", message: "Could not upload ad, internal error")
-            }
-            self.removeSpinner(self.spinner)
-        }
+        cityTextField.text = "New York"
+        regionTextField.text = "Brooklyn"
+        phoneTextField.text = "111-222-333"
+        chipTextField.text = "123456780"
+        emailTextField.text = "test@gmail.com"
+        streetTextField.text = "Broadway"
+        nameTextField.text = "Roger"
+        titleTextField.text = "Lost Roger"
+        distingMarksTextField.text = "Alien species"
+        descriptionTextView.text = "Out of this planet"
     }
     
     private func populateImagesScrollView() {

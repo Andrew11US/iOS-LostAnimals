@@ -188,9 +188,9 @@ extension AdoptionVC: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
             
             let ad = filteredAds[indexPath.row]
-            var image = UIImage(named: "logo")!
+            var image = UIImage(named: "art")!
             if adoptImagesDict.count > 0 && ad.imageURLs.count > 0 {
-                image = adoptImagesDict[ad.imageURLs[0]] ?? UIImage(named: "logo")!
+                image = adoptImagesDict[ad.imageURLs[0]] ?? UIImage(named: "art")!
             }
             cell.configureCell(ad: ad, image: image)
             return cell

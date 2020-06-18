@@ -40,7 +40,7 @@ class LostVC: UIViewController {
         addSpinner(spinner)
         NetworkWrapper.getAds(type: .lost) { success in
             if success {
-                self.filteredAds = lostAds.sorted { $0.date < $1.date }
+                self.filteredAds = lostAds
                 print(lostAds.count)
                 NetworkWrapper.getImages(ads: lostAds) {
                     self.tableView.reloadData()
@@ -188,9 +188,9 @@ extension LostVC: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AdvertismentCell", for: indexPath) as? AdvertismentCell {
             
             let ad = filteredAds[indexPath.row]
-            var image = UIImage(named: "logo")!
+            var image = UIImage(named: "art")!
             if lostImagesDict.count > 0 && ad.imageURLs.count > 0 {
-                image = lostImagesDict[ad.imageURLs[0]] ?? UIImage(named: "logo")!
+                image = lostImagesDict[ad.imageURLs[0]] ?? UIImage(named: "art")!
             }
             cell.configureCell(ad: ad, image: image)
             return cell
